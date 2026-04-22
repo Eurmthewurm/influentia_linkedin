@@ -230,6 +230,7 @@
       color: #2850c4;
     }
   </style>
+<!-- v2 -->
 </head>
 <body>
   <div class="container">
@@ -285,7 +286,7 @@
     const sessionId = params.get('session_id');
 
     async function fetchLicense() {
-      if (\!sessionId) {
+      if (!sessionId) {
         showError();
         return;
       }
@@ -299,7 +300,7 @@
           return;
         }
 
-        if (resp.status \!== 404) {
+        if (resp.status !== 404) {
           throw new Error('Unexpected response');
         }
 
@@ -323,7 +324,7 @@
 
     function showLicense(key) {
       document.querySelector('.loading').style.display = 'none';
-      document.querySelector('.status').textContent = 'License key ready\!';
+      document.querySelector('.status').textContent = 'License key ready!';
       document.getElementById('licenseKey').textContent = key;
       document.querySelector('.license-box').classList.add('show');
       document.querySelector('.next-steps').classList.add('show');
@@ -340,7 +341,7 @@
       navigator.clipboard.writeText(key).then(() => {
         const btn = event.target;
         const original = btn.textContent;
-        btn.textContent = 'Copied\!';
+        btn.textContent = 'Copied!';
         btn.classList.add('copied');
         setTimeout(() => {
           btn.textContent = original;

@@ -8,13 +8,17 @@ type Env = {
   STRIPE_WEBHOOK_SECRET: string;
   STRIPE_PRICE_ID: string;
   LANDING_URL: string;
+  ANTHROPIC_API_KEY: string;
+  BRAVE_API_KEY: string;
 };
 
 const app = new Hono<{ Bindings: Env }>();
 
 // CORS for frontend calls
 const ALLOWED_ORIGINS = [
-  'https://outreachpilot.app',
+  'https://influentia.io',
+  'https://www.influentia.io',
+  'https://influentia-79b.pages.dev',
   'https://outreach-pilot.pages.dev',
   'http://localhost:3000',
   'http://localhost:5173',
@@ -22,7 +26,14 @@ const ALLOWED_ORIGINS = [
 ];
 
 const strictCors = cors({
-  origin: (origin) => ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0],
+  origin: (origin) => {
+    if (!origin) return ALLOWED_ORIGINS[0];
+    if (ALLOWED_ORIGINS.includes(origin)) return origin;
+    // Allow any Cloudflare Pages preview URL for either project
+    if (origin.endsWith('.outreach-pilot.pages.dev')) return origin;
+    if (origin.endsWith('.influentia-79b.pages.dev')) return origin;
+    return ALLOWED_ORIGINS[0];
+  },
 });
 
 app.use('/api/checkout', strictCors);
@@ -345,6 +356,134 @@ app.post('/api/portal', async (c) => {
   } catch (error) {
     console.error('Portal error:', error);
     return c.json({ error: 'Failed to create portal session' }, 500);
+  }
+});
+
+// ── Shared license-check helper for proxy routes ──────────────────────────
+async function checkLicenseForProxy(
+  key: string,
+  db: D1Database
+): Promise<{ valid: boolean; reason?: string }> {
+  if (!key) return { valid: false, reason: 'missing_key' };
+  const now = Math.floor(Date.now() / 1000);
+
+  const license = await db
+    .prepare('SELECT * FROM licenses WHERE key = ?')
+    .bind(key)
+    .first<License>();
+
+  if (!license) return { valid: false, reason: 'not_found' };
+
+  // Update last_seen_at
+  await db
+    .prepare('UPDATE licenses SET last_seen_at = ? WHERE key = ?')
+    .bind(now, key)
+    .run();
+
+  let tier = license.tier;
+  if (tier === 'trial' && license.trial_ends_at && license.trial_ends_at < now) {
+    tier = 'expired';
+    await db.prepare('UPDATE licenses SET tier = ? WHERE key = ?').bind('expired', key).run();
+  }
+
+  if (tier === 'cancelled' || tier === 'expired') {
+    return { valid: false, reason: 'revoked' };
+  }
+
+  return { valid: true };
+}
+
+// POST /api/proxy/message  — AI calls on behalf of a verified license
+// Body: { license_key, model, max_tokens, messages, system? }
+app.post('/api/proxy/message', async (c) => {
+  try {
+    const body = await c.req.json<{
+      license_key: string;
+      model?: string;
+      max_tokens?: number;
+      messages: Array<{ role: string; content: string }>;
+      system?: string;
+    }>();
+
+    const { license_key, model, max_tokens, messages, system } = body;
+
+    const check = await checkLicenseForProxy(license_key, c.env.DB);
+    if (!check.valid) {
+      return c.json({ error: 'License invalid', reason: check.reason }, 403);
+    }
+
+    const anthropicBody: Record<string, unknown> = {
+      model: model || 'claude-haiku-4-5-20251001',
+      max_tokens: max_tokens || 256,
+      messages,
+    };
+    if (system) anthropicBody.system = system;
+
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': c.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify(anthropicBody),
+    });
+
+    if (!resp.ok) {
+      const err = await resp.text();
+      console.error('Anthropic proxy error', resp.status, err);
+      return c.json({ error: 'AI service error', status: resp.status }, 502);
+    }
+
+    const data = await resp.json();
+    return c.json(data);
+  } catch (error) {
+    console.error('Proxy message error:', error);
+    return c.json({ error: 'Internal error' }, 500);
+  }
+});
+
+// POST /api/proxy/search  — Brave Search on behalf of a verified license
+// Body: { license_key, query, count?, offset? }
+app.post('/api/proxy/search', async (c) => {
+  try {
+    const body = await c.req.json<{
+      license_key: string;
+      query: string;
+      count?: number;
+      offset?: number;
+    }>();
+
+    const { license_key, query, count = 20, offset = 0 } = body;
+
+    if (!query) return c.json({ error: 'Missing query' }, 400);
+
+    const check = await checkLicenseForProxy(license_key, c.env.DB);
+    if (!check.valid) {
+      return c.json({ error: 'License invalid', reason: check.reason }, 403);
+    }
+
+    const encoded = encodeURIComponent(query);
+    const braveUrl = `https://api.search.brave.com/res/v1/web/search?q=${encoded}&count=${Math.min(20, count)}&offset=${offset}&search_lang=en`;
+
+    const resp = await fetch(braveUrl, {
+      headers: {
+        Accept: 'application/json',
+        'X-Subscription-Token': c.env.BRAVE_API_KEY,
+      },
+    });
+
+    if (!resp.ok) {
+      const err = await resp.text();
+      console.error('Brave proxy error', resp.status, err);
+      return c.json({ error: 'Search service error', status: resp.status }, 502);
+    }
+
+    const data = await resp.json();
+    return c.json(data);
+  } catch (error) {
+    console.error('Proxy search error:', error);
+    return c.json({ error: 'Internal error' }, 500);
   }
 });
 

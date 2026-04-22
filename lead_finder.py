@@ -171,48 +171,36 @@ def search_leads(
             "sector":       industry or "",
         })
 
-    # ── Strategy 1: Brave Search API (free, 2000/month) ──────────────────────
+    # ── Strategy 1: Influentia search proxy (Brave Search behind the scenes) ──
     try:
-        from config import BRAVE_SEARCH_API_KEY
-        brave_key = (BRAVE_SEARCH_API_KEY or "").strip()
-    except ImportError:
-        brave_key = ""
-
-    if brave_key:
-        log.info("Using Brave Search API…")
-        try:
-            per_page = min(20, count)
-            for page_num in range(max(1, (count // per_page) + 1)):
-                if len(leads) >= count:
-                    break
-                offset  = page_num * per_page
-                encoded = urllib.parse.quote_plus(query)
-                brave_url = (
-                    f"https://api.search.brave.com/res/v1/web/search"
-                    f"?q={encoded}&count={per_page}&offset={offset}&search_lang=en&country=AU"
-                )
-                brave_html = _http_get(brave_url, extra_headers={
-                    "Accept":               "application/json",
-                    "Accept-Encoding":      "identity",
-                    "X-Subscription-Token": brave_key,
-                })
-                data = json.loads(brave_html)
+        from ai_proxy import search_web as _search_web
+        log.info("Using Influentia search proxy…")
+        per_page = min(20, count)
+        for page_num in range(max(1, (count // per_page) + 1)):
+            if len(leads) >= count:
+                break
+            offset = page_num * per_page
+            try:
+                data = _search_web(query, count=per_page, offset=offset)
                 results = data.get("web", {}).get("results", [])
                 added = 0
                 for r in results:
-                    url = r.get("url", "")
+                    url   = r.get("url", "")
                     title = r.get("title", "") or r.get("description", "")
                     if "linkedin.com/in/" in url.lower():
                         before = len(leads)
                         _add_lead(url, title)
                         if len(leads) > before:
                             added += 1
-                log.info(f"Brave page {page_num+1}: +{added} profiles (total: {len(leads)})")
+                log.info(f"Search page {page_num+1}: +{added} profiles (total: {len(leads)})")
                 if not results:
                     break
                 time.sleep(random.uniform(0.5, 1.5))
-        except Exception as e:
-            log.error(f"Brave API error: {e}")
+            except Exception as e:
+                log.error(f"Search proxy error on page {page_num+1}: {e}")
+                break
+    except Exception as e:
+        log.error(f"Search proxy unavailable: {e}")
 
     # ── Strategy 2: SearXNG public instances (no key needed) ─────────────────
     if not leads:
@@ -250,11 +238,8 @@ def search_leads(
                 log.warning(f"SearXNG instance {instance} failed: {e}")
                 continue
 
-    if not leads and not brave_key:
-        log.warning(
-            "No leads found. Add a free Brave Search API key to config.py for reliable results.\n"
-            "Sign up at: https://api.search.brave.com"
-        )
+    if not leads:
+        log.warning("No leads found — check your search criteria and try again.")
 
     log.info(f"Lead search complete — {len(leads)} profiles found.")
     return leads[:count]
@@ -269,10 +254,7 @@ def score_leads_quality(leads: list, icp_description: str, min_score: int = 5) -
     if not leads:
         return []
 
-    import anthropic
-    from config import ANTHROPIC_API_KEY
-
-    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    from ai_proxy import call_ai as _call_ai
 
     leads_txt = "\n".join(
         f"{i+1}. {l.get('name','?')} | {l.get('title','?')} | {l.get('company','?')}"
@@ -292,12 +274,11 @@ Respond with ONLY a JSON array of numbers matching the leads in order.
 Example: [8, 3, 7, 9, 2, ...]"""
 
     try:
-        resp = client.messages.create(
-            model="claude-haiku-4-5-20251001",   # cheap + fast for scoring
-            max_tokens=200,
+        raw = _call_ai(
             messages=[{"role": "user", "content": prompt}],
+            model="claude-haiku-4-5-20251001",
+            max_tokens=200,
         )
-        raw = resp.content[0].text.strip()
         raw = re.sub(r"^```[a-z]*\n?", "", raw)
         raw = re.sub(r"\n?```$", "", raw)
         scores = json.loads(raw)
@@ -337,10 +318,8 @@ def generate_icp_from_description(description: str, offering: str = "") -> dict:
         explanation: "I'll search for..."
       }
     """
-    import anthropic
-    from config import ANTHROPIC_API_KEY, YOUR_OFFERING
-
-    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    from ai_proxy import call_ai as _call_ai
+    from config import YOUR_OFFERING
 
     offering_text = offering or YOUR_OFFERING
 
@@ -372,12 +351,11 @@ Rules:
 """
 
     try:
-        response = client.messages.create(
+        raw = _call_ai(
+            messages=[{"role": "user", "content": prompt}],
             model="claude-sonnet-4-6",
             max_tokens=500,
-            messages=[{"role": "user", "content": prompt}],
         )
-        raw = response.content[0].text.strip()
         # Strip markdown code fences if present
         raw = re.sub(r"^```[a-z]*\n?", "", raw)
         raw = re.sub(r"\n?```$", "", raw)

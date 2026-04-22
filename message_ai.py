@@ -1,13 +1,14 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # message_ai.py  —  Claude-powered message generation
 # Loads prompts from prompts/ folder — edit those files to change behaviour
+#
+# All Claude API calls route through Influentia's hosted Worker.
+# No local Anthropic API key is needed — the license is validated server-side.
 # ─────────────────────────────────────────────────────────────────────────────
 import os
-import time
 import logging
-import anthropic
+from ai_proxy import call_ai
 from config import (
-    ANTHROPIC_API_KEY,
     YOUR_NAME,
     YOUR_COMPANY,
     YOUR_GOAL,
@@ -23,79 +24,31 @@ log = logging.getLogger(__name__)
 
 
 class MissingAPIKey(Exception):
-    """Raised when the Claude API key is not configured."""
+    """Kept for backwards compatibility — license errors surface as RuntimeError from ai_proxy."""
     pass
 
 
-# Lazy client — avoids crashing on import when the user hasn't set a key yet.
-_client = None
+# ── Proxy wrapper ─────────────────────────────────────────────────────────────
+class _FakeResponse:
+    """Thin shim so call sites that do response.content[0].text keep working."""
+    def __init__(self, text: str):
+        self.content = [type("_C", (), {"text": text})()]
 
-def _get_client():
-    """Return a cached Anthropic client. Re-reads the key each time so that
-    saving a new key via the dashboard takes effect without a server restart."""
-    global _client
-    # Re-read the key from the live config module (may have been updated)
-    try:
-        import importlib, config as _cfg
-        # Cheap re-import — only actually reloads if something changed
-        key = _cfg.ANTHROPIC_API_KEY or os.environ.get("ANTHROPIC_API_KEY", "")
-    except Exception:
-        key = ANTHROPIC_API_KEY or os.environ.get("ANTHROPIC_API_KEY", "")
-    if not key:
-        raise MissingAPIKey(
-            "No Claude API key set. Open the dashboard → Settings → Account "
-            "and paste your key from https://console.anthropic.com."
-        )
-    if _client is None or getattr(_client, "_configured_key", None) != key:
-        _client = anthropic.Anthropic(api_key=key)
-        _client._configured_key = key
-    return _client
+def _create_message(**kwargs) -> _FakeResponse:
+    """
+    Drop-in replacement for anthropic.messages.create().
+    Routes through the Influentia proxy worker; validates license server-side.
+    Accepts the same keyword arguments: model, max_tokens, messages, system.
+    """
+    return _FakeResponse(call_ai(
+        messages=kwargs["messages"],
+        model=kwargs.get("model", "claude-haiku-4-5-20251001"),
+        max_tokens=kwargs.get("max_tokens", 256),
+        system=kwargs.get("system"),
+    ))
 
-
-def _create_message(**kwargs):
-    """Wrapper around messages.create with retries for transient errors."""
-    last_err = None
-    for attempt in range(3):
-        try:
-            return _get_client().messages.create(**kwargs)
-        except MissingAPIKey:
-            raise
-        except anthropic.RateLimitError as e:
-            wait = (attempt + 1) * 20
-            log.warning(f"Claude rate limit hit, backing off {wait}s (attempt {attempt+1}/3)")
-            time.sleep(wait)
-            last_err = e
-        except anthropic.APIConnectionError as e:
-            wait = (attempt + 1) * 5
-            log.warning(f"Claude connection error ({e}). Retrying in {wait}s...")
-            time.sleep(wait)
-            last_err = e
-        except anthropic.APIStatusError as e:
-            # 5xx server errors are worth retrying; 4xx are not
-            status = getattr(e, "status_code", 0)
-            if 500 <= status < 600 and attempt < 2:
-                wait = (attempt + 1) * 5
-                log.warning(f"Claude server error {status}. Retrying in {wait}s...")
-                time.sleep(wait)
-                last_err = e
-                continue
-            raise
-    # If we fell out of the loop, raise the last error
-    if last_err:
-        raise last_err
-
-# Models — configurable via config.py, falls back to defaults
-try:
-    from config import CLAUDE_MODEL_CHEAP
-except ImportError:
-    CLAUDE_MODEL_CHEAP = None
-try:
-    from config import CLAUDE_MODEL_SMART
-except ImportError:
-    CLAUDE_MODEL_SMART = None
-
-MODEL_CHEAP = CLAUDE_MODEL_CHEAP or "claude-haiku-4-5-20251001"   # first msg, follow-up, goodbye, classify
-MODEL_SMART = CLAUDE_MODEL_SMART or "claude-sonnet-4-6"            # contextual replies only
+MODEL_CHEAP = "claude-haiku-4-5-20251001"   # first msg, follow-up, goodbye, classify
+MODEL_SMART = "claude-sonnet-4-6"            # contextual replies only
 
 PROMPTS_DIR = os.path.join(os.path.dirname(__file__), "prompts")
 

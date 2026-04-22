@@ -18,6 +18,7 @@ from urllib.parse import urlparse, parse_qs
 from datetime import datetime
 
 from config import STATE_FILE_PATH
+from ai_proxy import call_ai as _proxy_ai, search_web as _proxy_search
 
 PORT = 5555
 LOG_FILE = "outreach_log.txt"
@@ -725,8 +726,7 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                 importlib.reload(_cfg)
                 problems = _cfg.validate_config(strict=False)
                 needs_onboarding = any(
-                    p.startswith(("ANTHROPIC_API_KEY", "BRAVE_SEARCH_API_KEY",
-                                   "YOUR_NAME", "YOUR_COMPANY"))
+                    p.startswith(("YOUR_NAME", "YOUR_COMPANY"))
                     for p in problems
                 )
                 self._json_response({
@@ -1114,11 +1114,7 @@ class DashboardHandler(SimpleHTTPRequestHandler):
             # Check if the system is properly configured before running outreach
             issues = []
             try:
-                from config import ANTHROPIC_API_KEY, BRAVE_SEARCH_API_KEY, YOUR_OFFERING
-                if not ANTHROPIC_API_KEY or "YOUR_KEY" in ANTHROPIC_API_KEY:
-                    issues.append("Anthropic API key not set in config.py")
-                if not BRAVE_SEARCH_API_KEY or "YOUR_KEY" in BRAVE_SEARCH_API_KEY:
-                    issues.append("Brave Search API key not set in config.py")
+                from config import YOUR_OFFERING
                 if not YOUR_OFFERING or len(YOUR_OFFERING.strip()) < 50:
                     issues.append("YOUR_OFFERING is too short — add a proper description of your service")
             except ImportError as e:
@@ -1439,9 +1435,7 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                 hook_style = data.get("hook_style", "outcome")
                 context    = data.get("context", "").strip()
                 inspiration = data.get("inspiration", [])
-                from config import ANTHROPIC_API_KEY, YOUR_OFFERING, YOUR_NAME
-                import anthropic as _ant
-                _ai = _ant.Anthropic(api_key=ANTHROPIC_API_KEY)
+                from config import YOUR_OFFERING, YOUR_NAME
                 kb = {}
                 try:
                     if os.path.exists(KB_FILE):
@@ -1566,12 +1560,11 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                     "- Sound like a thoughtful founder who deeply understands content, not a marketer\n\n"
                     "Write ONLY the post. No preamble, no labels, no 'Here is a post:'."
                 )
-                resp = _ai.messages.create(
+                post_text = _proxy_ai(
+                    messages=[{"role": "user", "content": prompt}],
                     model="claude-sonnet-4-6",
                     max_tokens=700,
-                    messages=[{"role": "user", "content": prompt}],
                 )
-                post_text = resp.content[0].text.strip()
                 self._json_response({"ok": True, "post": post_text, "pillar": pillar, "framework": framework})
             except Exception as e:
                 self._json_response({"ok": False, "error": str(e)}, 500)
@@ -1585,9 +1578,6 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                 if not post_text or not instruction:
                     self._json_response({"ok": False, "error": "post and instruction required"}, 400)
                     return
-                from config import ANTHROPIC_API_KEY
-                import anthropic as _ant
-                _ai = _ant.Anthropic(api_key=ANTHROPIC_API_KEY)
                 prompt = (
                     "You are editing a LinkedIn post for Ermo (Authentik Studio).\n\n"
                     "Current post:\n---\n" + post_text + "\n---\n\n"
@@ -1596,12 +1586,12 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                     "Always: NO em dashes, NO emojis, NO buzzwords, short sentences, sound human.\n"
                     "Return ONLY the revised post."
                 )
-                resp = _ai.messages.create(
+                refined = _proxy_ai(
+                    messages=[{"role": "user", "content": prompt}],
                     model="claude-sonnet-4-6",
                     max_tokens=700,
-                    messages=[{"role": "user", "content": prompt}],
                 )
-                self._json_response({"ok": True, "post": resp.content[0].text.strip()})
+                self._json_response({"ok": True, "post": refined})
             except Exception as e:
                 self._json_response({"ok": False, "error": str(e)}, 500)
             return
@@ -1615,9 +1605,6 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                 if not post_text:
                     self._json_response({"ok": False, "error": "post text required"}, 400)
                     return
-                from config import ANTHROPIC_API_KEY
-                import anthropic as _ant
-                _ai = _ant.Anthropic(api_key=ANTHROPIC_API_KEY)
                 kb = {}
                 try:
                     if os.path.exists(KB_FILE):
@@ -1649,12 +1636,12 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                         "Rules: same structural approach, completely different content in Ermo's niche. "
                         "NO em dashes, NO emojis, NO buzzwords. 150-250 words. Return ONLY the adapted post."
                     )
-                resp = _ai.messages.create(
+                result_text = _proxy_ai(
+                    messages=[{"role": "user", "content": prompt}],
                     model="claude-sonnet-4-6",
                     max_tokens=800,
-                    messages=[{"role": "user", "content": prompt}],
                 )
-                self._json_response({"ok": True, "result": resp.content[0].text.strip(), "mode": mode})
+                self._json_response({"ok": True, "result": result_text, "mode": mode})
             except Exception as e:
                 self._json_response({"ok": False, "error": str(e)}, 500)
             return
@@ -1728,9 +1715,7 @@ class DashboardHandler(SimpleHTTPRequestHandler):
         if path == "/api/generate-week-queue":
             # Generate a full week of 4 posts (2 TAM, 1 Growth, 1 Sales) for the queue
             try:
-                from config import ANTHROPIC_API_KEY, YOUR_OFFERING, YOUR_NAME
-                import anthropic as _ant
-                _ai = _ant.Anthropic(api_key=ANTHROPIC_API_KEY)
+                from config import YOUR_OFFERING, YOUR_NAME
                 kb = {}
                 try:
                     if os.path.exists(KB_FILE):
@@ -1784,16 +1769,16 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                         " do NOT start with 'I', write in first person as Ermo."
                         " Write ONLY the post text."
                     )
-                    resp = _ai.messages.create(
+                    post_text = _proxy_ai(
+                        messages=[{"role": "user", "content": prompt}],
                         model="claude-sonnet-4-6",
                         max_tokens=700,
-                        messages=[{"role": "user", "content": prompt}],
                     )
                     posts.append({
                         "pillar":    spec["pillar"],
                         "framework": spec["framework"],
                         "day":       spec["day"],
-                        "text":      resp.content[0].text.strip(),
+                        "text":      post_text,
                         "posted":    False,
                     })
                 import datetime as _dt
@@ -1807,13 +1792,11 @@ class DashboardHandler(SimpleHTTPRequestHandler):
             return
 
         if path == "/api/research-viral":
-            # Search Brave for viral LinkedIn posts in the brand/founder/video niche
-            # and return hooks + snippets to use as post inspiration
+            # Search for viral LinkedIn posts in the brand/founder/video niche
+            # via Influentia proxy — returns hooks + snippets for post inspiration
             try:
-                import urllib.request, urllib.parse, urllib.error, gzip, re as _re
-                from config import BRAVE_SEARCH_API_KEY, YOUR_OFFERING
+                import re as _re
 
-                # Build 5 niche-targeted queries
                 niche_queries = [
                     'site:linkedin.com/posts "brand documentary" OR "brand film" founder',
                     'site:linkedin.com/posts "founder story" video brand',
@@ -1822,41 +1805,18 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                     'site:linkedin.com/posts "thought leadership" video "brand"',
                 ]
 
-                def _brave(q):
-                    u = (
-                        "https://api.search.brave.com/res/v1/web/search"
-                        f"?q={urllib.parse.quote(q)}&count=10&freshness=pm"
-                    )
-                    req = urllib.request.Request(u, headers={
-                        "Accept": "application/json",
-                        "Accept-Encoding": "gzip",
-                        "X-Subscription-Token": BRAVE_SEARCH_API_KEY,
-                    })
-                    max_wait, wait = 4, 5
-                    for attempt in range(max_wait):
-                        try:
-                            with urllib.request.urlopen(req, timeout=12) as r:
-                                raw = r.read()
-                                if r.headers.get("Content-Encoding") == "gzip":
-                                    raw = gzip.decompress(raw)
-                                return json.loads(raw).get("web", {}).get("results", [])
-                        except urllib.error.HTTPError as e:
-                            if e.code == 429 and attempt < max_wait - 1:
-                                time.sleep(wait); wait *= 2
-                            else:
-                                return []
-                        except Exception:
-                            return []
-                    return []
-
                 seen_authors = set()
                 posts = []
                 for q in niche_queries:
-                    for r in _brave(q):
+                    try:
+                        data = _proxy_search(q, count=10)
+                        results = data.get("web", {}).get("results", [])
+                    except Exception:
+                        results = []
+                    for r in results:
                         url = r.get("url", "")
                         if "linkedin.com/posts/" not in url:
                             continue
-                        # extract author slug for dedup
                         m = _re.search(r'linkedin\.com/posts/([^_/?#]+)', url)
                         slug = m.group(1) if m else url
                         if slug in seen_authors:
@@ -1869,13 +1829,11 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                         if len(text) < 40:
                             continue
 
-                        # Extract hook = first sentence (up to 180 chars)
                         hook = text.split(".")[0].strip()
                         if len(hook) < 20:
                             hook = text[:160].strip()
 
                         title = r.get("title", "")
-                        # Author name from "Name on LinkedIn" title pattern
                         author = _re.sub(r'\s+(on LinkedIn|LinkedIn Post|LinkedIn).*$', '', title, flags=_re.I).strip()
 
                         posts.append({
@@ -1919,9 +1877,7 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                 if not instruction:
                     instruction = "make it more casual and natural"
 
-                from config import ANTHROPIC_API_KEY, YOUR_OFFERING
-                import anthropic as _anthropic
-                c = _anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+                from config import YOUR_OFFERING
                 offering_line = YOUR_OFFERING[:300].split("\n")[0].strip().lstrip("#").strip()
 
                 prompt = f"""You are a B2B professional ({offering_line}) who wrote this LinkedIn comment.
@@ -1950,12 +1906,12 @@ Rewrite the comment following the instruction. Rules:
 
 Reply with ONLY the new comment text. No quotes, no preamble."""
 
-                resp = c.messages.create(
-                    model="claude-haiku-4-5-20251001",  # Haiku: cheap, fine for comment rewrites
-                    max_tokens=150,
+                refined = _proxy_ai(
                     messages=[{"role": "user", "content": prompt}],
+                    model="claude-haiku-4-5-20251001",
+                    max_tokens=150,
                 )
-                self._json_response({"ok": True, "refined_text": resp.content[0].text.strip()})
+                self._json_response({"ok": True, "refined_text": refined})
             except Exception as e:
                 self._json_response({"ok": False, "error": str(e)}, 500)
             return
@@ -2043,88 +1999,15 @@ Reply with ONLY the new comment text. No quotes, no preamble."""
             return
 
         if path == "/api/test-keys":
-            # Validate Claude and/or Brave API keys live, without saving them.
-            # Body: {"anthropic": "sk-ant-…", "brave": "BSA…"}.
-            # Only keys present in the body are tested.
+            # Verify the active license can reach the Influentia AI proxy.
+            # (API keys are no longer stored locally — they live in the worker.)
             try:
-                data = json.loads(body) if body else {}
-                results = {}
-
-                # Test Claude key with a 1-token no-op message
-                ak = (data.get("anthropic") or "").strip()
-                if ak:
-                    if not ak.startswith("sk-ant-"):
-                        results["anthropic"] = {
-                            "ok": False,
-                            "error": "Claude keys should start with 'sk-ant-'.",
-                        }
-                    else:
-                        try:
-                            import anthropic as _ant
-                            client = _ant.Anthropic(api_key=ak)
-                            # Smallest possible request — "ok" response.
-                            client.messages.create(
-                                model="claude-haiku-4-5-20251001",
-                                max_tokens=4,
-                                messages=[{"role": "user", "content": "ping"}],
-                            )
-                            results["anthropic"] = {"ok": True}
-                        except Exception as e:
-                            emsg = str(e)
-                            etype = type(e).__name__
-                            if "authentication" in emsg.lower() or "401" in emsg or "AuthenticationError" in etype:
-                                hint = "Key was rejected. Copy it fresh from console.anthropic.com."
-                            elif "rate" in emsg.lower() or "RateLimitError" in etype:
-                                hint = "Rate limit hit — key looks valid. Try again in a minute."
-                            else:
-                                hint = f"Could not reach Claude: {emsg[:160]}"
-                            results["anthropic"] = {
-                                "ok": (etype == "RateLimitError"),
-                                "error": hint,
-                            }
-
-                # Test Brave Search key with a minimal query
-                bk = (data.get("brave") or "").strip()
-                if bk:
-                    try:
-                        import urllib.request, urllib.parse, urllib.error
-                        url = "https://api.search.brave.com/res/v1/web/search?" + \
-                              urllib.parse.urlencode({"q": "hello", "count": 1})
-                        req = urllib.request.Request(url, headers={
-                            "Accept": "application/json",
-                            "X-Subscription-Token": bk,
-                        })
-                        with urllib.request.urlopen(req, timeout=10) as resp:
-                            if resp.status == 200:
-                                results["brave"] = {"ok": True}
-                            else:
-                                results["brave"] = {
-                                    "ok": False,
-                                    "error": f"Brave returned HTTP {resp.status}.",
-                                }
-                    except urllib.error.HTTPError as e:
-                        if e.code in (401, 403):
-                            results["brave"] = {
-                                "ok": False,
-                                "error": "Key was rejected. Copy it fresh from api.search.brave.com.",
-                            }
-                        elif e.code == 429:
-                            results["brave"] = {
-                                "ok": True,
-                                "error": "Rate limit hit — key looks valid.",
-                            }
-                        else:
-                            results["brave"] = {
-                                "ok": False,
-                                "error": f"Brave HTTP {e.code}: {e.reason}",
-                            }
-                    except Exception as e:
-                        results["brave"] = {
-                            "ok": False,
-                            "error": f"Could not reach Brave: {str(e)[:160]}",
-                        }
-
-                self._json_response({"ok": True, "results": results})
+                ping = _proxy_ai(
+                    messages=[{"role": "user", "content": "Reply with the single word: ok"}],
+                    model="claude-haiku-4-5-20251001",
+                    max_tokens=4,
+                )
+                self._json_response({"ok": True, "results": {"proxy": {"ok": True, "reply": ping}}})
             except Exception as e:
                 self._json_response({"ok": False, "error": str(e)}, 500)
             return
@@ -2374,7 +2257,6 @@ Reply with ONLY the new comment text. No quotes, no preamble."""
 
     _CONFIG_VARS = [
         "YOUR_NAME", "YOUR_COMPANY", "YOUR_GOAL", "YOUR_GOAL_LINK", "YOUR_WEBSITE",
-        "ANTHROPIC_API_KEY", "BRAVE_SEARCH_API_KEY",
     ]
 
     def _parse_env_file(self, path=ENV_FILE):

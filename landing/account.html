@@ -143,7 +143,7 @@
       const errorBox = document.getElementById('errorBox');
       const btn = document.getElementById('submitBtn');
 
-      if (\!key) {
+      if (!key) {
         errorBox.textContent = 'Please enter your license key';
         errorBox.classList.add('show');
         return;
@@ -160,7 +160,7 @@
           body: JSON.stringify({key})
         });
 
-        if (\!resp.ok) {
+        if (!resp.ok) {
           throw new Error('Invalid license key');
         }
 
