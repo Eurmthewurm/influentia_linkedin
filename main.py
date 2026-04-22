@@ -650,10 +650,30 @@ def cmd_reply():
     client = _make_client()
 
     try:
-        active_leads = [
-            r for r in state["leads"].values()
-            if r["status"] in {STATUS_MESSAGED, STATUS_REPLIED}
-        ]
+        now_utc = datetime.utcnow()
+        active_leads = []
+        for r in state["leads"].values():
+            if r["status"] not in {STATUS_MESSAGED, STATUS_REPLIED}:
+                continue
+            # Skip leads whose first message was sent within the last 2 hours.
+            # The autopilot runs send→reply back-to-back, and the scraper can
+            # briefly mis-classify our own outbound message as a prospect reply,
+            # causing a second AI message to fire immediately. A 2-hour buffer
+            # makes this impossible — no real prospect replies that fast.
+            first_msg_ts = r.get("first_message_at", "")
+            if first_msg_ts:
+                try:
+                    first_dt = datetime.fromisoformat(first_msg_ts.replace("Z", "+00:00"))
+                    hours_elapsed = (now_utc - first_dt.replace(tzinfo=None)).total_seconds() / 3600
+                    if hours_elapsed < 2:
+                        log.info(
+                            f"Skipping {r['name']} — first message sent only "
+                            f"{hours_elapsed:.1f}h ago (min 2h before reply check)."
+                        )
+                        continue
+                except (ValueError, TypeError):
+                    pass
+            active_leads.append(r)
         log.info(f"Checking inbox for {len(active_leads)} active conversations…")
 
         tracked_urls = [r["linkedin_url"] for r in active_leads]

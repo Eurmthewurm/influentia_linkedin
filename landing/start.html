@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started — Influentia</title>
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #0c0c0e;
+      --surface:   #141417;
+      --surface2:  #1c1c21;
+      --border:    rgba(255,255,255,0.08);
+      --accent:    #7c6aff;
+      --accent2:   #a78bfa;
+      --green:     #34d399;
+      --text:      #f1f0ff;
+      --muted:     #8b8a9e;
+      --radius:    16px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── Animated background ─────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,106,255,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(167,139,250,0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Nav ─────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      background: rgba(12,12,14,0.85);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      background: linear-gradient(135deg, #fff 30%, var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    .nav-steps {
+      display: flex;
+      gap: 4px;
+    }
+    .nav-step {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .nav-step:hover { color: var(--text); background: var(--surface2); }
+    .nav-step.active { color: var(--accent2); background: rgba(124,106,255,0.12); }
+    .nav-step .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      transition: transform 0.2s;
+    }
+    .nav-step.active .dot { transform: scale(1.4); }
+
+    /* ── Hero ────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(124,106,255,0.12);
+      border: 1px solid rgba(124,106,255,0.25);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      color: var(--accent2);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+    .time-chips {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .chip .icon { font-size: 15px; }
+
+    /* ── Progress bar ────────────────────────────────────────── */
+    .progress-bar {
+      max-width: 860px;
+      margin: 0 auto 0;
+      padding: 0 24px 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .progress-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .progress-track::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: var(--border);
+      z-index: 0;
+    }
+    .progress-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .progress-circle {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--muted);
+      transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .progress-item.active .progress-circle {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(124,106,255,0.5);
+      transform: scale(1.15);
+    }
+    .progress-item.done .progress-circle {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+    .progress-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      text-align: center;
+    }
+    .progress-item.active .progress-label { color: var(--accent2); }
+
+    /* ── Steps ───────────────────────────────────────────────── */
+    .steps-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-section {
+      margin-bottom: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .step-section.active { border-color: rgba(124,106,255,0.4); }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 28px 32px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .step-num {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(124,106,255,0.12);
+      border: 1px solid rgba(124,106,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent2);
+      flex-shrink: 0;
+      transition: all 0.3s;
+    }
+    .step-section.active .step-num {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(124,106,255,0.4);
+    }
+    .step-section.done .step-num {
+      background: rgba(52,211,153,0.12);
+      border-color: var(--green);
+      color: var(--green);
+    }
+    .step-meta { flex: 1; }
+    .step-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 2px;
+    }
+    .step-subtitle { font-size: 14px; color: var(--muted); }
+    .step-time {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .step-chevron {
+      font-size: 20px;
+      color: var(--muted);
+      transition: transform 0.3s;
+    }
+    .step-section.active .step-chevron { transform: rotate(90deg); color: var(--accent2); }
+
+    .step-body {
+      display: none;
+      padding: 0 32px 32px;
+    }
+    .step-section.active .step-body { display: block; }
+
+    /* ── Substeps ────────────────────────────────────────────── */
+    .substeps { display: flex; flex-direction: column; gap: 20px; }
+    .substep {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.4s forwards;
+    }
+    .substep:nth-child(1) { animation-delay: 0.05s; }
+    .substep:nth-child(2) { animation-delay: 0.1s; }
+    .substep:nth-child(3) { animation-delay: 0.15s; }
+    .substep:nth-child(4) { animation-delay: 0.2s; }
+    .substep:nth-child(5) { animation-delay: 0.25s; }
+    .substep:nth-child(6) { animation-delay: 0.3s; }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .substep-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .substep-content { flex: 1; }
+    .substep-content strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .substep-content p { font-size: 14px; color: var(--muted); }
+
+    /* ── Visual boxes ────────────────────────────────────────── */
+    .visual-box {
+      margin-top: 12px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .browser-bar {
+      background: var(--surface2);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .browser-url {
+      flex: 1;
+      background: var(--bg);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: monospace;
+    }
+    .browser-content { background: var(--bg); padding: 20px; }
+
+    /* Cookie finder visual */
+    .cookie-finder {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0;
+      font-size: 12px;
+      font-family: monospace;
+      min-height: 160px;
+    }
+    .cookie-tree {
+      background: #111114;
+      border-right: 1px solid var(--border);
+      padding: 12px;
+    }
+    .cookie-tree-item {
+      padding: 3px 6px;
+      border-radius: 4px;
+      color: var(--muted);
+      cursor: default;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cookie-tree-item.selected {
+      background: rgba(124,106,255,0.2);
+      color: var(--accent2);
+    }
+    .cookie-panel { padding: 12px; background: #0d0d10; }
+    .cookie-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 8px;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 11px;
+    }
+    .cookie-row .key { color: var(--muted); }
+    .cookie-row .val { color: #a3e635; }
+    .cookie-row.highlight .key { color: #f59e0b; font-weight: bold; }
+    .cookie-row.highlight .val {
+      color: #fff;
+      background: rgba(245,158,11,0.15);
+      border-radius: 3px;
+      padding: 1px 4px;
+    }
+
+    /* ── Code / copy block ───────────────────────────────────── */
+    .copy-block {
+      margin-top: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .copy-block code {
+      flex: 1;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--accent2);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .copy-btn {
+      background: none;
+      border: none;
+      border-left: 1px solid var(--border);
+      padding: 10px 14px;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 12px;
+      font-family: inherit;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .copy-btn:hover { background: var(--surface2); color: var(--text); }
+    .copy-btn.copied { color: var(--green); }
+
+    /* ── Info / tip boxes ────────────────────────────────────── */
+    .tip-box {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .tip-box.info {
+      background: rgba(124,106,255,0.08);
+      border: 1px solid rgba(124,106,255,0.2);
+      color: #c4b5fd;
+    }
+    .tip-box.warn {
+      background: rgba(251,191,36,0.08);
+      border: 1px solid rgba(251,191,36,0.2);
+      color: #fde68a;
+    }
+    .tip-box.success {
+      background: rgba(52,211,153,0.08);
+      border: 1px solid rgba(52,211,153,0.2);
+      color: #6ee7b7;
+    }
+    .tip-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── OS tabs ─────────────────────────────────────────────── */
+    .os-tabs { display: flex; gap: 4px; margin-bottom: 12px; }
+    .os-tab {
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: none;
+      transition: all 0.2s;
+    }
+    .os-tab.active {
+      background: rgba(124,106,255,0.12);
+      border-color: rgba(124,106,255,0.3);
+      color: var(--accent2);
+    }
+    .os-content { display: none; }
+    .os-content.active { display: block; }
+
+    /* ── Step actions ────────────────────────────────────────── */
+    .step-actions {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: #6b58f0;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(124,106,255,0.35);
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      background: none;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+
+    /* ── Done state ──────────────────────────────────────────── */
+    .done-banner {
+      display: none;
+      padding: 40px 32px;
+      text-align: center;
+    }
+    .step-section.done .done-banner { display: block; }
+    .step-section.done .step-body { display: block; padding: 0; }
+    .step-section.done .substeps { display: none; }
+    .step-section.done .step-actions { display: none; }
+    .done-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+      display: block;
+      animation: pop 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    /* ── Final screen ────────────────────────────────────────── */
+    .final-screen {
+      display: none;
+      text-align: center;
+      padding: 60px 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .final-screen.visible { display: block; }
+    .final-icon { font-size: 64px; margin-bottom: 20px; display: block; animation: pop 0.5s cubic-bezier(0.34,1.56,0.64,1); }
+    .final-screen h2 { font-size: 36px; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+    .final-screen p { font-size: 17px; color: var(--muted); max-width: 400px; margin: 0 auto 32px; }
+    .confetti {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* ── Key display ─────────────────────────────────────────── */
+    .key-display {
+      background: var(--bg);
+      border: 1px solid rgba(124,106,255,0.3);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 12px;
+      text-align: center;
+    }
+    .key-display .key-label { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    .key-display .key-value {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 15px;
+      color: var(--accent2);
+      letter-spacing: 1px;
+      word-break: break-all;
+    }
+
+    /* ── Divider ─────────────────────────────────────────────── */
+    .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .nav-steps { display: none; }
+      .step-header { padding: 20px; }
+      .step-body { padding: 0 20px 24px; }
+      .cookie-finder { grid-template-columns: 1fr; }
+      .cookie-tree { display: none; }
+      .progress-label { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://influentia.io" class="nav-logo">Influentia</a>
+    <div class="nav-steps">
+      <a href="#step-1" class="nav-step active" id="nav-1"><span class="dot"></span>Subscribe</a>
+      <a href="#step-2" class="nav-step" id="nav-2"><span class="dot"></span>Install</a>
+      <a href="#step-3" class="nav-step" id="nav-3"><span class="dot"></span>LinkedIn</a>
+      <a href="#step-4" class="nav-step" id="nav-4"><span class="dot"></span>First Run</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge">✦ Setup Guide</div>
+  <h1>You're <span>10 minutes away</span><br>from your first outreach</h1>
+  <p>Follow these four steps and Influentia will be running automatically by the time you finish your coffee.</p>
+  <div class="time-chips">
+    <div class="chip"><span class="icon">⏱</span> Takes about 10 minutes</div>
+    <div class="chip"><span class="icon">💻</span> Mac &amp; Windows</div>
+    <div class="chip"><span class="icon">🔑</span> No API keys needed</div>
+  </div>
+</div>
+
+<!-- Progress -->
+<div class="progress-bar">
+  <div class="progress-track">
+    <div class="progress-item active" id="prog-1">
+      <div class="progress-circle">1</div>
+      <div class="progress-label">Subscribe</div>
+    </div>
+    <div class="progress-item" id="prog-2">
+      <div class="progress-circle">2</div>
+      <div class="progress-label">Install</div>
+    </div>
+    <div class="progress-item" id="prog-3">
+      <div class="progress-circle">3</div>
+      <div class="progress-label">LinkedIn</div>
+    </div>
+    <div class="progress-item" id="prog-4">
+      <div class="progress-circle">4</div>
+      <div class="progress-label">First Run</div>
+    </div>
+  </div>
+</div>
+
+<!-- Steps -->
+<div class="steps-container">
+
+  <!-- ── Step 1: Subscribe ── -->
+  <div class="step-section active" id="step-1">
+    <div class="step-header" onclick="toggleStep(1)">
+      <div class="step-num">1</div>
+      <div class="step-meta">
+        <div class="step-title">Subscribe &amp; get your license key</div>
+        <div class="step-subtitle">Start your 14-day free trial — no charge until day 15</div>
+      </div>
+      <div class="step-time">~2 min</div>
+      <div class="step-chevron">›</div>
+    </div>
+    <div class="step-body">
+      <div class="substeps">
+        <div class="substep">
+          <div class="substep-num">1</div>
+          <div class="substep-content">
+            <strong>Go to influentia.io and click "Start Free Trial"</strong>
+            <p>You'll be taken to a secure Stripe checkout page.</p>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">2</div>
+          <div class="substep-content">
+            <strong>Enter your email and payment details</strong>
+            <p>Your card won't be charged for 14 days. Cancel anytime before then with one click.</p>
+            <div class="tip-box info">
+              <span class="tip-icon">🔒</span>
+              <span>Payments are handled by Stripe — we never see your card number.</span>
+            </div>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">3</div>
+          <div class="substep-content">
+            <strong>Copy your license key from the success page</strong>
+            <p>After checkout you'll see a page like this. Copy the key and keep it safe — you'll need it once during install.</p>
+            <div class="visual-box" style="margin-top:14px">
+              <div class="browser-bar">
+                <div class="browser-dot" style="background:#ff5f57"></div>
+                <div class="browser-dot" style="background:#ffbd2e"></div>
+                <div class="browser-dot" style="background:#28c840"></div>
+                <div class="browser-url">influentia.io/success.html</div>
+              </div>
+              <div class="browser-content">
+                <div style="text-align:center;padding:10px 0">
+                  <div style="font-size:28px;margin-bottom:8px">🎉</div>
+                  <div style="font-size:15px;font-weight:700;margin-bottom:4px">You're in. Here's your license key.</div>
+                  <div style="font-size:13px;color:var(--muted);margin-bottom:16px">Save it — you'll enter this once during install.</div>
+                  <div class="key-display">
+                    <div class="key-label">YOUR LICENSE KEY</div>
+                    <div class="key-value" id="demo-key">XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXXXXXX</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tip-box warn" style="margin-top:12px">
+              <span class="tip-icon">⚠️</span>
+              <span>Save your key now. You can always find it again at influentia.io/account.html if needed.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-actions">
+        <div></div>
+        <button class="btn-primary" onclick="completeStep(1)">I have my license key →</button>
+      </div>
+    </div>
+    <div class="done-banner">
+      <span class="done-icon">✅</span>
+      <div style="font-size:16px;font-weight:600">License key saved</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px">Nice. Let's get the app installed.</div>
+    </div>
+  </div>
+
+  <!-- ── Step 2: Install ── -->
+  <div class="step-section" id="step-2">
+    <div class="step-header" onclick="toggleStep(2)">
+      <div class="step-num">2</div>
+      <div class="step-meta">
+        <div class="step-title">Download &amp; install the app</div>
+        <div class="step-subtitle">Double-click to install — no technical knowledge needed</div>
+      </div>
+      <div class="step-time">~3 min</div>
+      <div class="step-chevron">›</div>
+    </div>
+    <div class="step-body">
+      <div class="substeps">
+        <div class="substep">
+          <div class="substep-num">1</div>
+          <div class="substep-content">
+            <strong>Download the app</strong>
+            <p>Click the button below to download the zip file.</p>
+            <div style="margin-top:10px">
+              <a href="/outreach-pilot.zip" class="btn-primary" style="display:inline-flex;font-size:14px;padding:10px 20px">
+                ⬇ Download Influentia
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">2</div>
+          <div class="substep-content">
+            <strong>Unzip and move to your Desktop</strong>
+            <p>Double-click the downloaded zip to unzip it, then move the <code style="color:var(--accent2);font-size:13px">outreach-pilot</code> folder to your Desktop so it's easy to find.</p>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">3</div>
+          <div class="substep-content">
+            <strong>Run the installer</strong>
+            <div class="os-tabs" style="margin-top:10px">
+              <button class="os-tab active" onclick="switchOS(this,'mac')">🍎 Mac</button>
+              <button class="os-tab" onclick="switchOS(this,'win')">🪟 Windows</button>
+            </div>
+            <div class="os-content active" id="os-mac">
+              <p style="margin-bottom:8px">Double-click <strong style="color:var(--accent2)">Install.command</strong> inside the folder.</p>
+              <div class="tip-box warn">
+                <span class="tip-icon">⚠️</span>
+                <span>If Mac says "cannot be opened because it is from an unidentified developer" — right-click the file → Open → Open anyway. This is normal for new apps.</span>
+              </div>
+            </div>
+            <div class="os-content" id="os-win">
+              <p style="margin-bottom:8px">Double-click <strong style="color:var(--accent2)">Install.bat</strong> inside the folder.</p>
+              <div class="tip-box warn">
+                <span class="tip-icon">⚠️</span>
+                <span>If Windows SmartScreen appears, click "More info" → "Run anyway". This is normal for new apps.</span>
+              </div>
+            </div>
+            <p style="margin-top:10px;font-size:14px;color:var(--muted)">The installer sets up Python and all dependencies automatically. It takes about 2 minutes.</p>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">4</div>
+          <div class="substep-content">
+            <strong>Start the app</strong>
+            <div class="os-tabs" style="margin-top:10px">
+              <button class="os-tab active" onclick="switchOS2(this,'mac2')">🍎 Mac</button>
+              <button class="os-tab" onclick="switchOS2(this,'win2')">🪟 Windows</button>
+            </div>
+            <div class="os-content active" id="os-mac2">
+              <p>Double-click <strong style="color:var(--accent2)">start.command</strong></p>
+            </div>
+            <div class="os-content" id="os-win2">
+              <p>Double-click <strong style="color:var(--accent2)">Start.bat</strong></p>
+            </div>
+            <div class="tip-box success" style="margin-top:10px">
+              <span class="tip-icon">✓</span>
+              <span>The dashboard will open automatically in your browser at <strong>localhost:5555</strong>. Enter your license key when prompted.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-actions">
+        <button class="btn-ghost" onclick="goToStep(1)">← Back</button>
+        <button class="btn-primary" onclick="completeStep(2)">Dashboard is open →</button>
+      </div>
+    </div>
+    <div class="done-banner">
+      <span class="done-icon">✅</span>
+      <div style="font-size:16px;font-weight:600">App installed &amp; running</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px">One more step before we can start — connect your LinkedIn.</div>
+    </div>
+  </div>
+
+  <!-- ── Step 3: LinkedIn ── -->
+  <div class="step-section" id="step-3">
+    <div class="step-header" onclick="toggleStep(3)">
+      <div class="step-num">3</div>
+      <div class="step-meta">
+        <div class="step-title">Connect your LinkedIn account</div>
+        <div class="step-subtitle">Takes 2 minutes — no password needed, ever</div>
+      </div>
+      <div class="step-time">~2 min</div>
+      <div class="step-chevron">›</div>
+    </div>
+    <div class="step-body">
+      <div class="tip-box info" style="margin-bottom:20px">
+        <span class="tip-icon">🛡️</span>
+        <span>Influentia never stores your LinkedIn password. We use a session cookie — the same way your browser stays logged in — which you can revoke any time by logging out of LinkedIn.</span>
+      </div>
+      <div class="substeps">
+        <div class="substep">
+          <div class="substep-num">1</div>
+          <div class="substep-content">
+            <strong>Open LinkedIn in Chrome and make sure you're logged in</strong>
+            <p>Go to <strong style="color:var(--accent2)">linkedin.com</strong>. If you're not logged in, do that first.</p>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">2</div>
+          <div class="substep-content">
+            <strong>Open Chrome DevTools</strong>
+            <p>Press <kbd style="background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 7px;font-size:12px">F12</kbd> on Windows, or <kbd style="background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 7px;font-size:12px">⌘ + Option + I</kbd> on Mac. A panel will open at the bottom or side of your browser.</p>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">3</div>
+          <div class="substep-content">
+            <strong>Find the "li_at" cookie</strong>
+            <p>In the DevTools panel, click <strong>Application</strong> (you may need to click the <strong>&raquo;</strong> arrow to find it). Then: Cookies → www.linkedin.com → find the row named <strong style="color:#f59e0b">li_at</strong>.</p>
+            <div class="visual-box" style="margin-top:12px">
+              <div class="browser-bar">
+                <div class="browser-dot" style="background:#ff5f57"></div>
+                <div class="browser-dot" style="background:#ffbd2e"></div>
+                <div class="browser-dot" style="background:#28c840"></div>
+                <div class="browser-url">linkedin.com — DevTools → Application → Cookies</div>
+              </div>
+              <div class="browser-content" style="padding:0">
+                <div class="cookie-finder">
+                  <div class="cookie-tree">
+                    <div class="cookie-tree-item">▾ Storage</div>
+                    <div class="cookie-tree-item" style="padding-left:16px">▾ Cookies</div>
+                    <div class="cookie-tree-item selected" style="padding-left:28px">🍪 linkedin.com</div>
+                    <div class="cookie-tree-item" style="padding-left:16px;margin-top:8px;opacity:0.4">▸ Local Storage</div>
+                    <div class="cookie-tree-item" style="padding-left:16px;opacity:0.4">▸ Session Storage</div>
+                  </div>
+                  <div class="cookie-panel">
+                    <div class="cookie-row"><span class="key">Name</span><span class="val">Value</span></div>
+                    <div class="cookie-row"><span class="key">bcookie</span><span class="val" style="color:var(--muted)">"v=2&amp;abc..."</span></div>
+                    <div class="cookie-row"><span class="key">bscookie</span><span class="val" style="color:var(--muted)">"v=1&amp;def..."</span></div>
+                    <div class="cookie-row highlight">
+                      <span class="key">li_at</span>
+                      <span class="val">AQEDATr… ← copy this entire value</span>
+                    </div>
+                    <div class="cookie-row"><span class="key">liap</span><span class="val" style="color:var(--muted)">true</span></div>
+                    <div class="cookie-row"><span class="key">lissc</span><span class="val" style="color:var(--muted)">"1"</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">4</div>
+          <div class="substep-content">
+            <strong>Copy the full value and paste it in the dashboard</strong>
+            <p>Click on the <strong style="color:#f59e0b">li_at</strong> row, then double-click the value in the bottom panel to select all of it. Copy it.</p>
+            <p style="margin-top:8px">Back in the Influentia dashboard, go to <strong>Settings → LinkedIn</strong> and paste it in the "LinkedIn Session Cookie" field. Click Save.</p>
+            <div class="tip-box success" style="margin-top:10px">
+              <span class="tip-icon">✓</span>
+              <span>The dashboard will show a green "Connected" status when the cookie is valid.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-actions">
+        <button class="btn-ghost" onclick="goToStep(2)">← Back</button>
+        <button class="btn-primary" onclick="completeStep(3)">LinkedIn connected →</button>
+      </div>
+    </div>
+    <div class="done-banner">
+      <span class="done-icon">✅</span>
+      <div style="font-size:16px;font-weight:600">LinkedIn connected</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px">Last step — let's set up your first campaign.</div>
+    </div>
+  </div>
+
+  <!-- ── Step 4: First Run ── -->
+  <div class="step-section" id="step-4">
+    <div class="step-header" onclick="toggleStep(4)">
+      <div class="step-num">4</div>
+      <div class="step-meta">
+        <div class="step-title">Set up &amp; start your first campaign</div>
+        <div class="step-subtitle">Tell Influentia who to reach — it handles the rest</div>
+      </div>
+      <div class="step-time">~3 min</div>
+      <div class="step-chevron">›</div>
+    </div>
+    <div class="step-body">
+      <div class="substeps">
+        <div class="substep">
+          <div class="substep-num">1</div>
+          <div class="substep-content">
+            <strong>Fill in your profile settings</strong>
+            <p>Go to <strong>Settings → Profile</strong>. Enter your name, company, what you're selling, and your booking link (Calendly, etc). This is what Claude uses to write your messages — be specific about your offering.</p>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">2</div>
+          <div class="substep-content">
+            <strong>Find your first leads</strong>
+            <p>Go to <strong>Lead Finder</strong>. Describe your ideal customer in plain language — e.g. "Founders of B2B service businesses in Australia who post on LinkedIn". Click <strong>Search</strong> and Influentia will find matching LinkedIn profiles.</p>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">3</div>
+          <div class="substep-content">
+            <strong>Review and approve leads</strong>
+            <p>Go through the list and mark the ones that look good. You can remove anyone who isn't a fit. Quality over quantity — start with 20-30 leads.</p>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">4</div>
+          <div class="substep-content">
+            <strong>Start outreach</strong>
+            <p>Go to <strong>Outreach</strong> and click <strong>Start</strong>. Influentia will send up to 15 connection requests per day — safely within LinkedIn's limits. Check back daily to review replies and conversations.</p>
+            <div class="tip-box warn" style="margin-top:10px">
+              <span class="tip-icon">⚠️</span>
+              <span>Don't increase the daily limit — 15/day is intentional to keep your account safe. LinkedIn monitors unusual activity.</span>
+            </div>
+          </div>
+        </div>
+        <div class="substep">
+          <div class="substep-num">5</div>
+          <div class="substep-content">
+            <strong>Check replies in the Conversations tab</strong>
+            <p>When prospects reply, Influentia responds automatically using Claude AI. You can jump in manually at any time by toggling "Manual mode" on a conversation.</p>
+            <div class="tip-box success" style="margin-top:10px">
+              <span class="tip-icon">🚀</span>
+              <span>That's it. Influentia runs in the background while you focus on your actual work.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-actions">
+        <button class="btn-ghost" onclick="goToStep(3)">← Back</button>
+        <button class="btn-primary" onclick="completeStep(4)">I'm all set! 🚀</button>
+      </div>
+    </div>
+    <div class="done-banner" style="display:none"></div>
+  </div>
+
+</div><!-- /steps-container -->
+
+<!-- Final screen -->
+<div class="final-screen" id="final-screen">
+  <span class="final-icon">🎉</span>
+  <h2>You're live. Go get those meetings.</h2>
+  <p>Influentia is running. Check your dashboard daily and reply to warm conversations — the rest is automated.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="http://localhost:5555" class="btn-primary">Open Dashboard →</a>
+    <a href="mailto:support@influentia.io" class="btn-ghost">Need help? Email us</a>
+  </div>
+</div>
+
+<script>
+  let currentStep = 1;
+  const totalSteps = 4;
+
+  function toggleStep(n) {
+    if (currentStep === n) return;
+    goToStep(n);
+  }
+
+  function goToStep(n) {
+    // Update current
+    document.getElementById(`step-${currentStep}`).classList.remove('active');
+    currentStep = n;
+    const section = document.getElementById(`step-${n}`);
+    if (!section.classList.contains('done')) {
+      section.classList.add('active');
+    }
+    updateProgress();
+    // Smooth scroll
+    setTimeout(() => {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
+
+  function completeStep(n) {
+    const section = document.getElementById(`step-${n}`);
+    section.classList.remove('active');
+    section.classList.add('done');
+
+    // Update progress circle
+    const prog = document.getElementById(`prog-${n}`);
+    prog.classList.remove('active');
+    prog.classList.add('done');
+    prog.querySelector('.progress-circle').innerHTML = '✓';
+
+    if (n < totalSteps) {
+      const next = n + 1;
+      currentStep = next;
+      const nextSection = document.getElementById(`step-${next}`);
+      nextSection.classList.add('active');
+      updateProgress();
+      setTimeout(() => {
+        nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 200);
+    } else {
+      // All done!
+      currentStep = 0;
+      updateProgress();
+      const finalScreen = document.getElementById('final-screen');
+      finalScreen.classList.add('visible');
+      setTimeout(() => {
+        finalScreen.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 200);
+      launchConfetti();
+    }
+  }
+
+  function updateProgress() {
+    // Progress circles
+    for (let i = 1; i <= totalSteps; i++) {
+      const prog = document.getElementById(`prog-${i}`);
+      prog.classList.remove('active');
+      if (currentStep === i) prog.classList.add('active');
+    }
+    // Nav steps
+    for (let i = 1; i <= totalSteps; i++) {
+      const nav = document.getElementById(`nav-${i}`);
+      nav.classList.remove('active');
+      if (currentStep === i) nav.classList.add('active');
+    }
+  }
+
+  // OS tab switching
+  function switchOS(btn, contentId) {
+    btn.closest('.substep-content').querySelectorAll('.os-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    btn.closest('.substep-content').querySelectorAll('.os-content').forEach(c => c.classList.remove('active'));
+    document.getElementById(contentId).classList.add('active');
+  }
+  function switchOS2(btn, contentId) {
+    btn.closest('.substep-content').querySelectorAll('.os-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    btn.closest('.substep-content').querySelectorAll('.os-content').forEach(c => c.classList.remove('active'));
+    document.getElementById(contentId).classList.add('active');
+  }
+
+  // Copy button
+  function copyText(btn, text) {
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  // Confetti
+  function launchConfetti() {
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const pieces = Array.from({ length: 120 }, () => ({
+      x: Math.random() * canvas.width,
+      y: -20,
+      w: Math.random() * 10 + 4,
+      h: Math.random() * 6 + 3,
+      r: Math.random() * Math.PI * 2,
+      dr: (Math.random() - 0.5) * 0.2,
+      vx: (Math.random() - 0.5) * 4,
+      vy: Math.random() * 4 + 2,
+      color: ['#7c6aff','#a78bfa','#34d399','#f59e0b','#f87171','#60a5fa'][Math.floor(Math.random()*6)]
+    }));
+
+    let frame = 0;
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pieces.forEach(p => {
+        p.x += p.vx; p.y += p.vy; p.r += p.dr; p.vy += 0.05;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.r);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+        ctx.restore();
+      });
+      frame++;
+      if (frame < 180) requestAnimationFrame(draw);
+      else canvas.remove();
+    }
+    draw();
+  }
+
+  // Intersection observer for nav highlighting
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        const n = parseInt(id.replace('step-',''));
+        if (!isNaN(n)) {
+          document.querySelectorAll('.nav-step').forEach(s => s.classList.remove('active'));
+          const nav = document.getElementById(`nav-${n}`);
+          if (nav) nav.classList.add('active');
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.step-section').forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
