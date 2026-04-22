@@ -1,4 +1,4 @@
-# Outreach Pilot — Beta Tester Quickstart
+# Influentia — Beta Tester Quickstart
 
 Thanks for testing. This should take about 10 minutes end-to-end.
 
@@ -7,7 +7,7 @@ Thanks for testing. This should take about 10 minutes end-to-end.
 - A computer (macOS or Windows).
 - A LinkedIn account you actively use.
 - Two free API keys — you'll grab these during setup.
-- A license key — start your 14-day free trial at **https://outreachpilot.app**. Your license key will appear on the success page; keep it handy.
+- A license key — start your 14-day free trial at **https://influentia.io**. Your license key will appear on the success page; keep it handy.
 
 ## Step 1 — Install (one time)
 
