@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account — Outreach Pilot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', system-ui, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #1a1a1a;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1a1a1a;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #3566E5;
+      box-shadow: 0 0 0 3px rgba(53, 102, 229, 0.1);
+    }
+
+    button {
+      width: 100%;
+      padding: 0.875rem;
+      background: #3566E5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #2850c4;
+      transform: translateY(-2px);
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .error {
+      background: #fee;
+      border: 1px solid #fcc;
+      border-radius: 6px;
+      padding: 1rem;
+      color: #c33;
+      margin-bottom: 1.5rem;
+      display: none;
+    }
+
+    .error.show {
+      display: block;
+    }
+
+    .hint {
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Manage your account</h1>
+    
+    <div class="error" id="errorBox"></div>
+
+    <form id="portalForm">
+      <div class="form-group">
+        <label for="licenseKey">License key</label>
+        <input type="text" id="licenseKey" placeholder="Paste your license key here" required>
+        <p class="hint">You received this via email after purchase.</p>
+      </div>
+      <button type="submit" id="submitBtn">Access account portal</button>
+    </form>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const licenseFromUrl = params.get('license');
+
+    if (licenseFromUrl) {
+      document.getElementById('licenseKey').value = licenseFromUrl;
+      submitForm();
+    }
+
+    document.getElementById('portalForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitForm();
+    });
+
+    async function submitForm() {
+      const key = document.getElementById('licenseKey').value.trim();
+      const errorBox = document.getElementById('errorBox');
+      const btn = document.getElementById('submitBtn');
+
+      if (\!key) {
+        errorBox.textContent = 'Please enter your license key';
+        errorBox.classList.add('show');
+        return;
+      }
+
+      errorBox.classList.remove('show');
+      btn.disabled = true;
+      btn.textContent = 'Redirecting...';
+
+      try {
+        const resp = await fetch('https://outreach-pilot-api-production.plain-king-ead0.workers.dev/api/portal', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({key})
+        });
+
+        if (\!resp.ok) {
+          throw new Error('Invalid license key');
+        }
+
+        const {url} = await resp.json();
+        window.location.href = url;
+      } catch (e) {
+        console.error('Portal error:', e);
+        errorBox.textContent = 'Invalid license key. Check your email and try again.';
+        errorBox.classList.add('show');
+        btn.disabled = false;
+        btn.textContent = 'Access account portal';
+      }
+    }
+  </script>
+</body>
+</html>

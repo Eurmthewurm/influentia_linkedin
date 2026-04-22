@@ -1,0 +1,32 @@
+name = "outreach-pilot-api"
+main = "src/index.ts"
+compatibility_date = "2024-09-01"
+type = "service"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "outreach-pilot"
+database_id = "98609424-77a1-48d5-b418-373505265cfc"
+
+# Environment variables
+[env.production]
+vars = { LANDING_URL = "https://outreach-pilot.pages.dev", STRIPE_PRICE_ID = "price_1TOwvsHHypM4FBkmF40c3KhZ" }
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "outreach-pilot-db"
+database_id = "98609424-77a1-48d5-b418-373505265cfc"
+
+[env.development]
+vars = { LANDING_URL = "http://localhost:3000", STRIPE_PRICE_ID = "" }
+
+# Secrets (set via: wrangler secret put STRIPE_SECRET_KEY --env production)
+# Required secrets:
+# - STRIPE_SECRET_KEY: Your Stripe API secret key (starts with sk_)
+# - STRIPE_WEBHOOK_SECRET: Your Stripe webhook signing secret (starts with whsec_)
+
+# Routes — using workers.dev for beta. Add custom domain later.
+# routes = [
+#   { pattern = "api.influentia.io/*", zone_name = "influentia.io" }
+# ]

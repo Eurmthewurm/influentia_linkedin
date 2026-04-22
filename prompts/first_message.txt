@@ -1,0 +1,109 @@
+# ─── FIRST MESSAGE PROMPT ────────────────────────────────────────────────────
+# Sent after a connection is accepted.
+# Goal: start a real conversation. Sound like a curious professional peer.
+# NOT a pitch. NOT a template. Not a sales sequence in disguise.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Task
+Write a short LinkedIn DM from Ermo to {prospect_name}.
+
+This should read like a message from someone who actually looked at their profile
+and got genuinely curious about one specific thing. Not a sales opener.
+Not an observation designed to lead somewhere. Just a real question from a peer.
+
+# The tone
+Think: a sharp, friendly colleague who connected because they found this person
+interesting. Not a consultant. Not a vendor. A peer who is curious.
+
+Short. Warm but not gushing. Direct. Sounds like a real person typed this on
+their phone between meetings.
+
+# What to do
+1. Scan their posts, role, career path, company name, or headline for ONE thing
+   that is specific, unusual, or interesting about THIS person.
+
+   It should be something you can only say to them — not to every recruiter,
+   every coach, or every founder. If it could apply to 10 other people, skip it.
+
+2. Ask ONE question that comes naturally from that observation.
+   The question should reflect genuine curiosity about their situation.
+   It should NOT be designed to surface a pain point or lead toward a pitch.
+   Ask something you would actually want to know about this person.
+
+# What makes a question real vs fake
+
+FAKE (designed to surface a problem Ermo can solve):
+- "Are you building visibility around that work?"
+- "Is most of your new business coming through word of mouth?"
+- "How are you handling the content side of things?"
+- "Is your online presence something you're actively working on?"
+- "Are you building something more systematic around that?"
+
+REAL (genuinely curious about their story):
+- "Was going niche in mining a deliberate call or did it just happen that way?"
+- "The exec search and coaching sides — do those clients overlap at all?"
+- "16 exits and the next one is a coaching business. What made that the pivot?"
+- "How long did it take Pathfinder to run without you in every room?"
+- "You built a Black Pencil shop — are you still hands-on in the creative work?"
+
+The difference: real questions are about their story. Fake ones are about a gap
+you want them to acknowledge so you can offer to fill it.
+
+# Hard rules — no exceptions
+- Under 40 words total
+- NEVER use "Most [X] I work with..." or any version of this phrase — ever
+- NEVER use "I noticed", "I came across", "I saw your profile"
+- NEVER ask about visibility, content, online presence, or being found online
+  in the first message — it telegraphs the pitch immediately
+- NO em dashes. Commas and periods only.
+- NO emojis
+- ONE question only. Never two.
+- Do NOT mention Authentik Studio, video, content production, or any service
+- Do NOT explain who Ermo is or what he does
+- Do NOT start with filler: "Hi", "Hey [name]," or "Hope you're well"
+- Start with their first name or directly with the observation
+- Return ONLY the message text. Nothing else.
+
+# Our Offering (context only — do NOT reference)
+{offering}
+
+# Prospect Information
+
+## Basic Profile
+- Full name: {prospect_name}
+- Headline: {prospect_headline}
+- Location: {prospect_location}
+- Industry/Sector: {prospect_sector}
+
+## Recent Posts (use these if available — specific posts make the best openers)
+{prospect_posts}
+
+## Experience
+- Current: {prospect_current_experience}
+- Past: {prospect_past_experiences}
+
+## Additional context
+- Skills: {prospect_skills}
+- Summary: {prospect_additional}
+
+# Tone examples — these show the register, length, and feel
+
+These are NOT templates to copy. Each one sounds different. That is the point.
+
+Example A (recruiter who built a niche firm):
+"Natasha, building a mining-specific firm means saying no to everything outside it for years. Was that a deliberate call, or did the niche find you?"
+
+Example B (exec with an unusual title):
+"Chief Coaching and Happiness Officer is not a title most orgs hand out. Is that a real mandate or a name for work you were already doing anyway?"
+
+Example C (founder with many exits):
+"15 exits is a lot of starting over. What keeps you going back in?"
+
+Example D (person who wrote a book while running a business):
+"You took Pathfinder to a bestselling book while running the consultancy. Did the book come out of the work, or did it open up new work?"
+
+Example E (someone doing two distinct things at once):
+"Multimedia production and talent management in the same shop. Is that by design or did one pull the other along?"
+
+Notice: none of these mention visibility, content, or online presence.
+None follow a formula. Each one sounds like a real person asking a real question.

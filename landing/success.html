@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success — Outreach Pilot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', system-ui, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      background: #3566E5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 3rem;
+      color: white;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+
+    .status {
+      font-size: 1.125rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .loading {
+      display: none;
+      margin: 2rem 0;
+    }
+
+    .spinner {
+      border: 3px solid #f0f0f0;
+      border-top: 3px solid #3566E5;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .license-box {
+      background: #f9f9f9;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 2rem 0;
+      display: none;
+    }
+
+    .license-box.show {
+      display: block;
+    }
+
+    .license-label {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .license-key {
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 1.125rem;
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      word-break: break-all;
+      font-weight: 600;
+      color: #3566E5;
+    }
+
+    .copy-btn {
+      background: #3566E5;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: #2850c4;
+      transform: translateY(-2px);
+    }
+
+    .copy-btn.copied {
+      background: #10b981;
+    }
+
+    .next-steps {
+      background: #f9f9f9;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: left;
+      display: none;
+    }
+
+    .next-steps.show {
+      display: block;
+    }
+
+    .next-steps h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: #1a1a1a;
+    }
+
+    .step {
+      margin-bottom: 1.5rem;
+    }
+
+    .step-number {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: #3566E5;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      font-weight: 600;
+      margin-right: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .step p {
+      display: inline;
+      color: #666;
+    }
+
+    .download-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+
+    .download-btn {
+      background: #3566E5;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+
+    .download-btn:hover {
+      background: #2850c4;
+      transform: translateY(-2px);
+    }
+
+    .docs-link {
+      display: inline-block;
+      color: #3566E5;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .docs-link:hover {
+      text-decoration: underline;
+    }
+
+    .error {
+      background: #fee;
+      border: 1px solid #fcc;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      color: #c33;
+      display: none;
+    }
+
+    .error.show {
+      display: block;
+    }
+
+    a {
+      color: #3566E5;
+    }
+
+    a:hover {
+      color: #2850c4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="checkmark">✓</div>
+    <h1>You're all set.</h1>
+    <p class="status">Getting your license key ready...</p>
+
+    <div class="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="license-box">
+      <div class="license-label">Your License Key</div>
+      <div class="license-key" id="licenseKey">Loading...</div>
+      <button class="copy-btn" onclick="copyLicense()">Copy to clipboard</button>
+    </div>
+
+    <div class="next-steps">
+      <h2>Next steps</h2>
+      
+      <div class="step">
+        <span class="step-number">1</span>
+        <p>Download the app for your platform:</p>
+        <div class="download-buttons">
+          <a href="/outreach-pilot.zip" class="download-btn">Download for Mac & Windows</a>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">2</span>
+        <p>Unzip the file and run the installer:</p>
+        <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+          <li><strong>Mac:</strong> Double-click <code>Install.command</code></li>
+          <li><strong>Windows:</strong> Double-click <code>Install.bat</code></li>
+        </ul>
+        <p style="margin-top: 0.75rem;">Then click Start — the app will ask for your license key.</p>
+      </div>
+
+      <div class="step">
+        <span class="step-number">3</span>
+        <p>Questions? Email <a href="mailto:support@outreachpilot.app">support@outreachpilot.app</a> — we respond within a few hours.</p>
+      </div>
+    </div>
+
+    <div class="error" id="errorBox">
+      <strong>Something went wrong</strong><br>
+      Failed to load your license key. Check your email for your Stripe receipt, then email <a href="mailto:support@outreachpilot.app">support@outreachpilot.app</a> with your receipt and we'll sort it out.
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get('session_id');
+
+    async function fetchLicense() {
+      if (\!sessionId) {
+        showError();
+        return;
+      }
+
+      try {
+        const resp = await fetch(`https://outreach-pilot-api-production.plain-king-ead0.workers.dev/api/license/by-session?session_id=${sessionId}`);
+        
+        if (resp.ok) {
+          const {key} = await resp.json();
+          showLicense(key);
+          return;
+        }
+
+        if (resp.status \!== 404) {
+          throw new Error('Unexpected response');
+        }
+
+        // Poll every 1s for up to 15s
+        for (let i = 0; i < 15; i++) {
+          await new Promise(r => setTimeout(r, 1000));
+          const retryResp = await fetch(`https://outreach-pilot-api-production.plain-king-ead0.workers.dev/api/license/by-session?session_id=${sessionId}`);
+          if (retryResp.ok) {
+            const {key} = await retryResp.json();
+            showLicense(key);
+            return;
+          }
+        }
+
+        showError();
+      } catch (e) {
+        console.error('License fetch error:', e);
+        showError();
+      }
+    }
+
+    function showLicense(key) {
+      document.querySelector('.loading').style.display = 'none';
+      document.querySelector('.status').textContent = 'License key ready\!';
+      document.getElementById('licenseKey').textContent = key;
+      document.querySelector('.license-box').classList.add('show');
+      document.querySelector('.next-steps').classList.add('show');
+    }
+
+    function showError() {
+      document.querySelector('.loading').style.display = 'none';
+      document.querySelector('.status').style.display = 'none';
+      document.getElementById('errorBox').classList.add('show');
+    }
+
+    function copyLicense() {
+      const key = document.getElementById('licenseKey').textContent;
+      navigator.clipboard.writeText(key).then(() => {
+        const btn = event.target;
+        const original = btn.textContent;
+        btn.textContent = 'Copied\!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // Show spinner immediately
+    document.querySelector('.loading').style.display = 'block';
+    fetchLicense();
+  </script>
+</body>
+</html>

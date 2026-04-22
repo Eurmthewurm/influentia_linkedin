@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.authentik.linkedin-outreach</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/anaconda3/bin/python3</string>
+        <string>-c</string>
+        <string>import os,sys; p='/Users/ermoegberts/Desktop/linkedin_outreach'; os.chdir(p); sys.path.insert(0,p); g={'__file__':p+'/server.py','__name__':'__main__'}; exec(compile(open(p+'/server.py').read(),p+'/server.py','exec'),g)</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/ermoegberts/Desktop/linkedin_outreach/server_stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/ermoegberts/Desktop/linkedin_outreach/server_stderr.log</string>
+
+    <key>ThrottleInterval</key>
+    <integer>30</integer>
+</dict>
+</plist>

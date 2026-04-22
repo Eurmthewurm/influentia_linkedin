@@ -1,0 +1,11 @@
+{
+  "note": "smoke",
+  "system": {
+    "os": "Linux-6.8.0-106-generic-aarch64-with-glibc2.35",
+    "python": "3.10.12",
+    "time": "2026-04-21T20:50:21.798083",
+    "page": ""
+  },
+  "recent_logs": [],
+  "recent_error": null
+}
