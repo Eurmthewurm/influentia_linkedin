@@ -55,6 +55,14 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "What is Influentia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Influentia is an intent intelligence platform for founders and solo operators. It scans Reddit and LinkedIn for people describing the exact problem your product solves, reads what they posted, and drafts a personalized reply in your voice. You press send. It runs locally on your machine — not on shared cloud servers — so your account is protected."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Is LinkedIn automation safe to use?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -427,6 +435,14 @@
     .nav-links{display:none}
     .specs-grid{grid-template-columns:repeat(2,1fr)}
     .spec:nth-child(2n){border-right:none}
+    .roi-grid{grid-template-columns:1fr;gap:40px}
+    .roi-results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .roi-card{padding:16px}
+    .roi-num{font-size:24px}
+    .roi-card small{font-size:9px}
+    .return-grid{grid-template-columns:1fr;gap:40px}
+    .return-mock::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent)}
+    .moat-timeline{max-width:480px}
     .how-grid{grid-template-columns:1fr 1fr}
     .privacy-grid{grid-template-columns:1fr;gap:40px}
     .proof-grid{grid-template-columns:1fr}
@@ -692,10 +708,10 @@
   .roi-field .range-val{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--dim)}
   .roi-results{display:flex;flex-direction:column;gap:24px}
   .roi-card{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:28px;position:relative;overflow:hidden}
-  .roi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-  .roi-card.signal::before{background:linear-gradient(90deg,var(--accent),var(--accent-2))}
-  .roi-card.reply::before{background:linear-gradient(90deg,var(--success),#6ee7b7)}
-  .roi-card.revenue::before{background:linear-gradient(90deg,var(--warn),#fbbf24)}
+  .roi-card::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:0 4px 4px 0}
+  .roi-card.signal::after{background:var(--accent)}
+  .roi-card.reply::after{background:var(--success)}
+  .roi-card.revenue::after{background:var(--warn)}
   .roi-num{font-size:42px;font-weight:800;letter-spacing:-2px;line-height:1;color:var(--text);margin-bottom:4px}
   .roi-label{font-size:13px;color:var(--dim)}
   .roi-card small{display:block;margin-top:8px;font-size:11px;color:var(--mute);font-family:var(--mono)}
@@ -1652,7 +1668,7 @@
 <section class="closing-cta reveal">
   <div class="wrap">
     <h2>Stop blasting templates.<br>Start conversations that convert.</h2>
-    <p>Your competitors are sending {'{first_name}'} from cloud IPs. You'll be the one who actually read their post. 14-day money-back guarantee — pay nothing if you don't land a call.</p>
+    <p>Your competitors are sending <code>{first_name}</code> from cloud IPs. You'll be the one who actually read their post. Try it risk-free — if Influentia doesn't land you a qualified call in 14 days, keep the software anyway. We just want you to win.</p>
     <div class="hero-ctas" style="justify-content:center">
       <button onclick="startCheckout(this)" class="btn btn-primary btn-lg">Get started →</button>
       <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
@@ -1660,7 +1676,7 @@
     <div class="closing-cta-meta">
       <span>14-day money-back guarantee</span>
       <span>Cancel anytime</span>
-      <span>14-day money-back guarantee</span>
+      <span>Runs on your machine, your IP</span>
     </div>
   </div>
 </section>
