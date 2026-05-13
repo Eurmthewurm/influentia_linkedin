@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d14"/>
+      <stop offset="100%" stop-color="#09090f"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#7c6aff"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c6aff"/>
+      <stop offset="100%" stop-color="#c4b5fd"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Ambient glow blobs -->
+  <ellipse cx="920" cy="200" rx="300" ry="240" fill="rgba(124,106,255,0.07)" filter="url(#softglow)"/>
+  <ellipse cx="200" cy="480" rx="180" ry="160" fill="rgba(96,165,250,0.05)" filter="url(#softglow)"/>
+
+  <!-- Logo mark (top-left) -->
+  <rect x="72" y="66" width="52" height="52" rx="13" fill="#0a0a0d" stroke="#16161e" stroke-width="0.5"/>
+  <path d="M 83 109 A 28 28 0 0 1 111 81" stroke="url(#brand)" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.28"/>
+  <path d="M 83 109 A 18 18 0 0 1 101 91" stroke="url(#brand)" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M 83 109 A 9 9 0 0 1 92 100"  stroke="url(#brand)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <circle cx="83" cy="109" r="4.5" fill="url(#brand)"/>
+  <text x="136" y="102" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="30" font-weight="700" fill="#f0efff" letter-spacing="-0.5">Influentia</text>
+
+  <!-- Small badge -->
+  <rect x="72" y="66" width="195" height="30" rx="15" fill="rgba(124,106,255,0.12)" stroke="rgba(124,106,255,0.15)" stroke-width="0.5"/>
+  <circle cx="86" cy="81" r="3" fill="#a78bfa"/>
+  <text x="96" y="85" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" fill="#a78bfa" font-weight="600" letter-spacing="1">V1.0 · INTENT INTELLIGENCE</text>
+
+  <!-- Main Headline — generous line spacing with padding for ascender/descender -->
+  <!-- Line 1: "Your next customer is" -->
+  <text x="72" y="280" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="52" font-weight="800" fill="#f0efff" letter-spacing="-2">Your next customer is</text>
+  <!-- Line 2: "complaining about their problem" (accent) — y=350 gives full descender clearance -->
+  <text x="72" y="350" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="52" font-weight="800" fill="url(#brand)" letter-spacing="-2" font-style="italic">complaining about their problem</text>
+  <!-- Line 3: "right now. Influentia" -->
+  <text x="72" y="420" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="52" font-weight="800" fill="#f0efff" letter-spacing="-2">right now. Influentia finds them first.</text>
+
+  <!-- Sub-copy with descender clearance -->
+  <text x="72" y="480" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" fill="rgba(255,255,255,0.50)" letter-spacing="-0.3">Finds buyers already asking — AI drafts in your voice. You press send.</text>
+
+  <!-- Bottom pill -->
+  <rect x="72" y="530" width="200" height="48" rx="24" fill="rgba(124,106,255,0.12)" stroke="rgba(124,106,255,0.35)" stroke-width="1"/>
+  <text x="172" y="561" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="19" font-weight="700" fill="#a78bfa" text-anchor="middle" letter-spacing="-0.3">$97/mo · 14-day money-back</text>
+</svg>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influentia vs Phantombuster — A Honest Comparison (2026)</title>
+  <meta name="description" content="Comparing Influentia and Phantombuster for LinkedIn outreach. Influentia is purpose-built with AI personalisation + Reddit Signal. Phantombuster is a general scraping tool.">
+  <link rel="canonical" href="https://influentia.io/vs-phantombuster.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Influentia",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Mac, Windows, Linux",
+    "offers": { "@type": "Offer", "price": "97", "priceCurrency": "USD" },
+    "description": "LinkedIn outreach automation that runs on your computer, reads prospect posts, and writes personalised messages in your voice.",
+    "url": "https://influentia.io"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0c0c0e; --s1: #141417; --s2: #1c1c21; --s3: #242428;
+      --border: rgba(255,255,255,0.07); --accent: #7c6aff; --accent2: #a78bfa;
+      --green: #34d399; --red: #f87171; --text: #f1f0ff; --muted: #8b8a9e; --r: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(ellipse 70% 50% at 15% 0%, rgba(124,106,255,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 40% at 85% 100%, rgba(167,139,250,0.05) 0%, transparent 60%);
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 32px; background: rgba(12,12,14,0.88); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo {
+      font-size: 17px; font-weight: 800; letter-spacing: -0.4px;
+      background: linear-gradient(135deg, #fff 20%, var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text); }
+    .btn-nav {
+      background: var(--accent); color: #fff; padding: 9px 20px; border-radius: 9px;
+      font-size: 14px; font-weight: 600; border: none; cursor: pointer; text-decoration: none;
+      transition: all 0.2s; letter-spacing: -0.2px;
+    }
+    .btn-nav:hover { background: #6b58f0; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(124,106,255,0.35); }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 120px 32px 80px; position: relative; z-index: 1; }
+    .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { margin: 0 8px; }
+    .page-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(124,106,255,0.1); border: 1px solid rgba(124,106,255,0.25);
+      color: var(--accent2); border-radius: 99px; padding: 5px 14px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 24px;
+    }
+    h1 { font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.04em; color: #fff; margin-bottom: 20px; }
+    h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .intro { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 680px; margin-bottom: 56px; }
+
+    .tldr { background: var(--s2); border: 1px solid var(--border); border-radius: var(--r); padding: 28px 32px; margin-bottom: 56px; }
+    .tldr-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent2); text-transform: uppercase; margin-bottom: 16px; }
+    .tldr ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .tldr li { font-size: 15px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+    .tldr li::before { content: '→'; color: var(--accent2); flex-shrink: 0; margin-top: 1px; }
+
+    h2 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; margin-bottom: 20px; margin-top: 52px; }
+    p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+    p strong { color: var(--text); font-weight: 600; }
+    code { background: var(--s3); padding: 2px 7px; border-radius: 5px; font-size: 13px; color: var(--accent2); }
+
+    .comparison-table { width: 100%; border-collapse: collapse; margin-bottom: 48px; }
+    .comparison-table th { padding: 12px 20px; text-align: left; font-size: 13px; font-weight: 700; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .comparison-table th:first-child { width: 36%; }
+    .comparison-table th:not(:first-child) { text-align: center; }
+    .comparison-table td { padding: 14px 20px; font-size: 14px; color: var(--text); border-bottom: 1px solid var(--border); vertical-align: top; }
+    .comparison-table td:not(:first-child) { text-align: center; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .col-influentia { background: rgba(124,106,255,0.05); }
+    .col-header-influentia { color: var(--accent2) !important; }
+
+    .check { color: var(--green); font-size: 16px; }
+    .cross { color: var(--red); font-size: 16px; }
+    .neutral { color: var(--muted); font-size: 14px; }
+
+    .callout { background: var(--s2); border-left: 3px solid var(--accent); border-radius: 0 var(--r) var(--r) 0; padding: 20px 24px; margin: 24px 0; }
+    .callout p { margin: 0; color: var(--text); }
+
+    .verdict { background: linear-gradient(135deg, rgba(124,106,255,0.12) 0%, rgba(167,139,250,0.06) 100%); border: 1px solid rgba(124,106,255,0.2); border-radius: var(--r); padding: 32px; margin: 48px 0; }
+    .verdict-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent2); text-transform: uppercase; margin-bottom: 12px; }
+    .verdict p { color: var(--text); margin-bottom: 0; }
+
+    .cta-section { text-align: center; padding: 64px 0 0; }
+    .cta-section h2 { margin-top: 0; }
+    .cta-section p { margin: 0 auto 32px; max-width: 480px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; text-decoration: none; transition: all 0.2s; letter-spacing: -0.3px; }
+    .btn-primary:hover { background: #6b58f0; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(124,106,255,0.4); }
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 16px !important; }
+
+    footer { text-align: center; padding: 48px 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; position: relative; z-index: 1; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">✦ Influentia</a>
+    <div class="nav-right">
+      <a class="nav-link" href="/#features">Features</a>
+      <a class="nav-link" href="/#pricing">Pricing</a>
+      <a class="btn-nav" href="/#pricing">Start free trial →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="breadcrumb">
+    <a href="/">Influentia</a><span>›</span> Comparisons <span>›</span> vs Phantombuster
+  </div>
+
+  <div class="page-badge">Honest comparison — updated 2026</div>
+
+  <h1>Influentia vs <em>Phantombuster</em></h1>
+  <p class="intro">
+    Phantombuster is a general-purpose web automation platform. Influentia is purpose-built
+    for LinkedIn outreach. They can both touch LinkedIn — but they're built to solve
+    completely different problems.
+  </p>
+
+  <div class="tldr">
+    <div class="tldr-label">TL;DR</div>
+    <ul>
+      <li>Phantombuster is a developer tool. Setting up a LinkedIn outreach workflow takes JSON configs, phantom chaining, and a willingness to read documentation. Influentia installs in two minutes.</li>
+      <li>Phantombuster scrapes and sends using cookies extracted from your browser — not a live browser session. Influentia runs a real Chromium instance with your full session. Much harder to detect.</li>
+      <li>Phantombuster has no AI writing layer. You bring your own templates. Influentia reads each prospect's posts and writes a fresh message every time.</li>
+      <li>Phantombuster starts at $56/month for limited execution time. Influentia is $97/month, unlimited runs.</li>
+    </ul>
+  </div>
+
+  <h2>Side-by-side comparison</h2>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th class="col-header-influentia">Influentia</th>
+        <th>Phantombuster</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Built for LinkedIn outreach</td>
+        <td class="col-influentia"><span class="check">✓</span> Purpose-built</td>
+        <td><span class="neutral">General automation tool</span></td>
+      </tr>
+      <tr>
+        <td>Setup time</td>
+        <td class="col-influentia">~2 minutes</td>
+        <td>Hours (phantom chaining, configs)</td>
+      </tr>
+      <tr>
+        <td>Technical skill required</td>
+        <td class="col-influentia">None</td>
+        <td>Moderate — JSON, phantom logic</td>
+      </tr>
+      <tr>
+        <td>LinkedIn session method</td>
+        <td class="col-influentia"><strong>Real browser</strong> (Chromium + your session)</td>
+        <td><strong>Cookie extraction</strong> from your browser</td>
+      </tr>
+      <tr>
+        <td>Runs on</td>
+        <td class="col-influentia">Your computer (your IP)</td>
+        <td>Phantombuster cloud (their IP)</td>
+      </tr>
+      <tr>
+        <td>AI message writing</td>
+        <td class="col-influentia"><span class="check">✓</span> Reads posts, writes fresh each time</td>
+        <td><span class="cross">✗</span> Bring your own template</td>
+      </tr>
+      <tr>
+        <td>Connection note personalisation</td>
+        <td class="col-influentia"><span class="check">✓</span> AI-generated per prospect</td>
+        <td><span class="cross">✗</span> Static text or variables</td>
+      </tr>
+      <tr>
+        <td>Follow-up automation</td>
+        <td class="col-influentia"><span class="check">✓</span> Built-in</td>
+        <td><span class="neutral">Requires chaining phantoms</td>
+      </tr>
+      <tr>
+        <td>Reply detection</td>
+        <td class="col-influentia"><span class="check">✓</span> Inbox monitoring + AI reply</td>
+        <td><span class="cross">✗</span> Not available</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td class="col-influentia"><strong>$97/month</strong>, unlimited</td>
+        <td>From $56/month, execution time limits</td>
+      </tr>
+      <tr>
+        <td>No-code setup</td>
+        <td class="col-influentia"><span class="check">✓</span></td>
+        <td><span class="cross">✗</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Two different products</h2>
+
+  <p>
+    Phantombuster is genuinely useful — if you're a developer who wants to build custom
+    LinkedIn automations, chain scrapers together, or do things no off-the-shelf tool supports.
+    It's flexible, powerful, and has a large phantom library.
+  </p>
+  <p>
+    But setting up a working LinkedIn outreach flow in Phantombuster is a project.
+    You need to chain the "LinkedIn Search" phantom → "LinkedIn Profile Scraper" →
+    "LinkedIn Network Booster" → "LinkedIn Message Sender". Each phantom needs its own
+    config. Session cookies expire. You'll be back in the docs regularly.
+  </p>
+
+  <div class="callout">
+    <p><strong>Influentia is for founders and sales people who want results without building a system.</strong> You describe who you're targeting, set it running, and the pipeline works. No phantom chaining, no JSON, no cookie management.</p>
+  </div>
+
+  <h2>The session method matters</h2>
+
+  <p>
+    Phantombuster extracts your LinkedIn session cookie (<code>li_at</code>) from your browser
+    and sends it along with HTTP requests from their servers. LinkedIn's risk engine knows what
+    a real browser session looks like — headers, timing, scroll behaviour, mouse movement.
+    Cookie-based requests from a cloud server don't have any of that.
+  </p>
+  <p>
+    <strong>Influentia controls a real Chromium browser</strong> running on your machine, with
+    your saved session, your IP, and your browsing fingerprint. It scrolls profiles, pauses
+    naturally, and behaves exactly like a human using LinkedIn. The difference in detection risk
+    is significant.
+  </p>
+
+  <h2>AI writing vs templates</h2>
+
+  <p>
+    Phantombuster has no writing layer. You write the message, add <code>{{firstName}}</code>
+    if you want, and it sends it. That's the whole personalisation story.
+  </p>
+  <p>
+    Influentia reads each prospect's recent LinkedIn posts before it writes a single word.
+    If they posted about a business challenge, that's the hook. If they shared a milestone,
+    that's the observation. The message is never pulled from a template — it's written for
+    that person, using that specific detail. Prospects notice the difference.
+  </p>
+
+  <div class="verdict">
+    <div class="verdict-label">Bottom line</div>
+    <p>
+      If you're a developer who wants to build custom LinkedIn automations and you're comfortable
+      maintaining them, Phantombuster gives you flexibility. If you want to run outreach
+      without becoming a LinkedIn automation engineer — and you want messages that actually
+      get replies — Influentia is the right tool.
+    </p>
+  </div>
+
+  <div class="cta-section">
+    <h2>Start 14-day free trial</h2>
+    <p>No technical setup. Works on Mac, Windows, and Linux.</p>
+    <a class="btn-primary" href="/#pricing">Start 14-day free trial →</a>
+    <p class="cta-sub">No credit card required · 14-day free trial · Cancel anytime</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Influentia · <a href="/">Home</a> · <a href="/vs-clay.html">vs Clay</a> · <a href="/vs-linkedhelper.html">vs LinkedHelper</a> · <a href="/vs-expandi.html">vs Expandi</a> · <a href="/vs-dux-soup.html">vs Dux-Soup</a> · <a href="/vs-zenmode.html">vs Zen-mode</a></p>
+</footer>
+
+</body>
+</html>

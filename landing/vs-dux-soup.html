@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influentia vs Dux-Soup — A Honest Comparison (2026)</title>
+  <meta name="description" content="Comparing Influentia and Dux-Soup for LinkedIn outreach. Dux-Soup is a Chrome extension — detectable. Influentia is a separate browser with AI-written messages, LinkedIn outreach, and Reddit buyer signals.">
+  <link rel="canonical" href="https://influentia.io/vs-dux-soup.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Influentia",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Mac, Windows, Linux",
+    "offers": { "@type": "Offer", "price": "97", "priceCurrency": "USD" },
+    "description": "LinkedIn outreach automation that runs on your computer, reads prospect posts, and writes personalised messages in your voice.",
+    "url": "https://influentia.io"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0c0c0e; --s1: #141417; --s2: #1c1c21; --s3: #242428;
+      --border: rgba(255,255,255,0.07); --accent: #7c6aff; --accent2: #a78bfa;
+      --green: #34d399; --red: #f87171; --text: #f1f0ff; --muted: #8b8a9e; --r: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(ellipse 70% 50% at 15% 0%, rgba(124,106,255,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 40% at 85% 100%, rgba(167,139,250,0.05) 0%, transparent 60%);
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 32px; background: rgba(12,12,14,0.88); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo {
+      font-size: 17px; font-weight: 800; letter-spacing: -0.4px;
+      background: linear-gradient(135deg, #fff 20%, var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text); }
+    .btn-nav {
+      background: var(--accent); color: #fff; padding: 9px 20px; border-radius: 9px;
+      font-size: 14px; font-weight: 600; border: none; cursor: pointer; text-decoration: none;
+      transition: all 0.2s; letter-spacing: -0.2px;
+    }
+    .btn-nav:hover { background: #6b58f0; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(124,106,255,0.35); }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 120px 32px 80px; position: relative; z-index: 1; }
+    .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { margin: 0 8px; }
+    .page-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(124,106,255,0.1); border: 1px solid rgba(124,106,255,0.25);
+      color: var(--accent2); border-radius: 99px; padding: 5px 14px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 24px;
+    }
+    h1 { font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.04em; color: #fff; margin-bottom: 20px; }
+    h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .intro { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 680px; margin-bottom: 56px; }
+
+    .tldr { background: var(--s2); border: 1px solid var(--border); border-radius: var(--r); padding: 28px 32px; margin-bottom: 56px; }
+    .tldr-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent2); text-transform: uppercase; margin-bottom: 16px; }
+    .tldr ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .tldr li { font-size: 15px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+    .tldr li::before { content: '→'; color: var(--accent2); flex-shrink: 0; margin-top: 1px; }
+
+    h2 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; margin-bottom: 20px; margin-top: 52px; }
+    p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+    p strong { color: var(--text); font-weight: 600; }
+
+    .comparison-table { width: 100%; border-collapse: collapse; margin-bottom: 48px; }
+    .comparison-table th { padding: 12px 20px; text-align: left; font-size: 13px; font-weight: 700; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .comparison-table th:first-child { width: 36%; }
+    .comparison-table th:not(:first-child) { text-align: center; }
+    .comparison-table td { padding: 14px 20px; font-size: 14px; color: var(--text); border-bottom: 1px solid var(--border); vertical-align: top; }
+    .comparison-table td:not(:first-child) { text-align: center; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .col-influentia { background: rgba(124,106,255,0.05); }
+    .col-header-influentia { color: var(--accent2) !important; }
+
+    .check { color: var(--green); font-size: 16px; }
+    .cross { color: var(--red); font-size: 16px; }
+    .neutral { color: var(--muted); font-size: 14px; }
+
+    .callout { background: var(--s2); border-left: 3px solid var(--accent); border-radius: 0 var(--r) var(--r) 0; padding: 20px 24px; margin: 24px 0; }
+    .callout p { margin: 0; color: var(--text); }
+
+    .verdict { background: linear-gradient(135deg, rgba(124,106,255,0.12) 0%, rgba(167,139,250,0.06) 100%); border: 1px solid rgba(124,106,255,0.2); border-radius: var(--r); padding: 32px; margin: 48px 0; }
+    .verdict-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent2); text-transform: uppercase; margin-bottom: 12px; }
+    .verdict p { color: var(--text); margin-bottom: 0; }
+
+    .cta-section { text-align: center; padding: 64px 0 0; }
+    .cta-section h2 { margin-top: 0; }
+    .cta-section p { margin: 0 auto 32px; max-width: 480px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; text-decoration: none; transition: all 0.2s; letter-spacing: -0.3px; }
+    .btn-primary:hover { background: #6b58f0; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(124,106,255,0.4); }
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 16px !important; }
+
+    footer { text-align: center; padding: 48px 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; position: relative; z-index: 1; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">✦ Influentia</a>
+    <div class="nav-right">
+      <a class="nav-link" href="/#features">Features</a>
+      <a class="nav-link" href="/#pricing">Pricing</a>
+      <a class="btn-nav" href="/#pricing">Start free trial →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="breadcrumb">
+    <a href="/">Influentia</a><span>›</span> Comparisons <span>›</span> vs Dux-Soup
+  </div>
+
+  <div class="page-badge">Honest comparison — updated 2026</div>
+
+  <h1>Influentia vs <em>Dux-Soup</em></h1>
+  <p class="intro">
+    Dux-Soup is one of the oldest LinkedIn automation tools around — a Chrome extension
+    that's been running sequences since 2016. It works. But extensions have a fundamental
+    problem: LinkedIn can see them.
+  </p>
+
+  <div class="tldr">
+    <div class="tldr-label">TL;DR</div>
+    <ul>
+      <li>Dux-Soup is a Chrome extension. LinkedIn scans for browser extensions and treats accounts using known automation extensions with heightened suspicion.</li>
+      <li>Influentia runs as a completely separate browser process — no extension, no plugin, no fingerprint in your real Chrome. LinkedIn sees a clean browser session.</li>
+      <li>Dux-Soup sends template-based messages. Influentia reads what each prospect has been posting and writes a message tailored to them specifically.</li>
+      <li>Dux-Soup Pro is $41.58/month. Influentia is $97/month with AI writing included — Dux-Soup has no equivalent.</li>
+    </ul>
+  </div>
+
+  <h2>Side-by-side comparison</h2>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th class="col-header-influentia">Influentia</th>
+        <th>Dux-Soup</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>How it runs</td>
+        <td class="col-influentia"><strong>Separate browser process</strong><br><span class="neutral">No Chrome extension</span></td>
+        <td><strong>Chrome extension</strong><br><span class="neutral">Lives inside your browser</span></td>
+      </tr>
+      <tr>
+        <td>Extension detectable by LinkedIn</td>
+        <td class="col-influentia"><span class="check">✓</span> Not an extension — nothing to detect</td>
+        <td><span class="cross">✗</span> Yes — extension fingerprint is visible</td>
+      </tr>
+      <tr>
+        <td>AI message writing</td>
+        <td class="col-influentia"><span class="check">✓</span> Reads posts, writes fresh per prospect</td>
+        <td><span class="cross">✗</span> Template variables only</td>
+      </tr>
+      <tr>
+        <td>Connection note personalisation</td>
+        <td class="col-influentia"><span class="check">✓</span> AI-generated, activity-aware</td>
+        <td><span class="neutral">Static text</span></td>
+      </tr>
+      <tr>
+        <td>Runs while Chrome is open</td>
+        <td class="col-influentia"><span class="check">✓</span> Separate process — Chrome unaffected</td>
+        <td><span class="cross">✗</span> Chrome must be open and on LinkedIn tab</td>
+      </tr>
+      <tr>
+        <td>Auto-reply to prospects</td>
+        <td class="col-influentia"><span class="check">✓</span> AI reads reply, responds in your voice</td>
+        <td><span class="cross">✗</span> Not available</td>
+      </tr>
+      <tr>
+        <td>Follow-up sequences</td>
+        <td class="col-influentia"><span class="check">✓</span> AI-written, context-aware</td>
+        <td><span class="check">✓</span> Template sequences</td>
+      </tr>
+      <tr>
+        <td>Operating system</td>
+        <td class="col-influentia">Mac, Windows, Linux</td>
+        <td>Chrome on any OS</td>
+      </tr>
+      <tr>
+        <td>Pricing (comparable plan)</td>
+        <td class="col-influentia"><strong>$97/month</strong></td>
+        <td><strong>$41.58/month</strong> (Pro, no AI)</td>
+      </tr>
+      <tr>
+        <td>Lead finder</td>
+        <td class="col-influentia"><span class="check">✓</span> Built-in ICP search</td>
+        <td><span class="check">✓</span> LinkedIn search integration</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>The extension problem</h2>
+
+  <p>
+    Chrome extensions modify the browser's DOM and JavaScript environment in ways that are
+    detectable. LinkedIn actively scans for known automation extensions — Dux-Soup is one of
+    the most widely used, which means it's one of the most well-known signatures to look for.
+  </p>
+  <p>
+    <strong>Influentia doesn't touch your Chrome at all.</strong> It launches a completely
+    separate Chromium browser with its own profile, its own session, and anti-detection patches
+    built in. Your normal Chrome continues working normally. LinkedIn sees two independent
+    browser sessions — one that's you, one that looks like you. No extension fingerprint, no
+    plugin detection, no DOM modifications in your real browser.
+  </p>
+
+  <div class="callout">
+    <p><strong>This isn't theoretical.</strong> LinkedIn has restricted or banned accounts using automation extensions. Running as a separate process with a clean fingerprint is a meaningfully lower-risk approach.</p>
+  </div>
+
+  <h2>What "personalisation" actually means</h2>
+
+  <p>
+    Dux-Soup personalisation looks like this: you write a template, add
+    <em>{{firstName}}</em> at the top, maybe <em>{{companyName}}</em> in the second line,
+    and the tool fills in the blanks. Every prospect gets structurally identical messages —
+    only the names change. Experienced LinkedIn users spot these immediately.
+  </p>
+  <p>
+    Before Influentia writes a message, it navigates to the prospect's LinkedIn activity page
+    and reads their recent posts. If they wrote about a challenge they're navigating, that's
+    the specific hook. If they shared something unexpected about their business, that's the
+    observation. The message gets written from scratch, for that person, using something only
+    they posted. There is no template underneath it.
+  </p>
+  <p>
+    The practical result: people reply to messages that feel like they were written by someone
+    who actually looked at their profile. Because they were.
+  </p>
+
+  <h2>Chrome dependency</h2>
+
+  <p>
+    Dux-Soup runs inside Chrome. That means Chrome needs to be open, on LinkedIn, for
+    automation to run. If you use Chrome for regular browsing while Dux-Soup is working,
+    you might accidentally navigate away and interrupt a sequence. It also means your
+    daily browser usage and your outreach automation are competing for the same process.
+  </p>
+  <p>
+    Influentia runs in its own window, independently. You can keep using Chrome, Safari,
+    or whatever you normally use. The automation doesn't care.
+  </p>
+
+  <div class="verdict">
+    <div class="verdict-label">Bottom line</div>
+    <p>
+      Dux-Soup is a solid tool if you're comfortable with template-based outreach and are
+      willing to accept the extension detection risk. If you want messages that don't read
+      like automation, a cleaner LinkedIn account safety profile, and AI that actually reads
+      what each prospect posts before writing to them — Influentia is the better fit. The
+      price difference is small. The difference in replies is not.
+    </p>
+  </div>
+
+  <div class="cta-section">
+    <h2>Start 14-day free trial</h2>
+    <p>No Chrome extension. No templates. Works on Mac, Windows, and Linux.</p>
+    <a class="btn-primary" href="/#pricing">Start 14-day free trial →</a>
+    <p class="cta-sub">No credit card required · 14-day free trial · Cancel anytime</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Influentia · <a href="/">Home</a> · <a href="/vs-clay.html">vs Clay</a> · <a href="/vs-linkedhelper.html">vs LinkedHelper</a> · <a href="/vs-expandi.html">vs Expandi</a> · <a href="/vs-phantombuster.html">vs Phantombuster</a> · <a href="/vs-zenmode.html">vs Zen-mode</a></p>
+</footer>
+
+</body>
+</html>

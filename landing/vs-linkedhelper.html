@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influentia vs LinkedHelper — Honest Comparison (2026)</title>
+  <meta name="description" content="Influentia vs LinkedHelper: both run locally, but Influentia reads prospect posts before writing, bundles AI, and adds Reddit buyer-intent scanning. Same price range, different philosophy.">
+  <link rel="canonical" href="https://influentia.io/vs-linkedhelper.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Influentia",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "macOS, Windows, Linux",
+    "offers": { "@type": "Offer", "price": "97", "priceCurrency": "USD" },
+    "description": "LinkedIn outreach automation that runs locally, reads prospect posts, and writes personalised messages using Claude AI.",
+    "url": "https://influentia.io"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0c0c0e; --s1: #141417; --s2: #1c1c21; --s3: #242428;
+      --border: rgba(255,255,255,0.07); --accent: #7c6aff; --accent2: #a78bfa;
+      --green: #34d399; --red: #f87171; --text: #f1f0ff; --muted: #8b8a9e; --r: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(ellipse 70% 50% at 15% 0%, rgba(124,106,255,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 40% at 85% 100%, rgba(167,139,250,0.05) 0%, transparent 60%);
+    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 32px; background: rgba(12,12,14,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-size: 17px; font-weight: 800; letter-spacing: -0.4px; background: linear-gradient(135deg, #fff 20%, var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text); }
+    .btn-nav { background: var(--accent); color: #fff; padding: 9px 20px; border-radius: 9px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+    .btn-nav:hover { background: #6b58f0; transform: translateY(-1px); }
+    .page { max-width: 860px; margin: 0 auto; padding: 120px 32px 80px; position: relative; z-index: 1; }
+    .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { margin: 0 8px; }
+    .page-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(124,106,255,0.1); border: 1px solid rgba(124,106,255,0.25); color: var(--accent2); border-radius: 99px; padding: 5px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 24px; }
+    h1 { font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.04em; color: #fff; margin-bottom: 20px; }
+    h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .intro { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 680px; margin-bottom: 56px; }
+    .tldr { background: var(--s2); border: 1px solid var(--border); border-radius: var(--r); padding: 28px 32px; margin-bottom: 56px; }
+    .tldr-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent2); text-transform: uppercase; margin-bottom: 16px; }
+    .tldr ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .tldr li { font-size: 15px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+    .tldr li::before { content: '→'; color: var(--accent2); flex-shrink: 0; margin-top: 1px; }
+    h2 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; margin-bottom: 20px; margin-top: 52px; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 10px; margin-top: 32px; }
+    p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+    p strong { color: var(--text); font-weight: 600; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin-bottom: 48px; }
+    .comparison-table th { padding: 12px 20px; text-align: left; font-size: 13px; font-weight: 700; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .comparison-table th:first-child { width: 36%; }
+    .comparison-table th:not(:first-child) { text-align: center; }
+    .comparison-table td { padding: 14px 20px; font-size: 14px; color: var(--text); border-bottom: 1px solid var(--border); vertical-align: top; }
+    .comparison-table td:not(:first-child) { text-align: center; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .col-influentia { background: rgba(124,106,255,0.05); }
+    .col-header-influentia { color: var(--accent2) !important; }
+    .check { color: var(--green); font-size: 16px; }
+    .cross { color: var(--red); font-size: 16px; }
+    .neutral { color: var(--muted); font-size: 14px; }
+    .verdict { background: linear-gradient(135deg, rgba(124,106,255,0.12) 0%, rgba(167,139,250,0.06) 100%); border: 1px solid rgba(124,106,255,0.2); border-radius: var(--r); padding: 32px; margin: 48px 0; }
+    .verdict-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent2); text-transform: uppercase; margin-bottom: 12px; }
+    .verdict p { color: var(--text); margin-bottom: 0; }
+    .cta-section { text-align: center; padding: 64px 0 0; }
+    .cta-section h2 { margin-top: 0; }
+    .cta-section p { margin: 0 auto 32px; max-width: 480px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+    .btn-primary:hover { background: #6b58f0; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(124,106,255,0.4); }
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 16px !important; }
+    footer { text-align: center; padding: 48px 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; position: relative; z-index: 1; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">✦ Influentia</a>
+    <div class="nav-right">
+      <a class="nav-link" href="/#features">Features</a>
+      <a class="nav-link" href="/#pricing">Pricing</a>
+      <a class="btn-nav" href="/#download">Get started →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="breadcrumb">
+    <a href="/">Influentia</a><span>›</span> Comparisons <span>›</span> vs LinkedHelper
+  </div>
+
+  <div class="page-badge">Honest comparison — updated 2026</div>
+
+  <h1>Influentia vs <em>LinkedHelper</em></h1>
+  <p class="intro">
+    LinkedHelper is one of the oldest and most popular LinkedIn automation tools. It's cheap, runs locally, and gets the job done. But it was built when "personalisation" meant first-name variables. Here's how the two compare in 2026.
+  </p>
+
+  <div class="tldr">
+    <div class="tldr-label">TL;DR</div>
+    <ul>
+      <li>Both tools run locally on your computer — so both have similar LinkedIn account safety profiles (your IP, your browser).</li>
+      <li>LinkedHelper uses template sequences with variable substitution. Influentia reads each prospect's recent LinkedIn posts before writing their message.</li>
+      <li>LinkedHelper has no AI. Influentia bundles Claude — no API keys needed.</li>
+      <li>LinkedHelper has no Reddit feature. Influentia scans Reddit daily for buyers describing your exact problem.</li>
+      <li>LinkedHelper starts at $15/month. Influentia is $97/month. The price difference reflects what the tool actually does.</li>
+    </ul>
+  </div>
+
+  <h2>Side-by-side comparison</h2>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th class="col-header-influentia">Influentia</th>
+        <th>LinkedHelper 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Where it runs</td>
+        <td class="col-influentia"><strong>Your computer</strong><br><span class="neutral">Your IP, your browser</span></td>
+        <td><strong>Your computer</strong><br><span class="neutral">Your IP, your browser</span></td>
+      </tr>
+      <tr>
+        <td>Message personalisation</td>
+        <td class="col-influentia"><span class="check">✓</span> AI reads prospect's recent posts before writing</td>
+        <td><span class="cross">✗</span> Template variables ({{firstName}}, {{company}})</td>
+      </tr>
+      <tr>
+        <td>AI writing</td>
+        <td class="col-influentia"><span class="check">✓</span> Claude included — no API key needed</td>
+        <td><span class="cross">✗</span> No AI — templates only</td>
+      </tr>
+      <tr>
+        <td>Reddit buyer-intent scanning</td>
+        <td class="col-influentia"><span class="check">✓</span> Daily scan of 12+ subreddits</td>
+        <td><span class="cross">✗</span> LinkedIn only</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td class="col-influentia"><strong>$97/month</strong></td>
+        <td><strong>$15–$45/month</strong></td>
+      </tr>
+      <tr>
+        <td>LinkedIn account risk</td>
+        <td class="col-influentia">Low — real browser, your IP</td>
+        <td>Low — real browser, your IP</td>
+      </tr>
+      <tr>
+        <td>Follow-up sequences</td>
+        <td class="col-influentia"><span class="check">✓</span> AI-written, context-aware</td>
+        <td><span class="check">✓</span> Template-based sequences</td>
+      </tr>
+      <tr>
+        <td>Reply handling</td>
+        <td class="col-influentia"><span class="check">✓</span> Drafts AI replies for your approval</td>
+        <td><span class="neutral">—</span> Stops sequence on reply</td>
+      </tr>
+      <tr>
+        <td>Setup complexity</td>
+        <td class="col-influentia">One-line install, log in once</td>
+        <td>Desktop app download, account setup</td>
+      </tr>
+      <tr>
+        <td>Requires LinkedIn Sales Navigator</td>
+        <td class="col-influentia"><span class="check">✓</span> No — finds leads via web search</td>
+        <td><span class="cross">✗</span> Works better with Sales Navigator</td>
+      </tr>
+      <tr>
+        <td>Free trial</td>
+        <td class="col-influentia">14-day money-back guarantee</td>
+        <td>14-day free trial</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Where they're the same: account safety</h2>
+
+  <p>
+    This is the honest part. LinkedHelper and Influentia both run on your own computer, using your own IP address and a real browser session. From LinkedIn's perspective, both look the same as you doing outreach manually. Neither routes your actions through a cloud server.
+  </p>
+  <p>
+    If you're choosing between the two purely on account safety grounds, it's a draw. Both are meaningfully safer than cloud tools like Expandi or Phantombuster.
+  </p>
+
+  <h2>Where they differ: what the message actually says</h2>
+
+  <p>
+    LinkedHelper's personalisation is <code>{{firstName}}</code>, <code>{{company}}</code>, and maybe a custom variable you populate from a CSV. Every prospect gets structurally the same message with different nouns. LinkedIn users have seen this pattern thousands of times. They recognise it immediately.
+  </p>
+  <p>
+    Before Influentia writes a message, it visits the prospect's LinkedIn activity page and reads what they've been posting about. If they published something about a challenge last week, that becomes the observation. If they shared a win, that's the opener. The message is generated fresh from their actual behaviour — there's no template underneath it.
+  </p>
+  <p>
+    <strong>The practical difference:</strong> a message that references something the person actually wrote gets a meaningfully higher reply rate than one that just says "Hi [Name], I noticed you work at [Company]."
+  </p>
+
+  <h2>Reddit: a channel LinkedHelper completely ignores</h2>
+
+  <p>
+    Influentia scans Reddit daily — 12+ subreddits relevant to your offering — looking for posts where people are actively describing the problem you solve. An AI scores each post 1–10. Score 8+ posts queue for one-click engagement: you review a drafted reply and approve it.
+  </p>
+  <p>
+    This matters because Reddit posts are intent signals. Someone posting "we keep losing deals at the pricing conversation — how do other agencies handle this?" is describing a pain in public, right now. Getting your response in front of them before a competitor does is a completely different motion from cold outreach.
+  </p>
+  <p>
+    LinkedHelper doesn't touch Reddit. If Reddit isn't a channel that matters for your ICP, this distinction doesn't help you. If it does, it's the biggest differentiator between the two tools.
+  </p>
+
+  <h2>Price</h2>
+
+  <p>
+    LinkedHelper starts at $15/month. Influentia is $97/month. That's a real difference. LinkedHelper makes sense if you want volume outreach with conservative personalisation and have no interest in AI or Reddit. Influentia makes sense if you want fewer, better conversations and are willing to pay for the AI layer that generates them.
+  </p>
+
+  <div class="verdict">
+    <div class="verdict-label">Bottom line</div>
+    <p>
+      LinkedHelper is a solid, proven automation tool at a low price. If you want template sequences that run reliably from your computer, it works. Influentia is the better fit if you want messages that read like they came from a person who actually looked at the prospect's profile — and if Reddit buyer intent is a channel you want in your stack.
+    </p>
+  </div>
+
+  <div class="cta-section">
+    <h2>Try Influentia free for 14 days</h2>
+    <p>Works on Mac, Windows, and Linux. No API keys needed.</p>
+    <a class="btn-primary" href="/#download">Download Influentia →</a>
+    <p class="cta-sub">$97/month. 14-day money-back guarantee. Cancel anytime.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Influentia · <a href="/">Home</a> · <a href="/vs-clay.html">vs Clay</a> · <a href="/vs-expandi.html">vs Expandi</a> · <a href="/vs-phantombuster.html">vs Phantombuster</a> · <a href="/vs-dux-soup.html">vs Dux-Soup</a> · <a href="/vs-zenmode.html">vs Zen-mode</a></p>
+</footer>
+
+</body>
+</html>

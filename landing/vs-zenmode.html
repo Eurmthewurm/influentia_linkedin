@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influentia vs Zen-mode — Honest Comparison (2026)</title>
+  <meta name="description" content="Zen-mode is a solid LinkedIn automation tool. But it's LinkedIn-only, cold-outreach only, and misses Reddit entirely. Influentia adds warm signal detection across both channels — and posts Reddit replies overnight automatically.">
+  <link rel="canonical" href="https://influentia.io/vs-zenmode.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Influentia",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Mac, Windows",
+    "offers": { "@type": "Offer", "price": "97", "priceCurrency": "USD" },
+    "description": "LinkedIn + Reddit outreach that runs on your machine. Finds warm buyer signals, drafts in your voice, posts Reddit replies overnight.",
+    "url": "https://influentia.io"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0c0c0e; --s1: #141417; --s2: #1c1c21; --s3: #242428;
+      --border: rgba(255,255,255,0.07); --accent: #7c6aff; --accent2: #a78bfa;
+      --green: #34d399; --red: #f87171; --text: #f1f0ff; --muted: #8b8a9e; --r: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(ellipse 70% 50% at 15% 0%, rgba(124,106,255,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 40% at 85% 100%, rgba(167,139,250,0.05) 0%, transparent 60%);
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 32px; background: rgba(12,12,14,0.88); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 800; letter-spacing: -0.03em; text-decoration: none; color: #fff; }
+    .nav-logo img { display: block; border-radius: 6px; }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text); }
+    .btn-nav {
+      background: var(--accent); color: #fff; padding: 9px 20px; border-radius: 9px;
+      font-size: 14px; font-weight: 600; border: none; cursor: pointer; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-nav:hover { background: #6b58f0; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(124,106,255,0.35); }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 120px 32px 80px; position: relative; z-index: 1; }
+    .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { margin: 0 8px; }
+    .page-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(124,106,255,0.1); border: 1px solid rgba(124,106,255,0.25);
+      color: var(--accent2); border-radius: 99px; padding: 5px 14px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 24px;
+    }
+    h1 { font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.04em; color: #fff; margin-bottom: 20px; }
+    h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .intro { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 680px; margin-bottom: 56px; }
+
+    .tldr { background: var(--s2); border: 1px solid var(--border); border-radius: var(--r); padding: 28px 32px; margin-bottom: 56px; }
+    .tldr-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent2); text-transform: uppercase; margin-bottom: 16px; }
+    .tldr ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .tldr li { font-size: 15px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+    .tldr li::before { content: '→'; color: var(--accent2); flex-shrink: 0; margin-top: 1px; }
+
+    h2 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; margin-bottom: 20px; margin-top: 52px; }
+    p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+    p strong { color: var(--text); font-weight: 600; }
+
+    .comparison-table { width: 100%; border-collapse: collapse; margin-bottom: 48px; }
+    .comparison-table th { padding: 12px 20px; text-align: left; font-size: 13px; font-weight: 700; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .comparison-table th:first-child { width: 36%; }
+    .comparison-table th:not(:first-child) { text-align: center; }
+    .comparison-table td { padding: 14px 20px; font-size: 14px; color: var(--text); border-bottom: 1px solid var(--border); vertical-align: top; }
+    .comparison-table td:not(:first-child) { text-align: center; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .col-influentia { background: rgba(124,106,255,0.05); }
+    .col-header-influentia { color: var(--accent2) !important; }
+
+    .check { color: var(--green); font-size: 16px; }
+    .cross { color: var(--red); font-size: 16px; }
+    .neutral { color: var(--muted); font-size: 14px; }
+
+    .callout { background: var(--s2); border-left: 3px solid var(--accent); border-radius: 0 var(--r) var(--r) 0; padding: 20px 24px; margin: 24px 0; }
+    .callout p { margin: 0; color: var(--text); }
+
+    .callout-orange { background: rgba(249,115,22,0.07); border-left: 3px solid #fb923c; border-radius: 0 var(--r) var(--r) 0; padding: 20px 24px; margin: 24px 0; }
+    .callout-orange p { margin: 0; color: var(--text); }
+
+    .verdict { background: linear-gradient(135deg, rgba(124,106,255,0.12) 0%, rgba(167,139,250,0.06) 100%); border: 1px solid rgba(124,106,255,0.2); border-radius: var(--r); padding: 32px; margin: 48px 0; }
+    .verdict-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent2); text-transform: uppercase; margin-bottom: 12px; }
+    .verdict p { color: var(--text); margin-bottom: 0; }
+
+    .cta-section { text-align: center; padding: 64px 0 0; }
+    .cta-section h2 { margin-top: 0; }
+    .cta-section p { margin: 0 auto 32px; max-width: 480px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+    .btn-primary:hover { background: #6b58f0; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(124,106,255,0.4); }
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 16px !important; }
+
+    footer { text-align: center; padding: 48px 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; position: relative; z-index: 1; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">
+      <img src="/favicon.svg" width="24" height="24" alt="">
+      Influentia
+    </a>
+    <div class="nav-right">
+      <a class="nav-link" href="/#features">Features</a>
+      <a class="nav-link" href="/#pricing">Pricing</a>
+      <a class="btn-nav" href="/#download">Get started →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="breadcrumb">
+    <a href="/">Influentia</a><span>›</span> Comparisons <span>›</span> vs Zen-mode
+  </div>
+
+  <div class="page-badge">Honest comparison — updated 2026</div>
+
+  <h1>Influentia vs <em>Zen-mode</em></h1>
+  <p class="intro">
+    Zen-mode is well-built LinkedIn automation software — local execution, smart sequences,
+    clean design. If your only goal is LinkedIn cold outreach, it's genuinely good.
+    But it's LinkedIn-only, it's cold outreach only, and it misses something significant:
+    half your buyers are on Reddit, asking about your problem right now, and nobody is reaching them.
+  </p>
+
+  <div class="tldr">
+    <div class="tldr-label">TL;DR</div>
+    <ul>
+      <li>Zen-mode automates cold LinkedIn outreach sequences (connect → follow-up → close). Influentia finds people already expressing buying intent on LinkedIn <em>and</em> Reddit, then replies to them.</li>
+      <li>Zen-mode is LinkedIn-only. Reddit is a completely untapped channel — buyers post there before they ever Google a solution.</li>
+      <li>Influentia's Reddit autopilot scans overnight and posts up to 3 replies automatically while you sleep. Zen-mode has no equivalent.</li>
+      <li>Both run locally on your machine — same approach, same safety model, same "your IP" advantage over cloud tools.</li>
+      <li>Zen-mode starts at $49/month (1 seat). Influentia is $97/month. The difference is Reddit, warm signals, and overnight automation.</li>
+    </ul>
+  </div>
+
+  <h2>Side-by-side comparison</h2>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th class="col-header-influentia">Influentia</th>
+        <th>Zen-mode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Outreach channels</td>
+        <td class="col-influentia"><span class="check">✓</span> LinkedIn + Reddit</td>
+        <td><span class="cross">✗</span> LinkedIn only</td>
+      </tr>
+      <tr>
+        <td>Reddit buyer signal detection</td>
+        <td class="col-influentia"><span class="check">✓</span> Scans dozens of subreddits daily</td>
+        <td><span class="cross">✗</span> Not available</td>
+      </tr>
+      <tr>
+        <td>Reddit autopilot (overnight posting)</td>
+        <td class="col-influentia"><span class="check">✓</span> Up to 3 replies posted while you sleep</td>
+        <td><span class="cross">✗</span> Not available</td>
+      </tr>
+      <tr>
+        <td>Signal detection approach</td>
+        <td class="col-influentia"><strong>Warm signals</strong><br><span class="neutral">People already describing the pain</span></td>
+        <td><strong>Cold outreach</strong><br><span class="neutral">Sequences to filtered prospect lists</span></td>
+      </tr>
+      <tr>
+        <td>Runs locally (your IP)</td>
+        <td class="col-influentia"><span class="check">✓</span> Fully local</td>
+        <td><span class="check">✓</span> Fully local</td>
+      </tr>
+      <tr>
+        <td>AI message writing</td>
+        <td class="col-influentia"><span class="check">✓</span> Reads activity, writes per prospect</td>
+        <td><span class="check">✓</span> AI personalisation per prospect</td>
+      </tr>
+      <tr>
+        <td>Outreach sequences</td>
+        <td class="col-influentia"><span class="check">✓</span> Day 3 nudge + Day 7 close</td>
+        <td><span class="check">✓</span> Day 0, 3, 7 automated sequences</td>
+      </tr>
+      <tr>
+        <td>Auto-reply to conversations</td>
+        <td class="col-influentia"><span class="check">✓</span> AI reads and continues threads</td>
+        <td><span class="neutral">Limited</span></td>
+      </tr>
+      <tr>
+        <td>LinkedIn buyer signal detection</td>
+        <td class="col-influentia"><span class="check">✓</span> Comment threads + post discussions</td>
+        <td><span class="cross">✗</span> Outbound sequences only</td>
+      </tr>
+      <tr>
+        <td>Voice notes</td>
+        <td class="col-influentia"><span class="cross">✗</span> Not available</td>
+        <td><span class="check">✓</span> Voice clone for audio messages</td>
+      </tr>
+      <tr>
+        <td>CRM integrations</td>
+        <td class="col-influentia"><span class="cross">✗</span> Not yet</td>
+        <td><span class="check">✓</span> HubSpot, Salesforce, Zapier</td>
+      </tr>
+      <tr>
+        <td>Multi-seat / agency</td>
+        <td class="col-influentia"><span class="cross">✗</span> Single seat</td>
+        <td><span class="check">✓</span> Up to 10 seats</td>
+      </tr>
+      <tr>
+        <td>Pricing (single seat)</td>
+        <td class="col-influentia"><strong>$97/month</strong></td>
+        <td><strong>$49/month</strong> (Practitioner)</td>
+      </tr>
+      <tr>
+        <td>Trial</td>
+        <td class="col-influentia">7-day free trial</td>
+        <td>10-day free trial</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>The same foundation, a different philosophy</h2>
+
+  <p>
+    Both tools solve the same root problem: cloud LinkedIn automation gets accounts banned because
+    LinkedIn sees data-center IPs sending thousands of requests. Running locally — your machine,
+    your IP, your browser session — is the right answer, and both Zen-mode and Influentia do this well.
+  </p>
+  <p>
+    Where they diverge is in what happens next. <strong>Zen-mode is a cold outreach sequencer.</strong>
+    You build a prospect list, configure a sequence, and the tool works through it — connection request,
+    wait three days, follow up, wait four days, close the loop. It's a well-executed version of
+    a proven playbook.
+  </p>
+  <p>
+    <strong>Influentia starts from a different question:</strong> instead of "who should I reach out to?",
+    it asks "who is already asking about my problem right now?" The tool scans LinkedIn comment threads
+    and Reddit communities for people actively expressing the pain your product solves — then drafts
+    a reply to that specific post, in your voice, tailored to what they actually said. You're not
+    starting a cold conversation. You're joining one that's already happening.
+  </p>
+
+  <div class="callout-orange">
+    <p><strong>Why Reddit matters:</strong> buyers often describe their problem on Reddit before they know what to search for. "How do founders find clients without cold email?" is a Reddit post, not a Google search. Zen-mode never sees it. Influentia finds it, scores it, and either drafts a reply for your review or posts it overnight automatically.</p>
+  </div>
+
+  <h2>The overnight autopilot gap</h2>
+
+  <p>
+    Zen-mode's sequences run during the day, on your schedule. You set a campaign and it executes.
+    That's good. But LinkedIn has daily limits, and you're still only working one channel.
+  </p>
+  <p>
+    Influentia's Reddit autopilot runs at night. While you sleep, it scans for signals scored 8 or
+    higher, generates a reply in your voice, and posts it — up to 3 replies per night. By the time
+    you open your laptop in the morning, conversations have already started. On a channel where
+    none of your competitors are operating.
+  </p>
+
+  <div class="callout">
+    <p><strong>What this looks like in practice:</strong> wake up, see two Reddit reply threads where someone has already engaged, and two LinkedIn drafts waiting for your approval. You didn't touch anything overnight. Neither did anyone else in your space.</p>
+  </div>
+
+  <h2>Where Zen-mode wins</h2>
+
+  <p>
+    Zen-mode is the better choice if you need multi-seat agency support, CRM integrations, or want
+    voice note outreach. Their Sangha Intelligence feature — collective learning from all users'
+    campaign data — is interesting, and their analytics dashboard is more detailed than Influentia's
+    current reporting.
+  </p>
+  <p>
+    If you're an agency running outreach for multiple clients, or if LinkedIn-only cold sequencing
+    is exactly what you need and you want deep integrations, Zen-mode is purpose-built for that.
+  </p>
+
+  <h2>Who Influentia is for</h2>
+
+  <p>
+    Influentia is built for a single founder or consultant who wants warm conversations — not cold
+    volume. If you're doing 10 high-quality replies to people already expressing pain, you'll outperform
+    100 cold sequences every time. And if you're willing to let Reddit autopilot run overnight, you
+    gain a channel that nobody else in your market is using.
+  </p>
+  <p>
+    The $48/month premium over Zen-mode's entry plan pays for Reddit access, overnight autopilot,
+    and warm signal detection across both channels. If even one of those extra Reddit replies
+    turns into a call, it covers months of the difference.
+  </p>
+
+  <div class="verdict">
+    <div class="verdict-label">Bottom line</div>
+    <p>
+      Zen-mode executes cold LinkedIn sequences cleanly and safely. If that's all you need, it's
+      a fair tool at a fair price. Influentia covers more ground — both channels, warm signals,
+      overnight Reddit automation — for founders who want conversations that start before they
+      send a single cold message. Different tools for different philosophies. The question is
+      whether you want to find people who are already asking, or reach out to people who aren't.
+    </p>
+  </div>
+
+  <div class="cta-section">
+    <h2>Try Influentia free for 7 days</h2>
+    <p>LinkedIn + Reddit. Warm signals. Overnight autopilot. Runs on your machine.</p>
+    <a class="btn-primary" href="/#download">Download Influentia →</a>
+    <p class="cta-sub">$97/month. 7-day free trial. Cancel anytime.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Influentia · <a href="/">Home</a> · <a href="/vs-clay.html">vs Clay</a> · <a href="/vs-linkedhelper.html">vs LinkedHelper</a> · <a href="/vs-expandi.html">vs Expandi</a> · <a href="/vs-phantombuster.html">vs Phantombuster</a> · <a href="/vs-dux-soup.html">vs Dux-Soup</a></p>
+</footer>
+
+</body>
+</html>

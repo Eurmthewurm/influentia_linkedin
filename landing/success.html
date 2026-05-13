@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Influentia — Setup in Progress</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+  :root {
+    --bg: #08080a; --text: #f4f3ff; --dim: #a3a1b8; --muted: #6b6a82;
+    --accent: #7c6aff; --accent-2: #a78bfa; --bg-2: #131318; --line: rgba(255,255,255,0.08);
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 32px 20px;
+  }
+  .container { max-width: 600px; width: 100%; text-align: center; }
+  
+  /* Hero Icon */
+  .icon-wrap {
+    width: 80px; height: 80px; background: rgba(124,106,255,0.1); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 32px;
+    border: 1px solid rgba(124,106,255,0.3); box-shadow: 0 0 30px rgba(124,106,255,0.15);
+  }
+  .check { width: 40px; height: 40px; stroke: var(--accent); fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  
+  /* Typography */
+  h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
+  h2 { font-size: 16px; font-weight: 400; color: var(--dim); line-height: 1.5; margin-bottom: 32px; }
+  .step { font-size: 14px; font-weight: 600; color: var(--accent-2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+  
+  /* Email Box */
+  .email-box {
+    background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px;
+    padding: 24px; margin-bottom: 32px; text-align: left; position: relative; overflow: hidden;
+  }
+  .email-box::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--accent);
+  }
+  .email-title { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; margin-bottom: 16px; color: var(--text); }
+  .email-desc { color: var(--dim); font-size: 14px; line-height: 1.6; }
+  .email-desc li { margin-bottom: 8px; padding-left: 8px; }
+  
+  /* Download Section */
+  .download-box {
+    background: rgba(124,106,255,0.05); border: 1px dashed var(--accent-2); border-radius: 12px;
+    padding: 24px; margin-bottom: 32px; display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .download-text { color: var(--dim); font-size: 14px; }
+  
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px;
+    background: var(--accent); color: #fff; border-radius: 8px; font-weight: 600; text-decoration: none;
+    transition: background 0.2s, transform 0.1s; font-size: 15px;
+  }
+  .btn:hover { background: #6b5aff; transform: translateY(-1px); }
+  .btn-secondary { background: transparent; border: 1px solid var(--line); color: var(--dim); }
+  .btn-secondary:hover { border-color: var(--dim); background: rgba(255,255,255,0.02); }
+
+  /* Footer */
+  .footer-note { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .footer-note a { color: var(--accent-2); text-decoration: none; }
+
+  /* Spinner */
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+  .spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.2); border-top-color: #fff; border-radius: 50%; animation: spin 0.8s linear infinite; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon-wrap">
+      <svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+
+    <div class="step">Step 1 of 3 · Payment Complete</div>
+    <h1>You're in. The hunt begins.</h1>
+    <h2>Your 14-day Pro trial is active starting now.<br>Influentia is now setting up your license.</h2>
+
+    <div class="email-box">
+      <div class="email-title">
+        📧 Check your inbox
+      </div>
+      <div class="email-desc"><strong>We just sent your License Key to the email you used for checkout.</strong>
+        <ul style="margin-left:18px; margin-top:8px;">
+          <li>It contains your <b>unique License Key</b> (don't lose it).</li>
+          <li>Instructions on how to install the app.</li>
+          <li style="opacity:0.7; font-size:13px">Can't find it? Check Spam/Junk or reply to the email for help.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="download-box">
+      <div class="step" style="margin:0">Ready to download?</div>
+      <div class="download-text">Get the desktop app and unlock your license with the key from the email.</div>
+      <a href="/start.html" class="btn">Download & Install <div style="width:8px"></div><div class="spinner"></div></a>
+    </div>
+
+    <div class="footer-note">
+      <p>Need help? Reply directly to the setup email or email <a href="mailto:hello@influentia.io">hello@influentia.io</a>.</p>
+    </div>
+  </div>
+</body>
+</html>

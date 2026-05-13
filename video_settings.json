@@ -1,0 +1,5 @@
+{
+  "enabled": false,
+  "video_url": "",
+  "message_template": "I also put together a quick personal video for you: {video_link}"
+}

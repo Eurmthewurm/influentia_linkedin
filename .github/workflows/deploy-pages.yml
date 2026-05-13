@@ -1,0 +1,44 @@
+name: Deploy landing to Cloudflare Pages
+
+# Solves the "no Git connection" issue on the existing influentia Pages
+# project. Cloudflare's native GitHub integration only works for projects
+# created from Git; ours is a Direct Upload project. This workflow performs
+# the equivalent — runs `wrangler pages deploy` on every push to main.
+#
+# Required GitHub secrets (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN   — token with "Cloudflare Pages: Edit" scope
+#   CLOUDFLARE_ACCOUNT_ID  — eb7f422005dc3f3c6ae2087d657c95a0
+#
+# To create the API token:
+#   Cloudflare Dashboard → My Profile → API Tokens → Create Token →
+#   "Custom token" → Permissions: Account > Cloudflare Pages > Edit →
+#   Account Resources: Include > eb7f422005dc3f3c6ae2087d657c95a0 →
+#   Continue to summary → Create Token → copy and store as a GitHub secret.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'landing/**'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:   # manual trigger from GitHub Actions tab
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ./landing --project-name=influentia --branch=main
+
+      - name: Print deployment URL
+        run: echo "Deployed → https://influentia.io"

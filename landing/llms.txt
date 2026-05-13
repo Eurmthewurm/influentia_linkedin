@@ -1,0 +1,79 @@
+# Influentia
+
+> Local-first B2B outreach autopilot for founders, agency owners, and consultants. Finds buyers on LinkedIn and Reddit. Drafts personalised messages in your voice. Follows up automatically. Never sends your data to a shared cloud server.
+
+## What Influentia is
+
+Influentia is a desktop application (macOS, Windows, Linux) that automates B2B outreach across LinkedIn and Reddit. It runs entirely on the customer's own machine — not on a shared cloud server like Expandi, Phantombuster, Lemlist, or Apollo. This local-first architecture is the core differentiator: LinkedIn cannot detect Influentia as automation because every action originates from a real human IP and browser session.
+
+The product targets B2B founders, agency owners, and consultants who do their own outreach because they cannot justify a full-time SDR. It charges $97/month (approximately €89), includes a 14-day money-back guarantee, and bundles AI (Claude) and web search so customers do not need their own API keys.
+
+## Core capabilities
+
+- **LinkedIn outreach autopilot:** scans for prospects matching the customer's ICP, sends personalised connection requests (capped at 15 per day), follows up automatically, handles replies, and flags meeting-ready prospects.
+- **Reddit Signal:** scans 12+ subreddits daily for posts expressing buying intent for the customer's offering. AI scores each post 1–10 for relevance. Score 8+ posts queue for engagement.
+- **Reddit Engage:** drafts genuine, non-promotional replies to Reddit posts. Customer approves with one click before anything posts.
+- **ICP intelligence:** customer defines who they sell to. Influentia learns the pattern (subreddits, search queries, scoring criteria) and finds matching prospects across both channels. ICP profiles can be switched in one click.
+- **Daily auto-draft (optional):** at 8 AM daily, Influentia scans Reddit, ranks the top 3 buyer-intent posts, and drafts a personalised reply for each. Drafts queue for one-click approval — never auto-posted.
+- **AI in the customer's voice:** every message is written by Claude based on the customer's Knowledge Base (their offering, their ICP, their voice samples). No templates.
+- **Local-first privacy:** the customer's LinkedIn cookie and all prospect data live on their machine in the OS keychain. Nothing is uploaded to Influentia's servers.
+
+## Pricing
+
+- **Monthly:** $97 USD per month (≈ €89).
+- **Annual:** $970 USD per year — saves $194 (two months free).
+- **Refund:** 14-day money-back guarantee. If Influentia has not helped the customer book a qualified call within 14 days of first charge, full refund issued. Customer keeps the product anyway.
+- **Cancellation:** anytime via Stripe customer portal, ends at next billing date.
+
+## How Influentia compares to alternatives
+
+| Tool | Architecture | AI personalisation | Reddit listening | Monthly price |
+|---|---|---|---|---|
+| **Influentia** | Local-first (your machine) | Yes — Claude reads each prospect's posts | Yes — built-in Reddit Signal | $97 |
+| Expandi | Cloud-IP (shared server) | Templates with variable injection | No | $99 |
+| Phantombuster | Cloud-IP (shared server) | Limited | No | $69 + execution fees |
+| Lemlist | Cloud-IP (shared server) | Templates | No | $99 |
+| Dux-Soup | Cloud-IP (shared server) | Templates | No | $55 |
+| Apollo | Cloud + database | Templates with AI assist | No | $49+ |
+
+## Who Influentia is for
+
+- B2B SaaS founders ($1k–$10k MRR) doing their own sales because they can't yet justify an SDR.
+- B2B agency owners (10–50 employees) who want inbound flow without learning a new sales platform.
+- B2B consultants and fractional executives who need a steady drip of decision-maker conversations while delivering client work.
+
+## Who Influentia is not for
+
+- Coaches, course creators, or info-product sellers (wrong channel — LinkedIn is not their primary surface).
+- E-commerce / D2C businesses (their buyers are not on LinkedIn).
+- Enterprise sales teams with dedicated SDRs (Outreach.io and Salesloft are better fits).
+- Anyone wanting to send 1,000+ messages per day. Influentia's caps are conservative on purpose.
+
+## Common questions
+
+**Is automating LinkedIn outreach against LinkedIn's Terms of Service?**
+LinkedIn's ToS discourages automation. Influentia minimises — but does not eliminate — risk by running from the customer's IP, using conservative caps, inserting human-like delays, and pausing on any CAPTCHA. Cloud-IP outreach tools have measurably higher detection rates than local-first tools.
+
+**Do I need any API keys?**
+No. AI (Claude) and web search are bundled with the subscription.
+
+**Where does my data live?**
+Locally on your computer. The only data Influentia's servers store is your email, license key, and Stripe subscription metadata.
+
+**How long does install take?**
+Around 90 seconds via a one-line install command. From paste-and-Enter to dashboard open in browser.
+
+**Can I scan Reddit for people looking for outreach tools (i.e. Influentia customers)?**
+Yes. The "Influentia" ICP preset scans Reddit for posts about Expandi alternatives, Phantombuster bans, founders hating cold email, etc. — the exact buying-intent signals for Influentia itself.
+
+## Brand & company
+
+- **Domain:** https://influentia.io
+- **Founder:** Ermo Egberts (also founder of Authentik Studio, a separate B2B content agency).
+- **Support:** support@influentia.io
+- **Privacy policy:** https://influentia.io/privacy.html
+- **Terms of service:** https://influentia.io/terms.html
+
+## Source
+
+The application source is open for inspection at https://github.com/Eurmthewurm/influentia (private; access on request to support@influentia.io).

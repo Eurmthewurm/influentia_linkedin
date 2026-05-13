@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install Influentia</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0a0f;
+    --surface: #141420;
+    --border: #2a2a3a;
+    --text: #e8e8f0;
+    --muted: #8888a0;
+    --accent: #7c6aff;
+    --accent-glow: rgba(124,106,255,.3);
+    --green: #34d399;
+    --code-bg: #1a1a2e;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px 40px;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+  }
+  .logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -.5px;
+    margin-bottom: 8px;
+  }
+  .logo span { color: var(--accent); }
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 36px;
+    line-height: 1.5;
+  }
+  .os-badge {
+    display: inline-block;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .code-block {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: left;
+    position: relative;
+    margin-bottom: 16px;
+    word-break: break-all;
+  }
+  .code-block .prompt { color: var(--green); }
+  .code-block .cmd { color: var(--text); }
+  .copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .15s;
+  }
+  .code-block:hover .copy-btn { opacity: 1; }
+  .copy-btn:hover { background: #6a58f0; }
+  .copy-btn.copied { background: var(--green); }
+  .note {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 24px;
+  }
+  .note a { color: var(--accent); text-decoration: none; }
+  .note a:hover { text-decoration: underline; }
+  .steps {
+    text-align: left;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .steps h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: var(--accent-glow);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+  .alt-os {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .alt-os a { color: var(--accent); text-decoration: none; }
+  footer {
+    margin-top: 32px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo">In<span>fluentia</span></div>
+  <p class="subtitle">Local-first LinkedIn + Reddit outreach.<br>Runs on your machine. Your data never leaves.</p>
+
+  <div id="os-badge" class="os-badge">macOS</div>
+
+  <div class="code-block" id="code-block">
+    <button class="copy-btn" onclick="copyCmd()">Copy</button>
+    <span class="prompt">$</span>
+    <span class="cmd" id="install-cmd">curl -fsSL https://get.influentia.io/install.sh | bash</span>
+  </div>
+
+  <p class="note">
+    Paste this in <strong>Terminal</strong> (press Enter).<br>
+    Takes about 2 minutes. Your browser will open automatically.
+  </p>
+
+  <div class="steps">
+    <h3>What happens</h3>
+    <div class="step"><div class="step-num">1</div><span>Downloads Influentia + creates an isolated Python environment</span></div>
+    <div class="step"><div class="step-num">2</div><span>Installs Chromium (the browser Influentia uses to reach LinkedIn)</span></div>
+    <div class="step"><div class="step-num">3</div><span>Starts the server and opens the setup wizard in your browser</span></div>
+    <div class="step"><div class="step-num">4</div><span>Enter your license key → connect LinkedIn → you're live</span></div>
+  </div>
+
+  <div class="alt-os" id="alt-os">
+    Not on macOS? <a href="#" onclick="showWindows(); return false;">Windows instructions →</a>
+  </div>
+</div>
+
+<footer>
+  <a href="https://influentia.io">influentia.io</a> · <a href="mailto:support@influentia.io">support@influentia.io</a>
+</footer>
+
+<script>
+  const ua = navigator.userAgent;
+  const isWindows = /Win/.test(ua);
+  const isMac = /Mac/.test(ua) && !/iPhone|iPad/.test(ua);
+
+  const macCmd = 'curl -fsSL https://get.influentia.io/install.sh | bash';
+  const winCmd = 'irm https://get.influentia.io/install.ps1 | iex';
+
+  function render(os, cmd, altHtml) {
+    document.getElementById('os-badge').textContent = os;
+    document.getElementById('install-cmd').textContent = cmd;
+    document.getElementById('alt-os').innerHTML = altHtml;
+  }
+
+  if (isWindows) {
+    render('Windows', winCmd, 'On macOS? <a href="#" onclick="showMac(); return false;">macOS instructions →</a>');
+  } else if (isMac) {
+    render('macOS', macCmd, 'Not on macOS? <a href="#" onclick="showWindows(); return false;">Windows instructions →</a>');
+  } else {
+    render('macOS', macCmd, '<a href="#" onclick="showWindows(); return false;">Windows instructions →</a>');
+  }
+
+  function showMac() { render('macOS', macCmd, 'Not on macOS? <a href="#" onclick="showWindows(); return false;">Windows instructions →</a>'); }
+  function showWindows() { render('Windows', winCmd, 'On macOS? <a href="#" onclick="showMac(); return false;">macOS instructions →</a>'); }
+
+  function copyCmd() {
+    const cmd = document.getElementById('install-cmd').textContent;
+    navigator.clipboard.writeText(cmd).then(() => {
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

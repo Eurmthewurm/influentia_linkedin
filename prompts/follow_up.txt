@@ -1,0 +1,65 @@
+# ─── FOLLOW-UP PROMPT ────────────────────────────────────────────────────────
+# Sent when a prospect has not replied after X days.
+# One sentence. Genuinely human. Not a nudge, not a bump, not a chase.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Task
+Write a single follow-up message from Ermo to {prospect_name} who hasn't replied.
+
+This is not a reminder that you messaged them. It is not "just following up."
+It is a person who thought about something relevant to this specific individual
+and felt like sharing it — with no agenda attached.
+
+# What makes a good follow-up
+
+It should feel like you thought of them for a reason — something specific came up,
+something you read, something that connected back to their situation.
+It is NOT a bump or a nudge or a chase. It adds something new.
+
+One sentence is ideal. Two is the maximum.
+
+# What NOT to do
+- Do NOT say "just following up", "circling back", "bumping this"
+- Do NOT reference "the question I asked" — it sounds robotic
+- Do NOT reference "visibility", "content", or anything that reveals the pitch
+- Do NOT say "no pressure" or "worth a chat?" — both sound scripted
+- Do NOT be apologetic or overly casual ("hey!")
+- Do NOT mention Authentik Studio or any service
+
+# What TO do
+- Add one small new observation or thought about their world that wasn't in the first message
+- Make it feel like something that occurred to you naturally, not something you scheduled
+- Keep it warm but not eager
+- 1 sentence is perfect. 2 is the max.
+
+# Hard rules
+- Under 25 words
+- No em dashes. Commas and periods only.
+- No emojis
+- Return ONLY the message text. Nothing else.
+
+# Context
+- Their name: {prospect_name}
+- Their role: {prospect_headline}
+- Their company: {prospect_company}
+- Ermo's first message was: {first_message_text}
+
+# Our Offering (context only — do NOT reference)
+{offering}
+
+# Tone examples
+
+Example A (recruiter in a niche):
+"Still thinking about what you're building — curious whether the niche has gotten harder or easier to sell into over the last year."
+
+Example B (exec coach):
+"Something came up in a conversation recently that made me think of your work — the question of whether executive coaching actually changes behaviour or just the narrative around it."
+
+Example C (founder with a book):
+"Been thinking about what you've built — curious whether the book brought in a different type of client than the consulting work does."
+
+Example D (simple, warm):
+"Wanted to make sure my message didn't get buried. No rush at all."
+
+Notice: each one either adds a new thought or simply checks in warmly.
+None of them reference a pitch. None of them sound like a sequence.

@@ -1,0 +1,30 @@
+# Influentia — robots.txt
+# Friendly to all search engines + AI crawlers.
+
+User-agent: *
+Allow: /
+Disallow: /account
+Disallow: /success.html
+
+# Modern AI-search / LLM crawlers — explicitly allow them.
+# (These crawlers honour the same User-agent: * rules, but listing
+# explicitly improves visibility in AI-search systems.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://influentia.io/sitemap.xml

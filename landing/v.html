@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A quick video for you</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: #0a0a0f;
+      color: #f0eeff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Logo / brand */
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 36px;
+      opacity: 0.6;
+    }
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      background: #8b6cf6;
+      border-radius: 50%;
+    }
+    .brand-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #b8a9f5;
+      text-transform: uppercase;
+    }
+
+    /* Heading */
+    .headline {
+      font-size: clamp(22px, 5vw, 30px);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      color: #f0eeff;
+    }
+    .headline .name {
+      color: #a78bfa;
+    }
+    .subline {
+      font-size: 15px;
+      color: #9896b0;
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+
+    /* Play button */
+    .play-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      cursor: pointer;
+    }
+    .play-btn {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+      animation: pulse 2.4s ease-in-out infinite;
+      transition: transform 0.15s;
+    }
+    .play-btn:hover { transform: scale(1.07); }
+    .play-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+      margin-left: 4px; /* optical centre for ▶ */
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0   rgba(139, 92, 246, 0.45); }
+      60%  { box-shadow: 0 0 0 22px rgba(139, 92, 246, 0);   }
+      100% { box-shadow: 0 0 0 0   rgba(139, 92, 246, 0);    }
+    }
+
+    /* CTA button */
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.15s, transform 0.15s;
+      margin-bottom: 28px;
+    }
+    .cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .note {
+      font-size: 13px;
+      color: #6b6880;
+      line-height: 1.5;
+    }
+
+    /* Loading / error states */
+    .state-loading, .state-error {
+      font-size: 15px;
+      color: #6b6880;
+      padding: 60px 0;
+    }
+    .state-error { color: #f87171; }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="state-loading">Loading…</div>
+  </div>
+
+  <script>
+    const WORKER_URL = 'https://outreach-pilot-api-production.plain-king-ead0.workers.dev';
+
+    function getToken() {
+      return new URLSearchParams(window.location.search).get('t');
+    }
+
+    function firstName(fullName) {
+      return (fullName || '').split(' ')[0] || fullName;
+    }
+
+    async function init() {
+      const token = getToken();
+      const card  = document.getElementById('card');
+
+      if (!token) {
+        card.innerHTML = '<div class="state-error">Invalid link — no video token found.</div>';
+        return;
+      }
+
+      let data;
+      try {
+        const res = await fetch(`${WORKER_URL}/api/video/${token}`);
+        if (!res.ok) throw new Error('not_found');
+        data = await res.json();
+      } catch {
+        card.innerHTML = '<div class="state-error">This link has expired or is no longer valid.</div>';
+        return;
+      }
+
+      const { lead_name, lead_company, video_url } = data;
+      const first = firstName(lead_name);
+      const companyLine = lead_company ? ` at <strong>${lead_company}</strong>` : '';
+
+      card.innerHTML = `
+        <div class="brand">
+          <div class="brand-dot"></div>
+          <div class="brand-name">Influentia</div>
+        </div>
+
+        <h1 class="headline">Hey <span class="name">${first}</span>, I recorded<br>a quick video for you</h1>
+        <p class="subline">Ermo recorded this personally${companyLine}.<br>Click below to watch — it's under 2 minutes.</p>
+
+        <div class="play-wrap" onclick="watchVideo('${encodeURIComponent(video_url)}')">
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+
+        <br>
+        <a class="cta-btn" href="${video_url}" target="_blank" rel="noopener">▶ Watch the video</a>
+
+        <p class="note">Made with Influentia · Personal video outreach for LinkedIn</p>
+      `;
+    }
+
+    function watchVideo(encodedUrl) {
+      window.open(decodeURIComponent(encodedUrl), '_blank', 'noopener');
+    }
+
+    init();
+  </script>
+</body>
+</html>

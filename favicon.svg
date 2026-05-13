@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c6aff"/>
+      <stop offset="100%" stop-color="#c4b5fd"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <rect width="32" height="32" rx="7"/>
+    </clipPath>
+  </defs>
+  <!-- Dark background -->
+  <rect width="32" height="32" rx="7" fill="#09090b"/>
+  <!-- Signal arcs radiating from bottom-left origin — clipped to rounded rect -->
+  <g clip-path="url(#clip)">
+    <path d="M 9 8 A 15 15 0 0 1 24 23" stroke="url(#g)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.28"/>
+    <path d="M 9 13 A 10 10 0 0 1 19 23" stroke="url(#g)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M 9 18 A 5 5 0 0 1 14 23"  stroke="url(#g)" stroke-width="2" stroke-linecap="round" fill="none"/>
+  </g>
+  <!-- Origin dot -->
+  <circle cx="9" cy="23" r="2.4" fill="url(#g)"/>
+</svg>

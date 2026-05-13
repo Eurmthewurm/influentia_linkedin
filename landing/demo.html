@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Influentia — 30 Second Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#08080a;--s1:#0d0d10;--s2:#131318;--line:rgba(255,255,255,0.06);
+  --text:#f4f3ff;--dim:#a3a1b8;--mute:#6b6a82;
+  --accent:#7c6aff;--accent2:#a78bfa;--green:#34d399;--accent-3:#c4b5fd;
+  --r:14px;--mono:'JetBrains Mono',ui-monospace,monospace;
+}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-family:'Inter',-system-ui,sans-serif;color:var(--text)}
+
+.scene{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.5s ease;z-index:0;padding:16px;overflow-y:auto}
+.scene.active{opacity:1;pointer-events:all;z-index:1}
+
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0}
+.glow::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 50% 30%,rgba(124,106,255,0.18) 0%,transparent 70%)}
+
+.fade-up{opacity:0;transform:translateY(16px);transition:all 0.45s cubic-bezier(.25,.46,.45,.94)}
+.fade-up.visible{opacity:1;transform:none}
+.fade-in{opacity:0;transition:opacity 0.4s ease}
+.fade-in.visible{opacity:1}
+.scale-in{opacity:0;transform:scale(0.92);transition:all 0.4s cubic-bezier(.25,.46,.45,.94)}
+.scale-in.visible{opacity:1;transform:none}
+
+/* Console */
+.console{position:relative;background:linear-gradient(180deg,#101015 0%,#0a0a0d 100%);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px rgba(124,106,255,0.06),0 30px 80px -20px rgba(0,0,0,0.8),0 0 60px -10px rgba(124,106,255,0.10);width:560px;max-width:92vw}
+.console-bar{height:36px;padding:0 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);background:rgba(255,255,255,0.015);flex-shrink:0}
+.traffic{display:flex;gap:5px}
+.traffic span{width:9px;height:9px;border-radius:50%;background:#3d3c52}
+.console-title{font-family:var(--mono);font-size:10px;color:var(--mute)}
+.console-tabs{margin-left:auto;display:flex;gap:3px;font-family:var(--mono);font-size:9px;color:var(--mute)}
+.console-tabs span{padding:2px 7px;border-radius:3px}
+.console-tabs .on{background:rgba(124,106,255,0.1);color:var(--accent2)}
+.console-body{padding:16px 18px}
+.draft{background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:8px}
+.draft-name{font-size:12px;font-weight:600;color:var(--text)}
+.draft-signal{font-size:10px;color:var(--mute);margin-bottom:6px;line-height:1.4;padding-left:8px;border-left:2px solid var(--line)}
+.draft-body{font-size:11px;color:var(--dim);line-height:1.5;min-height:32px}
+.draft-actions{display:flex;gap:5px;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:9px;font-weight:600;padding:4px 8px;border-radius:4px;background:rgba(255,255,255,0.04);color:var(--dim);border:1px solid var(--line)}
+.pill.go{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Scene 1 */
+#scene1 .headline{font-size:clamp(28px,6vw,52px);font-weight:900;letter-spacing:-1px;text-align:center;line-height:1.08;max-width:700px}
+#scene1 .headline .em{background:linear-gradient(180deg,var(--accent-3) 0%,var(--accent) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+#scene1 .sub{font-size:clamp(13px,2.5vw,18px);color:var(--dim);text-align:center;margin-top:16px;max-width:520px;line-height:1.5}
+.floating-cards{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;justify-content:center}
+.floating-card{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;text-align:center;min-width:0}
+.floating-card .icon{font-size:clamp(18px,3vw,24px);margin-bottom:6px}
+.floating-card .label{font-size:clamp(10px,1.8vw,12px);color:var(--dim);font-weight:500}
+
+/* Scene 2 */
+.step-row{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
+.step-num{flex:none;width:32px;height:32px;border-radius:8px;background:rgba(124,106,255,0.12);border:1px solid rgba(124,106,255,0.25);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--accent2)}
+.step-text h3{font-size:clamp(14px,2.5vw,16px);font-weight:600;margin-bottom:3px}
+.step-text p{font-size:clamp(11px,2vw,13px);color:var(--dim);line-height:1.5}
+
+/* Scene 4 */
+.result-box{background:linear-gradient(135deg,rgba(52,211,153,0.06),rgba(124,106,255,0.06));border:1px solid rgba(52,211,153,0.2);border-radius:var(--r);padding:clamp(20px,4vw,28px) clamp(24px,4vw,32px);text-align:center;max-width:500px;width:92vw}
+.result-box .stat{font-size:clamp(32px,8vw,48px);font-weight:900;letter-spacing:-1px;color:var(--green);line-height:1}
+.result-box .stat-label{font-size:clamp(12px,2vw,14px);color:var(--dim);margin-top:4px;margin-bottom:16px}
+.result-box .quote{font-size:clamp(12px,2vw,14px);color:var(--dim);line-height:1.6;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px}
+
+/* Scene 5 */
+.cta-logo{font-size:clamp(28px,6vw,48px);font-weight:900;letter-spacing:-1px;text-align:center;margin-bottom:12px}
+.cta-tagline{font-size:clamp(13px,2.5vw,18px);color:var(--accent2);text-align:center;font-style:italic;margin-bottom:20px}
+.cta-price{font-size:clamp(11px,2vw,14px);color:var(--mute);text-align:center}
+.cta-price strong{color:var(--text);font-weight:700}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:12px 24px;border-radius:10px;font-size:clamp(13px,2vw,15px);font-weight:600;margin-top:20px;text-decoration:none}
+.cta-btn:hover{background:#6b58f0}
+
+.progress{position:fixed;bottom:0;left:0;right:0;height:3px;background:var(--line);z-index:10}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%}
+
+.cursor{display:inline-block;width:2px;height:14px;background:var(--accent2);vertical-align:middle;animation:blink 1s step-end infinite;margin-left:1px}
+@keyframes blink{50%{opacity:0}}
+
+/* Scene 3 sub text */
+#scene3-sub{font-size:clamp(11px,2vw,13px);color:var(--dim);text-align:center;margin-top:16px}
+/* Scene 2 how-it-works header */
+.scene2-header{font-size:clamp(10px,1.8vw,11px);font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent2);margin-bottom:10px}
+.scene2-title{font-size:clamp(20px,4vw,32px);font-weight:800;letter-spacing:-0.6px;line-height:1.2;margin-bottom:2rem}
+.step-wrap{max-width:540px;width:92vw;margin:0 auto}
+.footer-note{font-size:11px;color:var(--mute);margin-top:16px}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- SCENE 1: The Problem (0-6s) -->
+<div class="scene active" id="scene1">
+  <div class="headline fade-up" data-t="0.0">
+    Your next customer is<br><span class="em">complaining online</span><br>right now.
+  </div>
+  <div class="sub fade-up" data-t="0.5">
+    Reddit posts. LinkedIn comments. People describing the exact problem you solve — before they Google it.
+  </div>
+  <div class="floating-cards" data-t="1.0">
+    <div class="floating-card fade-up" data-t="1.2">
+      <div class="icon">😩</div>
+      <div class="label">"How do I get customers?"</div>
+    </div>
+    <div class="floating-card fade-up" data-t="1.5">
+      <div class="icon">🔍</div>
+      <div class="label">"Best outreach tool?"</div>
+    </div>
+    <div class="floating-card fade-up" data-t="1.8">
+      <div class="icon">💡</div>
+      <div class="label">"I need help with X"</div>
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 2: How It Works (6-16s) -->
+<div class="scene" id="scene2">
+  <div style="text-align:center;margin-bottom:2rem">
+    <div class="scene2-header fade-up" data-t="0.0">How Influentia Works</div>
+    <div class="scene2-title fade-up" data-t="0.3">Find buyers. Draft replies.<br>You press <span style="background:linear-gradient(180deg,var(--accent-3),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic">send</span>.</div>
+  </div>
+  <div class="step-wrap">
+    <div class="step-row fade-up" data-t="0.8">
+      <div class="step-num">1</div>
+      <div class="step-text"><h3>Scans Reddit + LinkedIn</h3><p>80+ subreddits and LinkedIn comments — finding people describing your exact ICP right now.</p></div>
+    </div>
+    <div class="step-row fade-up" data-t="1.2">
+      <div class="step-num">2</div>
+      <div class="step-text"><h3>AI drafts in your voice</h3><p>Reads what they posted. Drafts a reply referencing their actual words. No templates, no variables.</p></div>
+    </div>
+    <div class="step-row fade-up" data-t="1.6">
+      <div class="step-num">3</div>
+      <div class="step-text"><h3>You approve what sends</h3><p>Review, edit, approve. Nothing blasts without you. Runs on your machine, your IP. Always.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 3: The Product (16-24s) -->
+<div class="scene" id="scene3">
+  <div class="console scale-in" data-t="0.0">
+    <div class="console-bar">
+      <div class="traffic"><span></span><span></span><span></span></div>
+      <div class="console-title">Influentia — Draft Queue</div>
+      <div class="console-tabs"><span class="on">LinkedIn</span><span>Reddit</span></div>
+    </div>
+    <div class="console-body">
+      <div class="draft" id="draft1">
+        <div class="draft-name">Marcus W. <span style="font-weight:400;color:var(--mute)">· Founder, Signalpath</span></div>
+        <div class="draft-signal">"Tried 4 outreach tools this quarter. Every single one templated me. Anyone else exhausted?" — 41 reactions</div>
+        <div class="draft-body" id="typewriter"></div>
+        <div class="draft-actions" style="margin-top:10px">
+          <span class="pill go">⏎ Approve & Send</span>
+          <span class="pill">Edit</span>
+          <span class="pill">Skip</span>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--mute);margin-top:12px;flex-wrap:wrap;gap:4px">
+        <span>⚡ Scanning 12 subreddits, 8 LinkedIn searches</span>
+        <span>9 drafts waiting</span>
+      </div>
+    </div>
+  </div>
+  <div id="scene3-sub" class="fade-in" data-t="5.0">Every draft reads what they actually said. No templates. No variables.</div>
+</div>
+
+<!-- SCENE 4: Social Proof (24-28s) -->
+<div class="scene" id="scene4">
+  <div class="result-box scale-in" data-t="0.0">
+    <div class="stat">"3 calls"</div>
+    <div class="stat-label">booked in the first 10 days</div>
+    <div class="quote">
+      "I was paying $99/mo for Expandi and getting maybe 2 replies a week. Switched to Influentia — 6 replies in week one. The Reddit signals alone are worth it."<br><br>
+      <strong style="color:var(--text)">— Sarah K.</strong> <span style="color:var(--mute)"> · Agency owner</span>
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 5: CTA (28-32s) -->
+<div class="scene" id="scene5" style="text-align:center">
+  <div class="cta-logo scale-in" data-t="0.0">Influentia</div>
+  <div class="cta-tagline fade-up" data-t="0.3">"You built the product. Now fill your pipeline."</div>
+  <div class="cta-price fade-up" data-t="0.6">$97/mo · <strong>14-day money-back guarantee</strong> · Cancel anytime</div>
+  <a href="https://influentia.io/#pricing" class="cta-btn fade-up" data-t="0.9">Get started →</a>
+  <div class="footer-note fade-in" data-t="1.2">Download & install in 2 minutes. No credit card for beta testers.</div>
+</div>
+
+<script>
+const scenes = [
+  {id:'scene1', enter:0, exit:6},
+  {id:'scene2', enter:6, exit:16},
+  {id:'scene3', enter:16, exit:24},
+  {id:'scene4', enter:24, exit:28},
+  {id:'scene5', enter:28, exit:32}
+];
+
+const TOTAL = 32;
+window.demoTime = 0;
+
+const typewriterText = "Marcus — your post on tool fatigue this week hit a nerve. We run a 6-person B2B agency and deleted three outreach tools in Q1 for the same reason. Tuesday, 12 minutes, no slide deck?";
+
+function render(t){
+  if(t < 0) t = 0;
+  if(t > TOTAL) t = TOTAL;
+
+  document.getElementById('progressFill').style.width = (t/TOTAL*100) + '%';
+
+  scenes.forEach(s => {
+    const el = document.getElementById(s.id);
+    const active = t >= s.enter && t < s.exit;
+    el.classList.toggle('active', active);
+  });
+
+  scenes.forEach(s => {
+    if(t < s.enter || t >= s.exit) return;
+    const localT = t - s.enter;
+    const sceneEl = document.getElementById(s.id);
+    sceneEl.querySelectorAll('[data-t]').forEach(el => {
+      const trigger = parseFloat(el.dataset.t);
+      if(localT >= trigger) {
+        el.classList.add('visible');
+      } else {
+        el.classList.remove('visible');
+      }
+    });
+  });
+
+  const s3local = t - 16;
+  const twStart = 0.8;
+  const twEnd = 6.0;
+  const twEl = document.getElementById('typewriter');
+  if(twEl){
+    if(s3local < twStart){
+      twEl.innerHTML = '';
+    } else if(s3local < twEnd) {
+      const progress = (s3local - twStart) / (twEnd - twStart);
+      const chars = Math.floor(progress * typewriterText.length);
+      twEl.innerHTML = typewriterText.substring(0, chars) + '<span class="cursor"></span>';
+    } else {
+      twEl.innerHTML = typewriterText;
+    }
+  }
+}
+
+let startTime = null;
+function tick(ts){
+  if(!startTime) startTime = ts;
+  const t = (ts - startTime) / 1000;
+  render(t);
+  if(t < TOTAL + 0.5){
+    requestAnimationFrame(tick);
+  } else {
+    startTime = null;
+    requestAnimationFrame(tick);
+  }
+}
+
+if(window.demoTime === 0){
+  requestAnimationFrame(tick);
+}
+</script>
+</body>
+</html>

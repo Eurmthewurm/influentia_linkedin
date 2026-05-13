@@ -1,0 +1,37 @@
+# Secrets
+.env
+*.key
+*.p12
+*.pem
+
+# Virtual environments
+venv/
+.venv/
+node_modules/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+*.pid
+*.sock
+
+# Local state files (optional - uncomment if you want them in git)
+# state.json
+# leads.json
+# config.json
+
+# Zip installers (keep these but large binaries)
+# Influentia-*.zip
+# Influentia-*.dmg

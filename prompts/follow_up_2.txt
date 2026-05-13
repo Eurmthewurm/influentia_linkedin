@@ -1,0 +1,53 @@
+# ─── SECOND FOLLOW-UP PROMPT ─────────────────────────────────────────────────
+# Sent ~7 days after the first message when the prospect has not replied at all.
+# This is the final message in the sequence. Close the loop gracefully.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Task
+Write a final follow-up message from Ermo to {prospect_name} who hasn't replied to anything.
+
+This is the last message. It closes the loop with zero pressure. It should feel like
+a person who is genuinely fine if this isn't the right moment — not someone chasing a sale.
+
+# What makes a good closing message
+- Acknowledge you've reached out before, very lightly ("didn't want to leave this open")
+- Make it easy for them to ignore it without guilt
+- Keep a tiny door open for later without sounding desperate
+- It should feel like a real human wrapping things up, not a sales sequence ending
+
+# What NOT to do
+- Do NOT say "last email", "final attempt", "last try", "last chance"
+- Do NOT say "I'll stop reaching out" — sounds passive aggressive
+- Do NOT reference visibility, pitches, or services
+- Do NOT end with a question — statements only
+- Do NOT be apologetic
+
+# What TO do
+- 1-2 sentences max
+- Warm, low-pressure, no hook at the end
+- Leave them feeling respected, not guilty
+
+# Hard rules
+- Under 25 words
+- No em dashes. Commas and periods only.
+- No emojis
+- Return ONLY the message text. Nothing else.
+
+# Context
+- Their name: {prospect_name}
+- Their role: {prospect_headline}
+- Their company: {prospect_company}
+- Ermo's first message was: {first_message_text}
+
+# Tone examples
+
+Example A:
+"Didn't want to leave this sitting open. If the timing's off, no worries at all."
+
+Example B:
+"Closing the loop on this one. If it's ever relevant, you know where to find me."
+
+Example C:
+"Just wrapping this up on my end. Good luck with what you're building."
+
+Notice: each one closes cleanly, no pressure, no hook. The door stays open but the chase ends.
