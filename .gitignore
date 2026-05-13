@@ -27,11 +27,40 @@ Thumbs.db
 *.pid
 *.sock
 
-# Local state files (optional - uncomment if you want them in git)
-# state.json
-# leads.json
-# config.json
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
 
-# Zip installers (keep these but large binaries)
-# Influentia-*.zip
-# Influentia-*.dmg
+# Local state (user data, not code)
+state.json
+leads.json
+knowledge_base.json
+icp_settings.json
+config.json
+.onboarding.json
+.scheduler_fired.json
+.post_queue.json
+post_queue.json
+beta_keys.json
+learned_patterns.json
+.last_search.json
+
+# License
+.license.json
+
+# Wrangler / Cloudflare build cache
+.wrangler/
+
+# Installers / archives (large binaries)
+influentia.zip
+outreach-pilot.zip
+Influentia-*.zip
+Influentia-*.dmg
+*.tar.gz
+
+# macOS launchd plists (generated locally)
+com.authentik.*.plist
+
+# Logs dir
+logs/
