@@ -388,6 +388,177 @@ app.get('/api/admin/licenses', async (c) => {
   }
 });
 
+// POST /api/admin/nudge-inactive - Send nudge emails to inactive trial users
+app.post('/api/admin/nudge-inactive', async (c) => {
+  try {
+    const { results } = await c.env.DB.prepare(
+      `SELECT key, email, tier, trial_ends_at, created_at, last_seen_at
+       FROM licenses ORDER BY created_at DESC LIMIT 100`
+    ).all();
+
+    const now = Math.floor(Date.now() / 1000);
+    const twoDaysAgo = now - 2 * 86400;
+    let sent = 0;
+
+    for (const l of results as any[]) {
+      // Only nudge trial/beta users who signed up 2+ days ago and never used the app
+      if (!l.email || !l.email.includes('@')) continue;
+      if (l.tier !== 'trial' && l.tier !== 'beta') continue;
+      if (l.created_at > twoDaysAgo) continue;  // signed up less than 2 days ago
+      if (l.last_seen_at) continue;  // has some activity already
+
+      // Send nudge email via Resend
+      const daysAgo = Math.floor((now - l.created_at) / 86400);
+      const keyLast4 = (l.key || '').slice(-4);
+
+      const emailHtml = `
+<html><body style="font-family:-apple-system,sans-serif;max-width:560px;margin:0 auto;padding:20px">
+<p>Hey there,</p>
+<p>I'm the founder of Influentia. I noticed you signed up <strong>${daysAgo} days ago</strong> but haven't run a scan yet.</p>
+<p>Usually this means one of two things:</p>
+<ol>
+<li><strong>Setup got stuck</strong> — the install confused you, or the app won't open.</li>
+<li><strong>ICP is hard to define</strong> — you're not sure what keywords to use.</li>
+</ol>
+<p><strong>Reply to this email</strong> and tell me which one. I'll personally walk you through the fix in 5 minutes.</p>
+<p>You've got <strong>${l.trial_ends_at ? Math.max(0, Math.ceil((l.trial_ends_at - now) / 86400)) : 14} days</strong> left to try the full product. I want you to see results before that timer runs out.</p>
+<p>Your license key: <code style="background:#f4f4f4;padding:4px 8px;border-radius:4px">${l.key}</code></p>
+<p>Or grab the setup guide: <a href="https://influentia.io/start">influentia.io/start</a></p>
+<p>Cheers,<br>Erm</p>
+</body></html>`;
+
+      try {
+        const res = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${c.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: 'Influentia <hello@influentia.io>',
+            to: [l.email],
+            subject: 'Need a hand getting started with Influentia?',
+            html: emailHtml,
+          }),
+        });
+
+        if (res.ok) {
+          console.log(`Nudge sent to ${l.email} (day ${daysAgo})`);
+          sent++;
+        } else {
+          console.error(`Failed to nudge ${l.email}: ${res.status}`);
+        }
+      } catch (err) {
+        console.error(`Error nudging ${l.email}:`, err);
+      }
+    }
+
+    return c.json({ sent, message: `${sent} nudge email(s) sent` });
+  } catch (error) {
+    console.error('Nudge inactive error:', error);
+    return c.json({ error: 'Failed to send nudges' }, 500);
+  }
+});
+
+// POST /api/admin/retention-emails - Full retention email system (runs daily)
+app.post('/api/admin/retention-emails', async (c) => {
+  try {
+    const { results } = await c.env.DB.prepare(
+      `SELECT key, email, tier, trial_ends_at, subscription_status, created_at, last_seen_at
+       FROM licenses ORDER BY created_at DESC LIMIT 100`
+    ).all();
+
+    const now = Math.floor(Date.now() / 1000);
+    const sent: Array<{ email: string; type: string }> = [];
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function sendEmail(email: string, subject: string, html: string) {
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${c.env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ from: 'Influentia <hello@influentia.io>', to: [email], subject, html }),
+      });
+      if (res.ok) {
+        console.log(`[EMAIL] ${subject} -> ${email}`);
+        sent.push({ email, type: subject });
+        return true;
+      }
+      console.error(`[FAIL] Email to ${email}: ${res.status}`);
+      return false;
+    }
+
+    for (const l of results as any[]) {
+      if (!l.email || !l.email.includes('@')) continue;
+      if (l.tier !== 'trial' && l.tier !== 'beta') continue;
+
+      const daysSinceSignup = Math.floor((now - l.created_at) / 86400);
+      const hasActivity = !!l.last_seen_at;
+      const daysLeft = l.trial_ends_at ? Math.max(0, Math.ceil((l.trial_ends_at - now) / 86400)) : 14;
+      const key = l.key;
+
+      // ── DAY 2: Inactive nudge (no activity, 2+ days) ──────────────
+      if (daysSinceSignup >= 2 && !hasActivity) {
+        await sendEmail(l.email, 'Need a hand getting started with Influentia?', `
+<html><body style="font-family:-apple-system,sans-serif;max-width:560px;margin:0 auto;padding:20px">
+<p>Hey there,</p>
+<p>I'm the founder of Influentia. I noticed you signed up <strong>${daysSinceSignup} days ago</strong> but haven't run a scan yet.</p>
+<p>Usually this means one of two things:</p><ol>
+<li><strong>Setup got stuck</strong> — the install confused you, or the app won't open.</li>
+<li><strong>ICP is hard to define</strong> — you're not sure what keywords to use.</li></ol>
+<p><strong>Reply to this email</strong> and tell me which one. I'll personally walk you through the fix in 5 minutes.</p>
+<p>Your license key: <code style="background:#f4f4f4;padding:4px 8px;border-radius:4px">${key}</code></p>
+<p><a href="https://influentia.io/start" style="color:#7c6aff;font-weight:600">Setup Guide →</a></p>
+<p>Cheers,<br>Erm</p></body></html>`);
+
+      // ── DAY 5: Check-in (active but slow) ─────────────────────────
+      } else if (daysSinceSignup >= 5 && hasActivity && daysLeft >= 5 && daysLeft <= 8) {
+        await sendEmail(l.email, 'How are your first signals looking?', `
+<html><body style="font-family:-apple-system,sans-serif;max-width:560px;margin:0 auto;padding:20px">
+<p>Hey,</p>
+<p>Day ${daysSinceSignup}. How's the first batch of signals looking?</p>
+<p>If you haven't found any quality leads yet, it usually means your ICP needs tightening. The AI needs a specific target — not "anyone who might buy." Reply with your ideal customer description and I'll help you dial it in.</p>
+<p>Remember: <strong>3 relevant signals > 300 cold messages.</strong> Quality compounds.</p>
+<p>Founding members lock in <strong>$97/mo forever</strong>. This pricing goes away once we launch publicly.</p>
+<p>Cheers,<br>Erm</p></body></html>`);
+
+      // ── DAY 7: Halfway urgency ────────────────────────────────────
+      } else if (daysLeft >= 6 && daysLeft <= 7) {
+        await sendEmail(l.email, 'Halfway point — let\'s get you results', `
+<html><body style="font-family:-apple-system,sans-serif;max-width:560px;margin:0 auto;padding:20px">
+<p>Hey,</p>
+<p>You're halfway through your 14-day trial. <strong>${daysLeft} days left.</strong></p>
+<p>If you haven't had a reply yet, it's usually because:</p><ol>
+<li>Your ICP is too broad (the AI can't score relevance well)</li>
+<li>You're scanning the wrong subreddits/LinkedIn groups</li>
+<li>You haven't approved enough drafts yet (the AI learns from your edits)</li></ol>
+<p><strong>Reply with "FIX"</strong> and I'll run a free audit of your settings. Takes me 10 minutes, saves you days of trial-and-error.</p>
+<p>Founding members lock in the <strong>$97/mo legacy price forever</strong>. After launch it goes to $149. But the legacy rate only applies if you stay active during the trial.</p>
+<p>Cheers,<br>Erm</p></body></html>`);
+
+      // ── DAY 13: Last day warning ──────────────────────────────────
+      } else if (daysLeft >= 1 && daysLeft <= 1) {
+        await sendEmail(l.email, 'Last day — don\'t lose your founding member rate', `
+<html><body style="font-family:-apple-system,sans-serif;max-width:560px;margin:0 auto;padding:20px">
+<p>Hey,</p>
+<p><strong>Tomorrow is your last day.</strong></p>
+<p>If you've been getting value from Influentia — and you want to keep your <strong>$97/mo founding member rate forever</strong> (vs. $149/mo at launch) — you need to upgrade before your trial ends.</p>
+<p><a href="https://influentia.io" style="display:inline-block;background:#7c6aff;color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;text-decoration:none">Upgrade and lock in $97/mo →</a></p>
+<p>14-day money-back guarantee. Zero risk. And your data — leads, signals, settings — all stay safe locally.</p>
+<p>If you have questions, reply. I'm around.</p>
+<p>Cheers,<br>Erm</p></body></html>`);
+      }
+    }
+
+    return c.json({ sent, count: sent.length, message: `${sent.length} retention email(s) sent` });
+  } catch (error) {
+    console.error('Retention emails error:', error);
+    return c.json({ error: 'Failed to send retention emails' }, 500);
+  }
+});
+
 // POST /api/portal - Create Stripe customer portal session
 app.post('/api/portal', async (c) => {
   try {
