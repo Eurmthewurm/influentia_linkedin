@@ -496,11 +496,12 @@ async function sendEmail(email: string, subject: string, html: string) {
 
       const daysSinceSignup = Math.floor((now - l.created_at) / 86400);
       const hasActivity = !!l.last_seen_at;
+      const isStuck = hasActivity && ((now - l.last_seen_at) > 3 * 86400); // active >3 days ago, then stopped
       const daysLeft = l.trial_ends_at ? Math.max(0, Math.ceil((l.trial_ends_at - now) / 86400)) : 14;
       const key = l.key;
 
       // ── DAY 2: Inactive nudge (no activity, 2+ days) ──────────────
-      if (daysSinceSignup >= 2 && !hasActivity) {
+      if (daysSinceSignup >= 2 && !hasActivity && !isStuck) {
         await sendEmail(l.email, 'Need a hand getting started with Influentia?', `
 <html><body style="font-family:-apple-system,sans-serif;max-width:560px;margin:0 auto;padding:20px">
 <p>Hey there,</p>
@@ -513,8 +514,19 @@ async function sendEmail(email: string, subject: string, html: string) {
 <p><a href="https://influentia.io/start" style="color:#7c6aff;font-weight:600">Setup Guide →</a></p>
 <p>Cheers,<br>Erm</p></body></html>`);
 
+      // ── DAY 3-6: "Stuck" detection (scanned once, then vanished) ─
+      } else if (isStuck) {
+        await sendEmail(l.email, 'Did something go wrong with your signals?', `
+<html><body style="font-family:-apple-system,sans-serif;max-width:560px;margin:0 auto;padding:20px">
+<p>Hey,</p>
+<p>I saw you ran a scan a few days ago, but then things went quiet. That usually means one thing:</p>
+<p><strong>The signals didn't look relevant to you.</strong></p>
+<p>That's actually a good sign — it means your standards are high (which is how you avoid spamming). It just means your ICP needs tightening. The AI needs a specific target, not "anyone who might buy."</p>
+<p>Reply with your ideal customer description and I'll help you dial in the settings in 5 minutes. I want to make sure you find at least one quality lead this week.</p>
+<p>Cheers,<br>Erm</p></body></html>`);
+
       // ── DAY 5: Check-in (active but slow) ─────────────────────────
-      } else if (daysSinceSignup >= 5 && hasActivity && daysLeft >= 5 && daysLeft <= 8) {
+      } else if (hasActivity && daysSinceSignup >= 5 && daysLeft >= 5 && daysLeft <= 8) {
         await sendEmail(l.email, 'How are your first signals looking?', `
 <html><body style="font-family:-apple-system,sans-serif;max-width:560px;margin:0 auto;padding:20px">
 <p>Hey,</p>
