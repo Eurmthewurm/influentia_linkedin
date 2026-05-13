@@ -683,6 +683,59 @@
   .anatomy-leg p .src{display:block;margin-top:6px;font-family:var(--mono);font-size:10.5px;color:var(--mute);letter-spacing:0.08em}
   .anatomy-leg p .src b{color:var(--accent-2);font-weight:500}
 
+  /* ROI Calculator */
+  .roi{border-top:1px solid var(--line);padding:80px 0}
+  .roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .roi-form{display:flex;flex-direction:column;gap:20px}
+  .roi-field label{display:block;font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px}
+  .roi-field input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
+  .roi-field .range-val{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--dim)}
+  .roi-results{display:flex;flex-direction:column;gap:24px}
+  .roi-card{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:28px;position:relative;overflow:hidden}
+  .roi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+  .roi-card.signal::before{background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+  .roi-card.reply::before{background:linear-gradient(90deg,var(--success),#6ee7b7)}
+  .roi-card.revenue::before{background:linear-gradient(90deg,var(--warn),#fbbf24)}
+  .roi-num{font-size:42px;font-weight:800;letter-spacing:-2px;line-height:1;color:var(--text);margin-bottom:4px}
+  .roi-label{font-size:13px;color:var(--dim)}
+  .roi-card small{display:block;margin-top:8px;font-size:11px;color:var(--mute);font-family:var(--mono)}
+  .roi-cta{margin-top:28px;font-size:13px;color:var(--dim);line-height:1.7}
+  .roi-cta strong{color:var(--text)}
+
+  /* Intelligence Moat */
+  .moat{border-top:1px solid var(--line);padding:80px 0}
+  .moat-head{text-align:center;margin-bottom:48px}
+  .moat-head .eyebrow{margin-bottom:12px}
+  .moat-head h2{margin-bottom:12px}
+  .moat-head p{max-width:480px;margin:0 auto;color:var(--dim);font-size:15px}
+  .moat-timeline{position:relative;max-width:640px;margin:0 auto}
+  .moat-timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:var(--line)}
+  .moat-step{position:relative;padding-left:56px;margin-bottom:40px}
+  .moat-step:last-child{margin-bottom:0}
+  .moat-dot{position:absolute;left:10px;top:0;width:22px;height:22px;border-radius:50%;background:var(--s2);border:2px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:9.5px;font-weight:700;color:var(--accent-2)}
+  .moat-step:last-child .moat-dot{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 0 16px rgba(124,106,255,.4)}
+  .moat-step h4{font-size:15px;font-weight:600;letter-spacing:-0.01em;margin-bottom:6px;color:var(--text)}
+  .moat-step p{font-size:13px;color:var(--dim);line-height:1.6}
+  .moat-note{margin-top:48px;text-align:center;padding:20px 24px;background:rgba(124,106,255,.06);border:1px solid rgba(124,106,255,.15);border-radius:12px;font-size:15px;font-weight:500;color:var(--text)}
+  .moat-note em{color:var(--accent-2);font-style:normal}
+
+  /* Return / What You Missed */
+  .return-section{border-top:1px solid var(--line);padding:80px 0}
+  .return-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+  .return-mock{background:var(--s1);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+  .return-bar{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  .return-bar .dot{width:8px;height:8px;border-radius:50%;background:var(--success);box-shadow:0 0 8px rgba(52,211,153,.5)}
+  .return-bar span{font-size:13px;font-weight:600;color:var(--text)}
+  .return-body{padding:20px}
+  .return-row{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  .return-row:last-child{border-bottom:none}
+  .return-row .sig{font-size:13px;color:var(--text)}
+  .return-row .score{font-family:var(--mono);font-size:11px;color:var(--accent-2);background:rgba(124,106,255,.1);padding:2px 8px;border-radius:4px}
+  .return-missed{text-align:center;font-size:24px;font-weight:700;color:#fbbf24;margin-top:8px;padding:12px;background:rgba(251,191,36,.06);border-radius:8px}
+  .return-text h2{margin-bottom:16px}
+  .return-text p{font-size:15px;color:var(--dim);line-height:1.7;margin-bottom:16px}
+  .return-text strong{color:var(--text)}
+
 </style>
 </head>
 <body>
@@ -1196,6 +1249,124 @@
       <div class="box"><span class="box-n">12</span><h4>Local Vault</h4><p>SQLite on your disk. Encrypted at rest. Export to CSV, JSON in two clicks.</p></div>
     </div>
     <div class="inside-foot"><span>Roadmap → team seats (Q3), CRM 2-way sync (Q3), mobile approver app (Q4)</span></div>
+  </div>
+</section>
+
+<!-- ROI Calculator -->
+<section class="roi" id="roi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">What it's worth</div>
+      <h2>One deal pays for the year.</h2>
+      <p>Drag the sliders. See the math. This isn't hope — it's arithmetic.</p>
+    </div>
+    <div class="roi-grid reveal-stagger">
+      <div class="roi-form">
+        <div class="roi-field">
+          <label>Deal size</label>
+          <input type="range" id="roiDeal" min="500" max="25000" step="500" value="2400" oninput="updateROI()">
+          <div class="range-val"><span>$500</span><span id="roiDealVal">$2,400</span><span>$25,000</span></div>
+        </div>
+        <div class="roi-field">
+          <label>Conversion rate (signal → reply)</label>
+          <input type="range" id="roiConv" min="5" max="40" step="1" value="15" oninput="updateROI()">
+          <div class="range-val"><span>5%</span><span id="roiConvVal">15%</span><span>40%</span></div>
+        </div>
+        <div class="roi-field">
+          <label>Signals per week</label>
+          <input type="range" id="roiSignals" min="1" max="20" step="1" value="5" oninput="updateROI()">
+          <div class="range-val"><span>1</span><span id="roiSignalsVal">5</span><span>20</span></div>
+        </div>
+      </div>
+      <div class="roi-results">
+        <div class="roi-card signal">
+          <div class="roi-num" id="roiMonthly">32</div>
+          <div class="roi-label">Qualified signals per month</div>
+          <small>Based on your ICP and niche volume</small>
+        </div>
+        <div class="roi-card reply">
+          <div class="roi-num" id="roiReplies">5</div>
+          <div class="roi-label">Conversations started per month</div>
+          <small>Real replies — not opens or clicks</small>
+        </div>
+        <div class="roi-card revenue">
+          <div class="roi-num" id="roiRev">$12,000</div>
+          <div class="roi-label">Pipeline value per month</div>
+          <small>124x your $97/mo subscription</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Intelligence Moat -->
+<section class="moat" id="moat">
+  <div class="wrap">
+    <div class="moat-head reveal">
+      <div class="eyebrow">Why it compounds</div>
+      <h2>The more you use it, the smarter it gets.</h2>
+      <p>Influentia doesn't just send messages — it builds a proprietary profile of your buyers that no competitor can replicate.</p>
+    </div>
+    <div class="moat-timeline reveal-stagger">
+      <div class="moat-step">
+        <div class="moat-dot">d1</div>
+        <h4>First scan — broad signal discovery</h4>
+        <p>Influentia casts a wide net across Reddit and LinkedIn. You get raw signals, some on-target, most are noise.</p>
+      </div>
+      <div class="moat-step">
+        <div class="moat-dot">d3</div>
+        <h4>ICP learns from your approvals</h4>
+        <p>Every approve and edit trains the scoring model. After 15 interactions, irrelevant signals drop off naturally.</p>
+      </div>
+      <div class="moat-step">
+        <div class="moat-dot">d7</div>
+        <h4>Drafts sound like you, not a bot</h4>
+        <p>The Voice Fingerprint adapts to your edits. Drafts shift from "close enough" to "that's exactly how I write."</p>
+      </div>
+      <div class="moat-step">
+        <div class="moat-dot">d14</div>
+        <h4>Signal prediction before they're obvious</h4>
+        <p>After 10 scans, Influentia knows the language patterns of your niche. It starts surfacing leads <strong>2 days before</strong> the buyer posts a buying signal.</p>
+      </div>
+    </div>
+    <div class="moat-note reveal">
+      Competitors can't copy this. The intelligence lives on <em>your</em> machine. It's your asset, not ours.
+    </div>
+  </div>
+</section>
+
+<!-- What You Missed (Return Hook) -->
+<section class="return-section" id="return">
+  <div class="wrap">
+    <div class="return-grid reveal-stagger">
+      <div class="return-mock">
+        <div class="return-bar">
+          <span class="dot"></span>
+          <span>Influentia — While You Were Away</span>
+        </div>
+        <div class="return-body">
+          <div class="return-row">
+            <span class="sig">"Looking for alternatives to X — budget $800/mo"</span>
+            <span class="score">9.4</span>
+          </div>
+          <div class="return-row">
+            <span class="sig">"How do you scale outreach without going bankrupt?"</span>
+            <span class="score">9.1</span>
+          </div>
+          <div class="return-row">
+            <span class="sig">"Our current tool costs $400/mo and sends spam"</span>
+            <span class="score">8.8</span>
+          </div>
+          <div class="return-missed">7 signals · 3 missed</div>
+        </div>
+      </div>
+      <div class="return-text">
+        <div class="eyebrow">While you sleep</div>
+        <h2>Here's what you missed while you were away.</h2>
+        <p>Every morning, Influentia shows you exactly what buyers said about your problem <strong>while your inbox was closed</strong>. No guesswork. No FOMO. Just the 7 signals that matter.</p>
+        <p>This is the difference between a list you build once and a <strong>live intelligence feed</strong> that never stops.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1785,6 +1956,22 @@
     // Refresh every 5 minutes
     setInterval(refresh, 300000);
   })();
+
+  // ===== ROI CALCULATOR =====
+  function updateROI(){
+    var deal = parseInt(document.getElementById('roiDeal').value);
+    var conv = parseInt(document.getElementById('roiConv').value);
+    var signals = parseInt(document.getElementById('roiSignals').value);
+    var monthly = Math.round(signals * 4.3);
+    var replies = Math.round(monthly * (conv / 100));
+    var revenue = replies * deal;
+    document.getElementById('roiDealVal').textContent = '$' + deal.toLocaleString();
+    document.getElementById('roiConvVal').textContent = conv + '%';
+    document.getElementById('roiSignalsVal').textContent = signals;
+    document.getElementById('roiMonthly').textContent = monthly;
+    document.getElementById('roiReplies').textContent = replies;
+    document.getElementById('roiRev').textContent = '$' + revenue.toLocaleString();
+  }
 </script>
 
 </body>
