@@ -313,6 +313,37 @@ LICENSE_CACHE_TTL_S = 12 * 60 * 60  # 12 hours
 UPGRADE_URL_BASE    = "https://influentia.io/account"
 
 
+# ── Daily usage tracking (scan cap per user) ─────────────────────────
+DAILY_SCAN_CAP = 50
+
+def _today():
+    from datetime import date
+    return date.today().isoformat()
+
+def _load_usage():
+    """Return today's scan count, reset if new day."""
+    lic = _load_license() or {}
+    scan_date = lic.get("scan_date", "")
+    scan_count = lic.get("daily_scan_count", 0)
+    # Reset counter when date changes (UTC-based)
+    if scan_date != _today():
+        scan_count = 0
+        scan_date = _today()
+        lic["scan_date"] = scan_date
+        lic["daily_scan_count"] = 0
+        _save_license(lic)
+    return scan_count
+
+def _increment_scan():
+    """Increment today's scan count and return new total."""
+    lic = _load_license() or {}
+    count = lic.get("daily_scan_count", 0) + 1
+    lic["daily_scan_count"] = count
+    lic["scan_date"] = _today()
+    _save_license(lic)
+    return count
+
+
 def _load_license():
     """Return the cached license dict, or None if no license is stored yet."""
     if not os.path.exists(LICENSE_FILE):
@@ -819,6 +850,18 @@ class DashboardHandler(SimpleHTTPRequestHandler):
             if cmd not in valid:
                 self._json_response({"ok": False, "error": f"Unknown command: {cmd}"}, 400)
                 return
+
+            # Daily scan cap: limit scans per user to prevent abuse/credit drain
+            if cmd in ("scan", "scan_posts", "find_leads"):
+                current = _load_usage()
+                if current >= DAILY_SCAN_CAP:
+                    self._json_response({
+                        "ok": False,
+                        "error": f"Daily scan cap reached ({DAILY_SCAN_CAP}/day). Resets at midnight.",
+                        "error_code": "daily_limit_reached",
+                    }, 429)
+                    return
+                _increment_scan()
             # Pass keywords to scan_posts so the user's input is actually used
             extra_args = []
             if cmd == "scan_posts":
