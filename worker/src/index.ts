@@ -348,6 +348,46 @@ app.post('/api/license/validate', async (c) => {
   }
 });
 
+// GET /api/admin/licenses - List all licenses (for morning briefing)
+app.get('/api/admin/licenses', async (c) => {
+  try {
+    const { results } = await c.env.DB.prepare(
+      `SELECT key, email, tier, trial_ends_at, subscription_status,
+              current_period_end, created_at, last_seen_at
+       FROM licenses ORDER BY created_at DESC LIMIT 100`
+    ).all();
+
+    const now = Math.floor(Date.now() / 1000);
+    const two_days_ago = now - 2 * 86400;
+
+    return c.json({
+      total: results.length,
+      licenses: (results as any[]).map((l: any) => {
+        const trialEnded = l.tier === 'trial' && l.trial_ends_at && l.trial_ends_at < now;
+        const tier = trialEnded ? 'expired' : l.tier;
+        const daysAgo = Math.floor((now - l.created_at) / 86400);
+        const lastSeenHoursAgo = l.last_seen_at
+          ? Math.floor((now - l.last_seen_at) / 3600)
+          : null;
+        const hasNoActivity = !l.last_seen_at || lastSeenHoursAgo! > 48;
+
+        return {
+          key_masked: '••••-' + (l.key || '').slice(-4),
+          email: l.email,
+          tier,
+          days_since_signup: daysAgo,
+          last_seen_hours_ago: lastSeenHoursAgo,
+          inactive: hasNoActivity && daysAgo >= 2,
+          trial_ends_soon: l.tier === 'trial' && l.trial_ends_at && (l.trial_ends_at - now) < 3 * 86400,
+        };
+      }),
+    });
+  } catch (error) {
+    console.error('Admin licenses error:', error);
+    return c.json({ error: 'Failed to fetch licenses' }, 500);
+  }
+});
+
 // POST /api/portal - Create Stripe customer portal session
 app.post('/api/portal', async (c) => {
   try {
