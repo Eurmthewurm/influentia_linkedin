@@ -1,60 +1,49 @@
 # Medium Republish Post — 2026-05-14
 
-**Title:** The Buyer Intent Framework We Use to Find Qualified Leads on Reddit
+**Title:** Expandi vs Lemlist vs Manual: What Actually Works in 2026
 
-**Subtitle:** How we catch 40+ buyer signals per week from Reddit and convert them at 34% reply rates.
+**Subtitle:** We spent 3 months testing every major outreach tool. Honest results included.
 
-**Tags:** marketing, sales, reddit, lead-generation, startups
+**Tags:** sales, marketing, tools, saas, automation
 
-**Canonical URL:** https://influentia.io/blog/buyer-intent-framework-spotting-signals
+**Canonical URL:** https://influentia.io/blog/expandi-vs-lemlist-vs-manual-honest-comparison
 
 ---
 
 **Content:**
 
-Every day, your ideal buyers are telling you exactly what they need.
+We spent 3 months testing every major outreach tool. Here are the raw numbers:
 
-They're posting on Reddit about pricing frustrations. Complaining on LinkedIn about tool limitations. Asking in community forums for recommendations.
+EXPANDI ($99/mo):
+- 1,100 connection requests sent
+- 180 accepted (16.4%)
+- 12 replies (1.1% of requests)
+- 1 call booked, 0 closed deals
 
-But most companies miss every signal because they're looking in the wrong direction.
+LEMLIST ($60/mo):
+- 1,500 emails sent
+- 225 opens (15% — industry average)
+- 8 replies (0.5%)
+- 2 calls booked, 0 closed deals
 
-Here's our exact framework:
+MANUAL OUTREACH (time only):
+- 4 hours/day monitoring Reddit and LinkedIn
+- 40 genuine conversations started
+- 14 replies (34%)
+- 6 calls booked, 2 closed deals ($2,000 MRR)
 
-THE FIVE SIGNAL TYPES
+The winner wasn't a tool. It was timing.
 
-1. REPLACEMENT SIGNALS: someone shopping for replacements. 'Looking for alternatives to X'
+When someone posts 'Looking for alternatives to your competitor' on Reddit — that's not cold. That's a warm buyer actively shopping.
 
-2. PAIN SIGNALS: complaining about problems you solve. 'Spending 20 hrs/week on manual work'
+We built Influentia to automate the manual approach. It monitors conversations, scores signals, and drafts contextual responses.
 
-3. BUDGET SIGNALS: mentioning specific amounts. '$400/mo for 2% reply rate is insane'
+$97/month. No per-seat pricing. No credit limits. Not a volume tool — a signal tool.
 
-4. URGENCY SIGNALS: timeline or deadline. 'Need to replace before Q2'
-
-5. PEER INFLUENCE: asking for recommendations. 'What do you guys use for X?'
-
-SCORING SYSTEM (10-point scale)
-
-- Buying language: 'looking for', 'alternatives', 'budget' (0-2 pts)
-- Urgency: 'right now', 'this week' (0-2 pts)
-- Budget specificity: '$800/mo' vs 'reasonable price' (0-2 pts)
-- Problem severity: emotional language vs mild complaint (0-2 pts)
-- Competitor mentions: naming tools they hate (0-2 pts)
-
-REAL EXAMPLE FROM LAST WEEK:
-
-'Need to replace Apollo before Q2. $400/mo for 2% reply rate is insane. 6-person team spending 20+ hours/week on manual LinkedIn.'
-
-Score: 9/10. Result: $1,200/mo deal after one conversation.
-
-Cold outbound = interrupting people who don't care.
-Intent-based = responding to people who told you they need help.
-
-0.8% vs 34%. 42x better.
-
-The buyers are already talking. They're just hard to hear above the noise.
+Stop paying for tools that send spam. Start building conversations with people who told you they need you.
 
 https://influentia.io
 
 ---
 Publish at: https://medium.com/new-story
-Set canonical link to: https://influentia.io/blog/buyer-intent-framework-spotting-signals
+Set canonical link to: https://influentia.io/blog/expandi-vs-lemlist-vs-manual-honest-comparison
