@@ -30963,3 +30963,22 @@ Call log:
 2026-05-13 23:09:31,466 [INFO] 🔄 [auto-scan] scan added 0 new signals
 2026-05-13 23:09:31,470 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
 2026-05-13 23:09:31,473 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-13 23:38:38,990 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-13 23:38:39,878 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-13 23:38:39,879 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-13 23:38:41,774 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-13 23:38:41,775 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-13 23:38:43,612 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-13 23:38:43,613 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-13 23:38:45,580 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-13 23:38:45,581 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-13 23:38:47,528 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-13 23:38:47,528 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-13 23:38:49,092 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-13 23:38:49,093 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-13 23:38:50,159 [INFO] Reddit Signal: 70 unique raw posts collected
+2026-05-13 23:38:50,160 [INFO] Reddit Signal: 70 posts collected — AI scoring now…
+2026-05-13 23:39:47,980 [INFO] Reddit Signal: saved 0 new signals.
+2026-05-13 23:39:47,980 [INFO] 🔄 [auto-scan] scan added 0 new signals
+2026-05-13 23:39:47,985 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-13 23:39:47,990 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps

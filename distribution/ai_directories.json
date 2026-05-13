@@ -1,0 +1,64 @@
+[
+  {
+    "name": "Theres An AI For That",
+    "url": "https://theresanaiforthat.com/submit",
+    "type": "AI Directory",
+    "status": "pending"
+  },
+  {
+    "name": "Futurepedia",
+    "url": "https://www.futurepedia.io/submit-tool",
+    "type": "AI Directory",
+    "status": "pending"
+  },
+  {
+    "name": "Toolify.ai",
+    "url": "https://www.toolify.ai/submit-tool",
+    "type": "AI Directory",
+    "status": "pending"
+  },
+  {
+    "name": "TopAI.tools",
+    "url": "https://topai.tools/submit",
+    "type": "AI Directory",
+    "status": "pending"
+  },
+  {
+    "name": "Opentools.ai",
+    "url": "https://opentools.ai/submit",
+    "type": "AI Directory",
+    "status": "pending"
+  },
+  {
+    "name": "100AI.tools",
+    "url": "https://100ai.tools/submit",
+    "type": "AI Directory",
+    "status": "pending"
+  },
+  {
+    "name": "AI Scout",
+    "url": "https://aiscout.net/submit",
+    "type": "AI Directory",
+    "status": "pending"
+  },
+  {
+    "name": "Product Hunt",
+    "url": "https://www.producthunt.com/posts/new",
+    "type": "Launch Platform",
+    "status": "pending"
+  },
+  {
+    "name": "AlternativeTo",
+    "url": "https://alternativeto.net/about/addsoftware.aspx",
+    "type": "Alternative Directory",
+    "status": "pending",
+    "note": "Submit as alternative to Expandi, Lemlist, Apollo.io"
+  },
+  {
+    "name": "aicrawler.com",
+    "url": "https://aicrawler.com",
+    "type": "AI Directory",
+    "status": "pending",
+    "note": "Focus on intent monitoring niche"
+  }
+]
