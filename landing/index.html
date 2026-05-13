@@ -736,6 +736,9 @@
           <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
         </div>
         <div class="hero-meta">
+          <div id="betaCounter" style="opacity:0;transition:opacity 0.8s ease">
+            <span class="counter-pulse"></span><span id="betaCount">🟢 Active now</span><span style="color:var(--accent)"> — Founding member pricing · 10 spots</span>
+          </div>
           <div>No templates — AI reads their posts, writes something unique</div>
           <div>Runs on your machine, your IP — LinkedIn sees a human</div>
           <div>You approve every send. Nothing blasts without you.</div>
@@ -1744,6 +1747,44 @@
     if(f){ f.src = ''; }
   }
   document.addEventListener('keydown', e => { if(e.key === 'Escape') closeDemoBtn(); });
+
+  // ===== LIVE BETA COUNTER (pulls from worker admin endpoint) =====
+  (function(){
+    const el = document.getElementById('betaCounter');
+    const countEl = document.getElementById('betaCount');
+    if(!el || !countEl) return;
+
+    const TOTAL_SPOTS = 10;
+    const WORKER_LICENSES = 'https://outreach-pilot-api-production.plain-king-ead0.workers.dev/api/admin/licenses';
+
+    async function refresh(){
+      try{
+        const res = await fetch(WORKER_LICENSES, { cache: 'no-cache' });
+        if(!res.ok) return;
+        const data = await res.json();
+        const licenses = data.licenses || [];
+        // Count only trial/beta (not expired)
+        const active = licenses.filter(l => l.tier === 'trial' || l.tier === 'beta').length;
+        const spots = Math.max(0, TOTAL_SPOTS - active);
+
+        if(active > 0){
+          countEl.innerHTML = `\U0001f7e2 <strong>${active}</strong> founding member${active === 1 ? '' : 's'} active${spots > 0 ? ' · <span style="color:var(--accent)">' + spots + ' spot' + (spots === 1 ? '' : 's') + ' left</span>' : ' · <span style="color:#f59e0b">Waitlist only</span>'}`;
+        } else {
+          countEl.innerHTML = `\U0001f7e2 Early access · <span style="color:var(--accent)">${TOTAL_SPOTS} founding member spots available</span>`;
+        }
+
+        el.style.opacity = '1';
+      } catch(e){
+        // Fallback if worker is down
+        countEl.innerHTML = `\U0001f7e2 Early access · Founding member pricing`;
+        el.style.opacity = '1';
+      }
+    }
+    // Initial fetch after 2s delay (page load)
+    setTimeout(refresh, 2000);
+    // Refresh every 5 minutes
+    setInterval(refresh, 300000);
+  })();
 </script>
 
 </body>
