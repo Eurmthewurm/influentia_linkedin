@@ -18,6 +18,9 @@ for name, script in [
     ("Blog Post", "generate_blog_post.py"),
     ("Social Drafts", "generate_social_drafts.py"),
     ("Reddit Opps", "find_reddit_opportunities.py"),
+    ("Alt Platforms", "generate_alt_platforms.py"),
+    ("Medium Post", "generate_medium_posts.py"),
+    ("Quora Answer", "generate_quora_answers.py"),
 ]:
     lines.append(f"\n--- {name} ---")
     r = subprocess.run([sys.executable, os.path.join(DIST, script)],
