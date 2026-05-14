@@ -2923,9 +2923,13 @@ Reply with ONLY the new comment text. No quotes, no preamble."""
         if path == "/api/license":
             # Activate a license key. Body: {"key": "XXXX-XXXX-..."}.
             # Validates with the Worker, caches locally.
+            # If body also contains "email", the email is saved to the local
+            # license cache and (best-effort) pushed to the Worker for D1 storage.
             try:
                 data = json.loads(body) if body else {}
                 key  = (data.get("key") or "").strip()
+                # NEW: capture email from signup form and store locally
+                signup_email = (data.get("email") or "").strip().lower()
                 if not key:
                     self._json_response(
                         {"ok": False, "error": "License key is required."}, 400,
@@ -2938,8 +2942,40 @@ Reply with ONLY the new comment text. No quotes, no preamble."""
                 # keys, and the case where the worker isn't deployed yet.
                 existing = _load_license() or {}
                 if existing.get("key") == key and existing.get("tier") in ("active", "trial"):
+                    # If we received a signup email, store it locally
+                    if signup_email:
+                        existing["email"] = signup_email
+                        _save_license(existing)
+                        # Best-effort: push email to Worker D1 for future reachability
+                        try:
+                            from urllib.request import urlopen, Request
+                            from urllib.error import URLError
+                            WorkerUrl = os.environ.get("WORKER_URL",
+                                "https://outreach-pilot-api-production.plain-king-ead0.workers.dev")
+                            rq = Request(f"{WorkerUrl}/api/license/register",
+                                data=json.dumps({"key": key, "email": signup_email}).encode(),
+                                headers={"Content-Type": "application/json"},
+                                method="POST")
+                            urlopen(rq, timeout=5)
+                        except Exception:
+                            pass  # best-effort, don't fail activation
                     self._json_response({"ok": True, **_license_state()})
                     return
+
+                # For the email from the Worker's register endpoint (new)
+                if signup_email:
+                    try:
+                        from urllib.request import urlopen, Request
+                        from urllib.error import URLError
+                        WorkerUrl = os.environ.get("WORKER_URL",
+                            "https://outreach-pilot-api-production.plain-king-ead0.workers.dev")
+                        rq = Request(f"{WorkerUrl}/api/license/register",
+                            data=json.dumps({"key": key, "email": signup_email}).encode(),
+                            headers={"Content-Type": "application/json"},
+                            method="POST")
+                        urlopen(rq, timeout=5)
+                    except Exception:
+                        pass  # best-effort, don't fail activation
 
                 fresh = _check_license_with_worker(key)
                 if fresh is None:

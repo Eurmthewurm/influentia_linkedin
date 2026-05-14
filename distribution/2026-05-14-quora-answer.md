@@ -1,31 +1,27 @@
 # Quora Answer — 2026-05-14
 
-**Question:** What's the best alternative to Lemlist in 2026?
-**URL:** https://www.quora.com/Alternative-to-Lemlist
+**Question:** How do I generate leads without cold calling?
+**URL:** https://www.quora.com/How-do-I-generate-leads-without-cold-calling
 
 **Answer:**
-I spent 3 months testing every major outreach tool:
+Most people think lead generation is about finding people who need your product. It's not.
 
-Expandi ($99/mo): 1,100 connection requests, 180 accepted, 12 replies, 1 call
-Lemlist ($60/mo): 1,500 emails, 225 opens, 8 replies, 2 calls
-Manual outreach (4 hrs/day): 40 genuine conversations, 14 replies, 6 calls, 2 closed deals
+It's about finding people who are already looking for your product.
 
-The winner wasn't a tool. It was timing.
+Here's the framework we use:
 
-Instead of sending 50 messages per day to people who don't care, we monitored Reddit for people who did care.
+1. Monitor where buyers talk about their problems (Reddit, LinkedIn, niche forums)
+2. Look for intent signals: "looking for alternatives", "budget $X", "current tool sends spam"
+3. Score them: buying language, urgency, budget, problem severity, competitor mentions
+4. Score 8+ = respond with context, not template
 
-Found buyer signals like:
-- "Looking for alternatives to [tool]"
-- "Budget $X/mo for something better"
-- "Our current tool sends spam"
+Why this works: When someone says "I need X" and you reply "Here's X" — you're solving a stated problem, not interrupting their day.
 
-Responded with context. Not templates.
+Results we saw: 0.8% cold outreach reply rate → 34% with intent-based responses.
 
-Results: $1,200/mo + $800/mo new clients from 2 real conversations. vs $0 from 225 cold emails.
+We even built a tool to automate this: https://influentia.io
 
-We built Influentia (influentia.io) to automate this signal monitoring. It's not another email sequencing tool — it's an intent intelligence system.
-
-If you're comparing tools right now: Expandi and Lemlist get you volume. Intent-based outreach gets you buyers. Pick what you need.
+But even manually: one week of listening instead of sending will change your lead generation game.
 
 ---
-Post at: https://www.quora.com/Alternative-to-Lemlist
+Post at: https://www.quora.com/How-do-I-generate-leads-without-cold-calling

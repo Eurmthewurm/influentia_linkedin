@@ -73,7 +73,7 @@ Rate this post's buying signal strength on a scale of 1-10:
     },
 
     # ── Influentia: find outreach-tool buyers ─────────────────────────────
-    "influentia": {
+        "influentia": {
         "label":       "Influentia",
         "description": "B2B founders / agency owners / consultants tired of being their own SDR, frustrated with cloud-IP tools (Expandi/Phantombuster/Lemlist), or looking for a privacy-first LinkedIn outreach tool. Customers buy Influentia ($97/mo, local-first).",
         "subreddits": [
@@ -84,6 +84,9 @@ Rate this post's buying signal strength on a scale of 1-10:
             "agency", "consulting", "freelance",
             # Pain-specific subs
             "linkedin", "marketing",
+            # NEW: Broader subs where ICP hangs out
+            "b2bmarketing", "leadgeneration", "solopreneur",
+            "ecommerce", "dropship", "digital_marketing",
         ],
         "queries": [
             # Direct competitor / category complaints (hottest buying signals)
@@ -111,6 +114,17 @@ Rate this post's buying signal strength on a scale of 1-10:
             # Privacy / data concerns
             "linkedin cookie automation",
             "outreach tool privacy",
+            # NEW: More general lead-gen pain (catches r/startups, r/smallbusiness)
+            "how to get B2B leads",
+            "lead generation strategy",
+            "cold outreach not working",
+            "how to find customers",
+            "getting clients for agency",
+            "pipeline empty",
+            "sales automation tool",
+            "prospecting strategy",
+            "outbound sales tips",
+            "B2B customer acquisition",
         ],
         "scoring_criteria": """ICP (Ideal Customer Profile):
 - B2B founder, agency owner, or consultant doing their OWN outreach (not a sales team)

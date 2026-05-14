@@ -372,6 +372,19 @@
     <p class="lede" id="license-lede">Those signals are live. Activate to start replying — every draft goes through you for approval before anything sends.</p>
 
     <div class="field">
+      <label class="label" for="signup-email">Your email</label>
+      <input id="signup-email" class="license-input" type="email" autocomplete="email" spellcheck="false"
+             placeholder="you@company.com">
+    </div>
+
+    <div class="field" style="margin-bottom:16px">
+      <label class="label" for="email">Your email <span class="required">*</span></label>
+      <input id="email" class="license-input" type="email" autocomplete="email" spellcheck="false"
+             placeholder="you@company.com" required>
+      <p class="hint">So we can send you your scan results and account updates. No spam.</p>
+    </div>
+
+    <div class="field">
       <label class="label" for="license">License key</label>
       <input id="license" class="license-input" type="text" autocomplete="off" spellcheck="false"
              placeholder="AAAA-BBBB-CCCC-DDDD-EEEE-FFFF-GG" maxlength="34">
@@ -635,7 +648,20 @@
     btn.classList.add('loading');
     btn.innerHTML = '<span class="spinner"></span>';
     try {
+      const email = (document.getElementById('email').value || '').trim().toLowerCase();
+      if (email) {
+        // Best-effort: register email directly in the Worker's D1 DB
+        await fetch(`${LICENSE_WORKER_URL}/api/license/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ key, email }),
+          mode: 'cors',
+        }).catch(() => {});
+        // Also save locally via POST /api/license so server.py caches it
+        await postJSON('/api/license', { key, email }).catch(() => {});
+      }
       st.license = key; save();
+      st.email = email; save();
       const r = await postJSON('/api/license', { key });
       if (!r.ok) {
         alert((r.data && r.data.error) || "Couldn't validate that key — check your purchase email or contact support@influentia.io.");

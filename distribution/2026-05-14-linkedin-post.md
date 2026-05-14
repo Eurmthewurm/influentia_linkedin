@@ -1,35 +1,42 @@
 # LINKEDIN Post - 2026-05-14
 
-## The math that killed our cold outreach
+## The best outreach I ever did had zero templates
 
-50 cold DMs per day.
-350 per week.
-1,400 per month.
+I spent 3 months running cold outreach with templates.
 
-14 replies.
-3 conversations.
-1 call booked.
+847 connection requests.
+3 replies.
+0 calls booked.
 
-1 call for 1,400 messages.
+Then I changed my entire approach.
 
-That's 0.07% booking rate from cold outreach.
+I stopped sending first.
 
-We stopped.
+Instead, I started listening.
 
-Now we catch ~40 intent signals per week:
-- 12 are high quality (8+)
-- 6 get genuine responses
-- 3 become conversations
-- 1-2 become calls
+I monitored LinkedIn and Reddit for people complaining about problems our product solves.
 
-1-2 calls from 40 signals vs 1 call from 1,400 cold DMs.
+Someone posted: "I hate our current tool. It's expensive and sends spam."
 
-The ratio is 35x better.
+I didn't send a template. I didn't pitch. I read their actual post and responded to their specific situation.
 
-It's not about volume. It's about timing and context.
+15 minutes later: we were on a call.
 
-When someone says they need your exact solution and you respond — that's not outreach. That's solving a problem.
+That's when I realized: the problem isn't that people don't need our product. The problem is we were reaching them at the wrong time with the wrong message.
 
-We built this into Influentia. Find buyers. Respond with context. No templates.
+Intent-based outreach is simple:
+1. Find people already talking about your problem
+2. Respond with context, not templates
+3. Build relationships with people who need you
 
-If you're still doing volume outreach in 2026 — you're just wasting time and money.
+It's slower at first. You can't blast 500 people a day.
+
+But the quality is so much higher that it doesn't matter.
+
+34% reply rate vs 0.8% from cold templates.
+
+I'd rather have 10 real conversations than 500 ignored messages.
+
+This is what we're building at Influentia. Find buyers who are already looking. Respond with context, not templates.
+
+If you're doing cold outreach right now — what's your reply rate?

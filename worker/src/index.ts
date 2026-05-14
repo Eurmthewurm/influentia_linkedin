@@ -266,6 +266,46 @@ app.get('/api/license/by-session', async (c) => {
   }
 });
 
+// POST /api/license/register - Attach email to a license key (used by wizard)
+app.post('/api/license/register', async (c) => {
+  try {
+    const body = await c.req.json<{
+      key: string;
+      email: string;
+    }>();
+    const { key, email } = body;
+    if (!key || !email) {
+      return c.json({ error: 'key and email required' }, 400);
+    }
+    const normalizedEmail = email.trim().toLowerCase();
+
+    const row = await c.env.DB.prepare(
+      'SELECT key, email FROM licenses WHERE key = ?'
+    )
+      .bind(key)
+      .first<{ key: string; email: string | null }>();
+
+    if (!row) {
+      return c.json({ error: 'License key not found' }, 404);
+    }
+
+    if (row.email && row.email.toLowerCase() === normalizedEmail) {
+      return c.json({ ok: true, message: 'Email unchanged' });
+    }
+
+    await c.env.DB.prepare(
+      'UPDATE licenses SET email = ? WHERE key = ?'
+    )
+      .bind(normalizedEmail, key)
+      .run();
+
+    return c.json({ ok: true, message: 'Email registered' });
+  } catch (error) {
+    console.error('Register error:', error);
+    return c.json({ error: 'Failed to register email' }, 500);
+  }
+});
+
 // POST /api/license/validate - Validate a license key
 app.post('/api/license/validate', async (c) => {
   try {

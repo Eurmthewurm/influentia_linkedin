@@ -31020,3 +31020,831 @@ Call log:
 2026-05-14 00:40:18,627 [INFO] 🔄 [auto-scan] scan added 0 new signals
 2026-05-14 00:40:18,630 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
 2026-05-14 00:40:18,633 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 01:13:52,716 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 01:13:53,787 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 01:13:53,792 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 01:13:55,988 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 01:13:55,989 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 01:13:57,898 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 01:13:57,899 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 01:13:59,775 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 01:13:59,790 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 01:14:01,630 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 01:14:01,634 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 01:14:03,216 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 01:14:03,239 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 01:14:03,447 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 01:14:04,367 [INFO] Reddit Signal: 71 unique raw posts collected
+2026-05-14 01:14:04,419 [INFO] Reddit Signal: 71 posts collected — AI scoring now…
+2026-05-14 01:15:05,887 [INFO] Reddit Signal: saved 0 new signals.
+2026-05-14 01:15:05,888 [INFO] 🔄 [auto-scan] scan added 0 new signals
+2026-05-14 01:15:05,893 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 01:15:05,898 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 01:32:03,632 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 01:50:03,929 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 01:50:07,211 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 01:50:08,308 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 01:50:08,308 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 01:50:10,334 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 01:50:10,334 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 01:50:12,310 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 01:50:12,310 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 01:50:14,221 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 01:50:14,222 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 01:50:16,103 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 01:50:16,103 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 01:50:17,707 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 01:50:17,707 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 01:50:18,753 [INFO] Reddit Signal: 73 unique raw posts collected
+2026-05-14 01:50:18,754 [INFO] Reddit Signal: 73 posts collected — AI scoring now…
+2026-05-14 01:51:22,396 [INFO] Reddit Signal: saved 3 new signals.
+2026-05-14 01:51:22,397 [INFO] 🔄 [auto-scan] scan added 3 new signals
+2026-05-14 01:51:22,401 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 01:51:22,403 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 02:07:04,195 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 02:24:53,673 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 02:24:54,960 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 02:24:54,960 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 02:24:56,902 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 02:24:56,902 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 02:24:58,820 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 02:24:58,821 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 02:25:00,842 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 02:25:00,842 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 02:25:02,760 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 02:25:02,760 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 02:25:04,577 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 02:25:04,577 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 02:25:04,655 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 02:25:05,586 [INFO] Reddit Signal: 70 unique raw posts collected
+2026-05-14 02:25:05,586 [INFO] Reddit Signal: 70 posts collected — AI scoring now…
+2026-05-14 02:26:10,504 [INFO] Reddit Signal: saved 0 new signals.
+2026-05-14 02:26:10,505 [INFO] 🔄 [auto-scan] scan added 0 new signals
+2026-05-14 02:26:10,509 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 02:26:10,513 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 02:46:05,247 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 03:01:41,848 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 03:01:42,700 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 03:01:42,700 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 03:01:44,731 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 03:01:44,732 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 03:01:46,676 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 03:01:46,677 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 03:01:48,991 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 03:01:48,992 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 03:01:51,339 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 03:01:51,340 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 03:01:53,254 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 03:01:53,254 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 03:01:54,261 [INFO] Reddit Signal: 70 unique raw posts collected
+2026-05-14 03:01:54,261 [INFO] Reddit Signal: 70 posts collected — AI scoring now…
+2026-05-14 03:01:54,583 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dw7gGo1hC58a96CWM9"}
+2026-05-14 03:01:54,584 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:01:55,693 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwCNoJSh8BBsbS3ybm"}
+2026-05-14 03:01:55,694 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:01:56,292 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwEuMWd6iebBv8rLY3"}
+2026-05-14 03:01:56,292 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:01:57,418 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwKipUwFqBRgopW96M"}
+2026-05-14 03:01:57,419 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:01:57,885 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwNAAbEvoXC5FqE1dA"}
+2026-05-14 03:01:57,885 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:01:58,254 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwPZziZtH4Gw34DKSs"}
+2026-05-14 03:01:58,254 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:01:58,646 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwRZ4MiuAkkSpce3cD"}
+2026-05-14 03:01:58,647 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:01:59,027 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwTA3a7EfknSkUR39K"}
+2026-05-14 03:01:59,027 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:01:59,549 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwVDpcim3JcYvyRE7A"}
+2026-05-14 03:01:59,549 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:01:59,925 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwX2iJwCM3LC4ZYmXe"}
+2026-05-14 03:01:59,925 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:00,379 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwYx4JcGf9rQdpxwpR"}
+2026-05-14 03:02:00,379 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:00,731 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwaTqWWPBnP4kgcPk6"}
+2026-05-14 03:02:00,731 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:01,033 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwbmUKc5dEPxTiBkwY"}
+2026-05-14 03:02:01,033 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:01,473 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwdeaN7XKQz45aCeT1"}
+2026-05-14 03:02:01,473 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:01,977 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwfePBmyNSnCj4ZcWt"}
+2026-05-14 03:02:01,978 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:02,545 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwiCvAGrM1rHDtAF5T"}
+2026-05-14 03:02:02,545 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:03,041 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwjtcrge91ueqHZLTa"}
+2026-05-14 03:02:03,041 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:03,727 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwnoVkhpSvjT9iZbgR"}
+2026-05-14 03:02:03,727 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:04,224 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwqLYLw4EhhHo9Lea5"}
+2026-05-14 03:02:04,224 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:04,675 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwsEeRLaAPSzT1bz6v"}
+2026-05-14 03:02:04,675 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:05,132 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 03:02:05,246 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwuAEQLVy48KP5o29X"}
+2026-05-14 03:02:05,246 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:05,632 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwwPRZPEVGSZDKCKKg"}
+2026-05-14 03:02:05,633 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:06,312 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dwydchfqqM9yCk9JmM"}
+2026-05-14 03:02:06,312 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:06,987 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dx2gv16uFKqC731osR"}
+2026-05-14 03:02:06,988 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:07,454 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dx53o3SRU1TvVwiFyx"}
+2026-05-14 03:02:07,454 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:07,861 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dx6vf5tqUkBYbMTxZr"}
+2026-05-14 03:02:07,862 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:08,310 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dx8sEjb4z5aA3M5EAC"}
+2026-05-14 03:02:08,310 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:08,743 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxAhcspuZrpe7ts3Wp"}
+2026-05-14 03:02:08,743 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:09,059 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxC4UbipjZwzArzMm8"}
+2026-05-14 03:02:09,059 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:09,493 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxDw676BMLHPd1bfGs"}
+2026-05-14 03:02:09,494 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:10,012 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxFjVGhbVQePaoNg9y"}
+2026-05-14 03:02:10,012 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:10,382 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxHgpEity3MjGncsJD"}
+2026-05-14 03:02:10,382 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:10,812 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxKaRM4oDESVGSgjXZ"}
+2026-05-14 03:02:10,812 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:11,541 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxMNZumB3rWBgyoP5d"}
+2026-05-14 03:02:11,541 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:11,868 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxQ5Xkro6gthT333Ci"}
+2026-05-14 03:02:11,868 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:12,303 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxRwenVNfHtQyMr2Yy"}
+2026-05-14 03:02:12,304 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:12,746 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxTqzsNEwT5b6aK2TK"}
+2026-05-14 03:02:12,746 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:13,391 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxVtHTQcnavpH1LJza"}
+2026-05-14 03:02:13,391 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:13,782 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxYGQdo1RQQ8EPokCZ"}
+2026-05-14 03:02:13,782 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:14,115 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1dxZeznsjKJzHMWpGSq"}
+2026-05-14 03:02:14,115 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:02:14,356 [INFO] Reddit Signal: saved 40 new signals.
+2026-05-14 03:02:14,356 [INFO] 🔄 [auto-scan] scan added 40 new signals
+2026-05-14 03:02:14,361 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 03:02:14,365 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 03:18:01,738 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 03:33:11,117 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 03:33:12,121 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 03:33:12,122 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 03:33:14,795 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 03:33:14,796 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 03:33:16,747 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 03:33:16,747 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 03:33:18,759 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 03:33:18,759 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 03:33:20,622 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 03:33:20,622 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 03:33:22,263 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 03:33:22,264 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 03:33:23,344 [INFO] Reddit Signal: 34 unique raw posts collected
+2026-05-14 03:33:23,344 [INFO] Reddit Signal: 34 posts collected — AI scoring now…
+2026-05-14 03:33:23,558 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLNQvAwRzMH7KxmF2w"}
+2026-05-14 03:33:23,558 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:24,016 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLQGJ3C4YCFT6sQiW1"}
+2026-05-14 03:33:24,016 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:24,553 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLSJpmKL3n1VLXBgDs"}
+2026-05-14 03:33:24,553 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:27,722 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLU8xYcaYAgd1cHq64"}
+2026-05-14 03:33:27,723 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:28,171 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLi8aQcjFSQErRTdSZ"}
+2026-05-14 03:33:28,171 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:28,583 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLjuzFwQu6LXwknc8N"}
+2026-05-14 03:33:28,583 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:29,057 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLmfQLbYYhTc7anEBc"}
+2026-05-14 03:33:29,057 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:29,496 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLon9ji8iPqhcjer79"}
+2026-05-14 03:33:29,496 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:29,884 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLqSsL8UKP1fZg38uT"}
+2026-05-14 03:33:29,885 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:30,197 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLrmyudzaNCrJXhEsU"}
+2026-05-14 03:33:30,197 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:30,666 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLtfLqi835dAGpvVnR"}
+2026-05-14 03:33:30,667 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:31,167 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLvdufiWtzbm2SrnDi"}
+2026-05-14 03:33:31,167 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:31,833 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gLyEgAfxzaKKCLCFkQ"}
+2026-05-14 03:33:31,833 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:32,519 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gM29nq5DNTHLRfaFom"}
+2026-05-14 03:33:32,519 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:32,905 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gM4Lktu6uFjVYpwfxc"}
+2026-05-14 03:33:32,905 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:33,421 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gM65BcbRVPaSPdWS7r"}
+2026-05-14 03:33:33,421 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:33,929 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gM8Q66SZNiK2KnwUBw"}
+2026-05-14 03:33:33,929 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:34,561 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMAnTF6gmzgeWVWVmv"}
+2026-05-14 03:33:34,561 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:35,270 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMDrzmopzmoCRhwnE6"}
+2026-05-14 03:33:35,270 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:35,820 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMGraYnWyXEkQbPEmE"}
+2026-05-14 03:33:35,821 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:36,223 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMJZX7JKbmRXPrcqrK"}
+2026-05-14 03:33:36,223 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:36,559 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gML1atH9JKG1N8BUid"}
+2026-05-14 03:33:36,560 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:36,992 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMMrxKYhcjtJQgjogY"}
+2026-05-14 03:33:36,992 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:37,452 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMPpn53pstmEW2pJyd"}
+2026-05-14 03:33:37,453 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:38,064 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMRkNRYrobqbmNSCno"}
+2026-05-14 03:33:38,064 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:38,424 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMTxa5gvQ4PmEw6FZj"}
+2026-05-14 03:33:38,425 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:38,875 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMVuu1MdCBWaZMNYFA"}
+2026-05-14 03:33:38,875 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:39,287 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMXeaCPhHjArkFMDUj"}
+2026-05-14 03:33:39,287 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:39,612 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMZ3ufUwFHeovNwtu8"}
+2026-05-14 03:33:39,612 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:40,018 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gManLhoKmfMhVMgUtJ"}
+2026-05-14 03:33:40,018 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:40,449 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMceTTsgarLYSAdorU"}
+2026-05-14 03:33:40,449 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:40,915 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMeeWLR8hFNtDD8nCb"}
+2026-05-14 03:33:40,915 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:41,331 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMgKU7JY3vUgGDeiut"}
+2026-05-14 03:33:41,331 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:41,653 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1gMhnGhjCDy4j8MXSSi"}
+2026-05-14 03:33:41,653 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 03:33:41,911 [INFO] Reddit Signal: saved 34 new signals.
+2026-05-14 03:33:41,911 [INFO] 🔄 [auto-scan] scan added 34 new signals
+2026-05-14 03:33:41,916 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 03:33:41,919 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 03:34:01,757 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 04:04:38,066 [INFO] ⏰ Wake-from-sleep detected (31 min gap) — checking for missed slots
+2026-05-14 04:04:48,558 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 04:04:49,513 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 04:04:49,514 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 04:04:52,110 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 04:04:52,110 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 04:04:54,065 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 04:04:54,065 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 04:04:56,194 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 04:04:56,194 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 04:04:58,183 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 04:04:58,183 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 04:04:59,805 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 04:04:59,805 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 04:05:00,924 [INFO] Reddit Signal: 5 unique raw posts collected
+2026-05-14 04:05:00,924 [INFO] Reddit Signal: 5 posts collected — AI scoring now…
+2026-05-14 04:05:01,208 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1ikFWqaaZ1Gzu6wZk7h"}
+2026-05-14 04:05:01,208 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:05:01,720 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1ikHacGoKjhs91fhgaz"}
+2026-05-14 04:05:01,720 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:05:02,232 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1ikKvW7m2Gb9jNwAiaG"}
+2026-05-14 04:05:02,232 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:05:02,649 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1ikMz2HxuMMkk9PL2AK"}
+2026-05-14 04:05:02,649 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:05:02,972 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1ikPNcXA4rHXSz7zuWD"}
+2026-05-14 04:05:02,972 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:05:03,213 [INFO] Reddit Signal: saved 5 new signals.
+2026-05-14 04:05:03,214 [INFO] 🔄 [auto-scan] scan added 5 new signals
+2026-05-14 04:05:03,218 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 04:05:03,221 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 04:18:42,121 [INFO] ⏰ Wake-from-sleep detected (14 min gap) — checking for missed slots
+2026-05-14 04:34:41,917 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 04:35:07,377 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 04:35:08,288 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 04:35:08,288 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 04:35:10,118 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 04:35:10,119 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 04:35:12,016 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 04:35:12,016 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 04:35:13,934 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 04:35:13,935 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 04:50:29,530 [WARNING] Reddit search failed (q='best way to find leads'): TimeoutError: The read operation timed out
+2026-05-14 04:50:30,147 [INFO] Reddit API → 10 results for 'https:' q='best way to find leads'
+2026-05-14 04:50:30,147 [INFO] Reddit Signal: query 'best way to find leads' → 0 in subreddits, 10 global
+2026-05-14 04:50:31,634 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 04:50:31,635 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 04:50:32,770 [INFO] Reddit Signal: 12 unique raw posts collected
+2026-05-14 04:50:32,771 [INFO] Reddit Signal: 12 posts collected — AI scoring now…
+2026-05-14 04:50:32,981 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDcrLXCiiPsjjduGGF"}
+2026-05-14 04:50:32,981 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:33,347 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDeK99n5GxErjkzqtG"}
+2026-05-14 04:50:33,347 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:33,690 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDfsu18mrnoVyCymZP"}
+2026-05-14 04:50:33,691 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:34,148 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDhpjQN8fYE6M3BLrS"}
+2026-05-14 04:50:34,148 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:34,599 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDjk56gEjodtHCn1o4"}
+2026-05-14 04:50:34,599 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:35,134 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDmfucPhC8C694AhGY"}
+2026-05-14 04:50:35,134 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:35,577 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDovavmr4tBEtDoLZD"}
+2026-05-14 04:50:35,577 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:36,063 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDqnD4CeWurn8onWb9"}
+2026-05-14 04:50:36,064 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:36,494 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDsmmRYNggcPhyK8KB"}
+2026-05-14 04:50:36,495 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:37,339 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDvAt8eEtjGcGAYRHo"}
+2026-05-14 04:50:37,339 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:37,857 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nDygy53hFkDfNbhrJR"}
+2026-05-14 04:50:37,857 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:38,437 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1nE25LY84jMZPtRw4Y3"}
+2026-05-14 04:50:38,437 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 04:50:38,648 [INFO] Reddit Signal: saved 12 new signals.
+2026-05-14 04:50:38,648 [INFO] 🔄 [auto-scan] scan added 12 new signals
+2026-05-14 04:50:38,653 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 04:50:38,657 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 04:50:41,529 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 05:06:08,879 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 05:06:09,700 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 05:06:09,700 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 05:06:11,617 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 05:06:11,617 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 05:06:13,548 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 05:06:13,549 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 05:06:15,385 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 05:06:15,386 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 05:06:17,189 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 05:06:17,190 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 05:06:18,717 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 05:06:18,717 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 05:06:19,767 [INFO] Reddit Signal: 5 unique raw posts collected
+2026-05-14 05:06:19,767 [INFO] Reddit Signal: 5 posts collected — AI scoring now…
+2026-05-14 05:06:20,132 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1oRRWexw1UGEG11XPNx"}
+2026-05-14 05:06:20,132 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 05:06:20,549 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1oRTvm4v2h2P6c5QAm6"}
+2026-05-14 05:06:20,550 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 05:06:20,953 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1oRVbDxeB5qz4hU9NJk"}
+2026-05-14 05:06:20,954 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 05:06:21,673 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1oRXgjLtHdpnJ6BbxTS"}
+2026-05-14 05:06:21,673 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 05:06:22,153 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1oRanmDSBroMuky6NsC"}
+2026-05-14 05:06:22,153 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 05:06:22,304 [INFO] Reddit Signal: saved 5 new signals.
+2026-05-14 05:06:22,304 [INFO] 🔄 [auto-scan] scan added 5 new signals
+2026-05-14 05:06:22,309 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 05:06:22,313 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 05:06:41,750 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 05:39:47,521 [INFO] ⏰ Wake-from-sleep detected (33 min gap) — checking for missed slots
+2026-05-14 05:39:58,454 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 05:39:59,228 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 05:39:59,228 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 05:40:01,527 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 05:40:01,527 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 05:40:03,409 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 05:40:03,409 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 05:40:05,353 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 05:40:05,354 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 05:40:07,168 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 05:40:07,168 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 05:40:08,691 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 05:40:08,691 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 05:40:09,756 [INFO] Reddit Signal: 1 unique raw posts collected
+2026-05-14 05:40:09,756 [INFO] Reddit Signal: 1 posts collected — AI scoring now…
+2026-05-14 05:40:10,026 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1r14aFtV2aspDF2VAYy"}
+2026-05-14 05:40:10,026 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 05:40:10,278 [INFO] Reddit Signal: saved 1 new signals.
+2026-05-14 05:40:10,278 [INFO] 🔄 [auto-scan] scan added 1 new signals
+2026-05-14 05:40:10,283 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 05:40:10,286 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 05:55:52,647 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 06:13:31,628 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 06:13:32,663 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 06:13:32,663 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 06:13:34,471 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 06:13:34,472 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 06:13:36,339 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 06:13:36,340 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 06:13:38,338 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 06:13:38,338 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 06:13:40,118 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 06:13:40,119 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 06:13:41,750 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 06:13:41,750 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 06:13:42,799 [INFO] Reddit Signal: 1 unique raw posts collected
+2026-05-14 06:13:42,799 [INFO] Reddit Signal: 1 posts collected — AI scoring now…
+2026-05-14 06:13:43,575 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1tZU41cYbJUreWXUBD1"}
+2026-05-14 06:13:43,575 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 06:13:43,839 [INFO] Reddit Signal: saved 1 new signals.
+2026-05-14 06:13:43,839 [INFO] 🔄 [auto-scan] scan added 1 new signals
+2026-05-14 06:13:43,845 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 06:13:43,849 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 06:14:08,668 [INFO] ⏰ Wake-from-sleep detected (18 min gap) — checking for missed slots
+2026-05-14 06:30:17,763 [INFO] ⏰ Wake-from-sleep detected (16 min gap) — checking for missed slots
+2026-05-14 06:52:13,834 [INFO] ⏰ Wake-from-sleep detected (22 min gap) — checking for missed slots
+2026-05-14 06:52:19,431 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 06:52:20,220 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 06:52:20,220 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 06:52:21,984 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 06:52:21,984 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 06:52:23,731 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 06:52:23,731 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 06:52:25,725 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 06:52:25,726 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 06:52:27,591 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 06:52:27,591 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 06:52:29,203 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 06:52:29,203 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 06:52:30,251 [INFO] Reddit Signal: 2 unique raw posts collected
+2026-05-14 06:52:30,251 [INFO] Reddit Signal: 2 posts collected — AI scoring now…
+2026-05-14 06:52:30,456 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1wX1riFb2whUoypvoav"}
+2026-05-14 06:52:30,456 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 06:52:30,838 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1wX3ThQDmewkaR8pXtj"}
+2026-05-14 06:52:30,838 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 06:52:30,976 [INFO] Reddit Signal: saved 2 new signals.
+2026-05-14 06:52:30,976 [INFO] 🔄 [auto-scan] scan added 2 new signals
+2026-05-14 06:52:30,981 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 06:52:30,984 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 07:09:59,919 [INFO] ⏰ Wake-from-sleep detected (18 min gap) — checking for missed slots
+2026-05-14 07:26:57,769 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 07:26:58,701 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 07:26:58,701 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 07:27:00,916 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 07:27:00,916 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 07:27:02,968 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 07:27:02,969 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 07:27:05,092 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 07:27:05,092 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 07:27:06,996 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 07:27:06,996 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 07:27:08,507 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 07:27:08,508 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 07:27:09,509 [INFO] Reddit Signal: 4 unique raw posts collected
+2026-05-14 07:27:09,510 [INFO] Reddit Signal: 4 posts collected — AI scoring now…
+2026-05-14 07:27:10,116 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1zAHwMmamCvHPb1nUJb"}
+2026-05-14 07:27:10,116 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 07:27:10,456 [INFO] ⏰ Wake-from-sleep detected (17 min gap) — checking for missed slots
+2026-05-14 07:27:10,563 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1zAMJmGupm4PRVCJ1Va"}
+2026-05-14 07:27:10,563 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 07:27:11,021 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1zAPDcHQVPnT1skjfH4"}
+2026-05-14 07:27:11,021 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 07:27:11,374 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb1zAQn7rLpxX4o5MPmZQ"}
+2026-05-14 07:27:11,374 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 07:27:11,565 [INFO] Reddit Signal: saved 4 new signals.
+2026-05-14 07:27:11,566 [INFO] 🔄 [auto-scan] scan added 4 new signals
+2026-05-14 07:27:11,570 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 07:27:11,574 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 07:37:46,119 [INFO] ⏰ Wake-from-sleep detected (11 min gap) — checking for missed slots
+2026-05-14 07:54:02,151 [INFO] ⏰ Wake-from-sleep detected (12 min gap) — checking for missed slots
+2026-05-14 07:57:04,298 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 07:57:04,988 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 07:57:04,988 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 07:57:06,752 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 07:57:06,753 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 07:57:08,578 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 07:57:08,578 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 07:57:10,431 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 07:57:10,431 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 07:57:12,202 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 07:57:12,202 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 07:57:13,687 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 07:57:13,688 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 07:57:14,763 [INFO] Reddit Signal: 3 unique raw posts collected
+2026-05-14 07:57:14,763 [INFO] Reddit Signal: 3 posts collected — AI scoring now…
+2026-05-14 07:57:14,975 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb22TMxQnqoiYnabxfywT"}
+2026-05-14 07:57:14,975 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 07:57:15,451 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb22TPerocrgqp3Yh5cGD"}
+2026-05-14 07:57:15,452 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 07:57:15,787 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb22TRQmwc4WdLpvmnxtJ"}
+2026-05-14 07:57:15,787 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 07:57:15,924 [INFO] Reddit Signal: saved 3 new signals.
+2026-05-14 07:57:15,924 [INFO] 🔄 [auto-scan] scan added 3 new signals
+2026-05-14 07:57:15,929 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 07:57:15,933 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 08:00:02,332 [INFO] ⏰ Scheduler [08:00]: starting — [<function _reddit_daily_draft at 0x101c1b9c0>]
+2026-05-14 08:00:02,338 [INFO] ⏰ [reddit_daily_draft] auto-post is ON — comments will post without review
+2026-05-14 08:00:05,041 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 08:00:05,042 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 08:00:09,086 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 08:00:09,087 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 08:00:11,498 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 08:00:11,499 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 08:00:13,976 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 08:00:13,977 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 08:00:16,263 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 08:00:16,264 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 08:00:17,960 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 08:00:17,960 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 08:00:19,013 [INFO] Reddit Signal: 0 unique raw posts collected
+2026-05-14 08:00:19,014 [WARNING] Reddit Signal: zero posts from all queries — Reddit may be blocking or returning empty results.
+2026-05-14 08:00:19,014 [INFO] ⏰ [reddit_daily_draft] scan added 0 new signals
+2026-05-14 08:00:19,023 [INFO] ⏰ [reddit_daily_draft] queued 0 draft(s), auto-posted 0
+2026-05-14 08:00:19,050 [INFO] ⏰ Scheduler [08:00]: done.
+2026-05-14 08:27:22,328 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 08:27:23,132 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 08:27:23,133 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 08:27:24,910 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 08:27:24,910 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 08:27:27,215 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 08:27:27,216 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 08:27:29,199 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 08:27:29,200 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 08:27:31,227 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 08:27:31,228 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 08:27:32,972 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 08:27:32,972 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 08:27:34,122 [INFO] Reddit Signal: 3 unique raw posts collected
+2026-05-14 08:27:34,123 [INFO] Reddit Signal: 3 posts collected — AI scoring now…
+2026-05-14 08:27:34,498 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb24mUhwtkyK8shEMSru8"}
+2026-05-14 08:27:34,498 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 08:27:34,952 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb24mXKi28WtJdiygyXvQ"}
+2026-05-14 08:27:34,952 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 08:27:35,267 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb24mYe5md5ES5m5Eq3ts"}
+2026-05-14 08:27:35,267 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 08:27:35,530 [INFO] Reddit Signal: saved 3 new signals.
+2026-05-14 08:27:35,531 [INFO] 🔄 [auto-scan] scan added 3 new signals
+2026-05-14 08:27:35,535 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 08:27:35,539 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 08:57:41,419 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 08:57:42,316 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 08:57:42,317 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 08:57:44,210 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 08:57:44,211 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 08:57:46,108 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 08:57:46,109 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 08:57:48,076 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 08:57:48,077 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 08:57:49,881 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 08:57:49,882 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 08:57:51,410 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 08:57:51,410 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 08:57:52,476 [INFO] Reddit Signal: 3 unique raw posts collected
+2026-05-14 08:57:52,476 [INFO] Reddit Signal: 3 posts collected — AI scoring now…
+2026-05-14 08:57:52,704 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb275X3L1KWQEBg6c9Xgp"}
+2026-05-14 08:57:52,704 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 08:57:53,071 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb275YbbBqWigzdqXWWL9"}
+2026-05-14 08:57:53,071 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 08:57:53,449 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb275a1RYRrVwZ4MoHvyi"}
+2026-05-14 08:57:53,450 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 08:57:53,648 [INFO] Reddit Signal: saved 3 new signals.
+2026-05-14 08:57:53,649 [INFO] 🔄 [auto-scan] scan added 3 new signals
+2026-05-14 08:57:53,653 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 08:57:53,657 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 09:00:06,874 [INFO] ⏰ Scheduler [09:00]: starting — ['find_leads', 'withdraw', 'scan_posts', 'connect', 'check', 'sync_connections', 'send', 'reply', 'followup']
+2026-05-14 09:00:06,874 [INFO] ⏰ [09:00] started 'find_leads'
+2026-05-14 09:00:06,994 [INFO] Pipeline has 164 pending leads — no search needed (min: 30).
+2026-05-14 09:00:16,901 [INFO] ⏰ [09:00] started 'withdraw'
+2026-05-14 09:00:17,448 [INFO] LinkedIn client initialised.
+2026-05-14 09:00:17,448 [INFO] Verifying LinkedIn session…
+2026-05-14 09:00:22,576 [INFO] Session OK — LinkedIn feed loaded. Session saved.
+2026-05-14 09:00:22,576 [INFO] Found 11 stale requests to withdraw (older than 21 days).
+2026-05-14 09:01:09,044 [INFO] Withdrew 0 old invitations.
+2026-05-14 09:01:09,045 [INFO] Waiting 97s…
+2026-05-14 09:02:46,677 [INFO] Withdraw complete. 0 requests withdrawn.
+2026-05-14 09:02:48,521 [INFO] ⏰ [09:00] started 'scan_posts'
+2026-05-14 09:02:48,545 [INFO] Smart Scan: searching for high-value posts across engagement tiers…
+2026-05-14 09:02:48,548 [INFO] [watering_hole] Brave search: 'site:linkedin.com/posts founder content strategy linkedin'
+2026-05-14 09:02:49,931 [INFO]   13 raw results for 'founder content strategy linkedin'
+2026-05-14 09:02:49,931 [INFO] [watering_hole] Brave search: 'site:linkedin.com/posts B2B thought leadership linkedin'
+2026-05-14 09:02:51,304 [INFO]   2 raw results for 'B2B thought leadership linkedin'
+2026-05-14 09:02:51,305 [INFO] [watering_hole] Brave search: 'site:linkedin.com/posts personal brand ROI B2B'
+2026-05-14 09:02:52,562 [INFO]   0 raw results for 'personal brand ROI B2B'
+2026-05-14 09:02:52,562 [INFO] [adjacent_peer] Brave search: 'site:linkedin.com/posts B2B brand strategy consultant'
+2026-05-14 09:02:53,811 [INFO]   0 raw results for 'B2B brand strategy consultant'
+2026-05-14 09:02:53,811 [INFO] [adjacent_peer] Brave search: 'site:linkedin.com/posts copywriting B2B founders linkedin'
+2026-05-14 09:02:55,220 [INFO]   2 raw results for 'copywriting B2B founders linkedin'
+2026-05-14 09:02:55,220 [INFO] [icp_direct] Brave search: 'site:linkedin.com/posts founder linkedin not getting traction'
+2026-05-14 09:02:56,702 [INFO]   20 raw results for 'founder linkedin not getting traction'
+2026-05-14 09:02:56,702 [INFO] [icp_direct] Brave search: 'site:linkedin.com/posts content not working B2B'
+2026-05-14 09:02:57,982 [INFO]   2 raw results for 'content not working B2B'
+2026-05-14 09:02:57,983 [INFO] Total unique raw results across all tiers: 35
+2026-05-14 09:02:57,985 [INFO]   ✓ [watering_hole] 'Johnkraski' | https://www.linkedin.com/posts/johnkraski_i-have-some-e…
+2026-05-14 09:02:57,986 [INFO]   ✓ [watering_hole] 'Johnkraski' | https://www.linkedin.com/posts/johnkraski_most-people-t…
+2026-05-14 09:02:57,986 [INFO]   ✓ [icp_direct] 'You’re not being overlooked' | https://www.linkedin.com/posts/georgiehubbard_youre-not…
+2026-05-14 09:02:57,987 [INFO]   ✓ [icp_direct] 'Sohansethi' | https://www.linkedin.com/posts/sohansethi_i-had-no-conn…
+2026-05-14 09:02:57,988 [INFO] Skipping 'Rajnish Kumar 9444B1287' — post does not appear to be in English
+2026-05-14 09:02:57,988 [INFO]   ✓ [icp_direct] 'Corporatebro' | https://www.linkedin.com/posts/corporatebro_breaking-al…
+2026-05-14 09:02:57,988 [INFO]   ✓ [icp_direct] 'Cloudwithraj' | https://www.linkedin.com/posts/cloudwithraj_as-ai-is-ma…
+2026-05-14 09:02:57,988 [INFO] Brave Search: 6 usable posts across all tiers
+2026-05-14 09:02:58,602 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb27U4scEkvybZ5dvSatY"}
+2026-05-14 09:02:58,602 [WARNING] Relevance scoring failed (Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i) — all posts kept unscored, applying neutral score
+2026-05-14 09:02:58,602 [INFO] Relevance filter: 6 relevant, 0 flagged as low-relevance
+2026-05-14 09:02:58,602 [INFO] Skip Johnkraski — already commented on their content.
+2026-05-14 09:02:58,602 [INFO] Skip Johnkraski — already commented on this post.
+2026-05-14 09:02:58,603 [INFO] Skip Sohansethi — already commented on this post.
+2026-05-14 09:02:58,603 [INFO] Smart Pick: 3 fetched → 3 passed quality bar → 3 selected
+2026-05-14 09:02:58,603 [INFO] Smart Pick selected 3 posts: {'icp_direct': 3}
+2026-05-14 09:02:58,603 [INFO] [Tier 3 — ICP direct] Generating comment for 'You’re not being overlooked' (score 6/10)…
+2026-05-14 09:02:58,812 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb27U5q9yHiRhw7ekYhQf"}
+2026-05-14 09:02:58,813 [ERROR] Comment generation failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 09:03:00,361 [INFO] [Tier 3 — ICP direct] Generating comment for 'Corporatebro' (score 6/10)…
+2026-05-14 09:03:00,577 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb27UDMbP9Eb28m33QDxc"}
+2026-05-14 09:03:00,578 [ERROR] Comment generation failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 09:03:02,095 [INFO] [Tier 3 — ICP direct] Generating comment for 'Cloudwithraj' (score 6/10)…
+2026-05-14 09:03:02,358 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb27ULumQeurNwQx9CMAb"}
+2026-05-14 09:03:02,359 [ERROR] Comment generation failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 09:03:04,042 [INFO] [auto-post] auto-approved 0 LinkedIn comments from this scan — posting now
+2026-05-14 09:03:04,045 [INFO] No approved comments to post. Review and approve in the Engage tab.
+2026-05-14 09:03:08,618 [INFO] ⏰ [09:00] started 'connect'
+2026-05-14 09:03:09,116 [INFO] LinkedIn client initialised.
+2026-05-14 09:03:09,116 [INFO] Verifying LinkedIn session…
+2026-05-14 09:03:14,243 [INFO] Session OK — LinkedIn feed loaded. Session saved.
+2026-05-14 09:03:14,243 [INFO] 164 pending. Sending up to 15 today.
+2026-05-14 09:03:21,755 [INFO] Waiting 124s…
+2026-05-14 09:05:27,213 [INFO]   3 recent post(s) found for Ricki Colliflower — using as hook
+2026-05-14 09:05:27,438 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb27f3FgpmG4V6CpBy13d"}
+2026-05-14 09:05:27,438 [WARNING] Could not generate connection note for Ricki: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 09:05:27,439 [INFO] Connecting: Ricki Colliflower ()
+2026-05-14 09:05:37,832 [INFO] Connection request sent → ricki-colliflower-b13b4b10b
+2026-05-14 09:05:37,833 [INFO] Waiting 131s…
+2026-05-14 09:07:56,873 [INFO] Waiting 66s…
+2026-05-14 09:09:03,354 [INFO]   3 recent post(s) found for Erika Hurt — using as hook
+2026-05-14 09:09:03,583 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb27vyAp6JK3zRyJJj3VJ"}
+2026-05-14 09:09:03,583 [WARNING] Could not generate connection note for Erika: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 09:09:03,584 [INFO] Connecting: Erika Hurt ()
+2026-05-14 09:09:14,850 [INFO] Connection request sent → erika-hurt-a1a25269
+2026-05-14 09:09:14,850 [INFO] Waiting 80s…
+2026-05-14 09:10:35,425 [WARNING] Connect timeout reached (441s) — stopping early. Remaining leads will be tried tomorrow.
+2026-05-14 09:10:35,438 [INFO] Done. Sent 2 connection requests. 0 leads skipped (repeated failures).
+2026-05-14 09:10:38,568 [INFO] ⏰ [09:00] started 'check'
+2026-05-14 09:10:39,061 [INFO] LinkedIn client initialised.
+2026-05-14 09:10:39,061 [INFO] Verifying LinkedIn session…
+2026-05-14 09:10:44,744 [INFO] Session OK — LinkedIn feed loaded. Session saved.
+2026-05-14 09:10:44,744 [INFO] Checking 20 requested leads for acceptance…
+2026-05-14 09:11:41,153 [INFO] Fetched 20 connections from your network.
+2026-05-14 09:11:41,153 [INFO] Waiting 141s…
+2026-05-14 09:14:03,537 [INFO] Bulk-checking 20 leads against 20 loaded connections…
+2026-05-14 09:14:03,538 [INFO]   ✓ Accepted: Ferisa Zukic
+2026-05-14 09:14:03,561 [INFO]   ✓ Accepted: Maryam El Allati
+2026-05-14 09:14:03,577 [INFO]   ✓ Accepted: Samira Tarifit
+2026-05-14 09:14:03,588 [INFO]   ✓ Accepted: Jordan Parle
+2026-05-14 09:14:03,597 [INFO] Bulk check: 4 newly accepted, 16 still unconfirmed.
+2026-05-14 09:14:03,597 [INFO]   (Connections page loaded 20 — individual profile checks will cover the rest)
+2026-05-14 09:14:03,597 [INFO] Checking 16 leads individually (cap 20/run, 0 deferred to next run)…
+2026-05-14 09:14:17,758 [INFO]   Ricki Colliflower: none (14.2s)
+2026-05-14 09:14:17,758 [INFO]   Ricki Colliflower: request not found on profile (none×1 — may be declined/expired)
+2026-05-14 09:14:17,783 [INFO]   → Reset Ricki Colliflower to Pending (request likely declined/expired after 1 checks)
+2026-05-14 09:14:30,216 [INFO]   Erika Hurt: none (12.4s)
+2026-05-14 09:14:30,217 [INFO]   Erika Hurt: request not found on profile (none×1 — may be declined/expired)
+2026-05-14 09:14:30,241 [INFO]   → Reset Erika Hurt to Pending (request likely declined/expired after 1 checks)
+2026-05-14 09:14:43,420 [INFO]   Chris Read: pending (13.2s)
+2026-05-14 09:14:55,513 [INFO]   Robert Bishop: pending (12.1s)
+2026-05-14 09:15:07,537 [INFO]   Didier Elzinga: pending (12.0s)
+2026-05-14 09:15:22,341 [INFO]   Hunter Johnson: pending (14.8s)
+2026-05-14 09:15:33,962 [INFO]   Red Design Pty Ltd: pending (11.6s)
+2026-05-14 09:15:46,859 [INFO]   George O'Beid: pending (12.9s)
+2026-05-14 09:16:00,143 [INFO]   Mark W.: pending (13.3s)
+2026-05-14 09:16:12,896 [INFO]   Austools Direct: pending (12.8s)
+2026-05-14 09:16:24,636 [INFO]   Francois Bondiguel: pending (11.7s)
+2026-05-14 09:16:36,861 [INFO]   Steve Harris: pending (12.2s)
+2026-05-14 09:16:50,782 [INFO]   Mark Vischschoonmaker: pending (13.9s)
+2026-05-14 09:17:03,278 [INFO]   Natalie Loeb: pending (12.5s)
+2026-05-14 09:17:15,456 [INFO]   Aleksandra Remplewicz: pending (12.2s)
+2026-05-14 09:17:36,708 [INFO]   A1 Standard Recruitment: pending (21.3s)
+2026-05-14 09:17:36,709 [INFO] Syncing connections page for organic/missed connections…
+2026-05-14 09:17:36,709 [INFO] Checking notifications for accepted connection requests…
+2026-05-14 09:17:59,175 [INFO] Found 0 accepted connection(s) in notifications.
+2026-05-14 09:17:59,175 [INFO] Scanning connections page for any remaining new connections…
+2026-05-14 09:18:19,977 [INFO] Synced 0 connections from network page.
+2026-05-14 09:18:19,977 [INFO] Waiting 137s…
+2026-05-14 09:20:38,577 [INFO] Rich scraper found 0 — running slug-based fallback check…
+2026-05-14 09:20:38,577 [INFO] Using 20 prefetched slugs (skipping redundant fetch).
+2026-05-14 09:20:38,578 [INFO] Slug fallback: no new connections found.
+2026-05-14 09:20:38,603 [INFO] Sync complete — 0 new connection(s) added, 0 upgraded from Requested→Connected. (notifications: 0, page: 0)
+2026-05-14 09:20:38,615 [INFO] Check complete. 4 newly accepted, 0 organic/new connections added, 4 total connected awaiting first message.
+2026-05-14 09:20:38,615 [INFO] Use 'Send' to message them.
+2026-05-14 09:20:40,031 [INFO] ⏰ [09:00] started 'sync_connections'
+2026-05-14 09:20:40,634 [INFO] LinkedIn client initialised.
+2026-05-14 09:20:40,634 [INFO] Verifying LinkedIn session…
+2026-05-14 09:20:46,517 [INFO] Session OK — LinkedIn feed loaded. Session saved.
+2026-05-14 09:20:46,517 [INFO] Checking notifications for accepted connection requests…
+2026-05-14 09:21:07,763 [INFO] Found 0 accepted connection(s) in notifications.
+2026-05-14 09:21:07,764 [INFO] Scanning connections page for any remaining new connections…
+2026-05-14 09:21:26,790 [INFO] Synced 0 connections from network page.
+2026-05-14 09:21:26,792 [INFO] Waiting 108s…
+2026-05-14 09:23:15,220 [INFO] Rich scraper found 0 — running slug-based fallback check…
+2026-05-14 09:24:11,522 [INFO] Fetched 20 connections from your network.
+2026-05-14 09:24:11,523 [INFO] Waiting 130s…
+2026-05-14 09:26:23,075 [INFO] Slug fallback found 1 unknown connection(s) — fetching profiles…
+2026-05-14 09:26:39,554 [INFO] Fetched profile: ilgi-polat-3ab19620a
+2026-05-14 09:26:39,554 [INFO] Waiting 69s…
+2026-05-14 09:27:49,547 [INFO] New connection added: ilgi-polat-3ab19620a (Digital marketing specialist in wording @ )
+2026-05-14 09:27:49,547 [INFO]   + Added via slug fallback: ilgi-polat-3ab19620a
+2026-05-14 09:27:49,561 [INFO] Sync complete — 1 new connection(s) added, 0 upgraded from Requested→Connected. (notifications: 0, page: 0)
+2026-05-14 09:27:54,265 [INFO] ⏰ [09:00] started 'send'
+2026-05-14 09:27:54,845 [INFO] LinkedIn client initialised.
+2026-05-14 09:27:54,845 [INFO] Verifying LinkedIn session…
+2026-05-14 09:27:58,565 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 09:27:59,320 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 09:27:59,320 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 09:28:00,266 [INFO] Session OK — LinkedIn feed loaded. Session saved.
+2026-05-14 09:28:00,266 [INFO] Sending first messages to 5 connected leads…
+2026-05-14 09:28:01,224 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 09:28:01,224 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 09:28:03,061 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 09:28:03,061 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 09:28:04,996 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 09:28:04,997 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 09:28:06,783 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 09:28:06,783 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 09:28:08,352 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 09:28:08,352 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 09:28:09,420 [INFO] Reddit Signal: 2 unique raw posts collected
+2026-05-14 09:28:09,420 [INFO] Reddit Signal: 2 posts collected — AI scoring now…
+2026-05-14 09:28:09,747 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb29PTCPBQvwxNMRynkPB"}
+2026-05-14 09:28:09,747 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 09:28:10,113 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb29PVDBBgSH2qHERiYDR"}
+2026-05-14 09:28:10,113 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 09:28:10,229 [INFO] Reddit Signal: saved 2 new signals.
+2026-05-14 09:28:10,230 [INFO] 🔄 [auto-scan] scan added 2 new signals
+2026-05-14 09:28:10,231 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 09:28:10,233 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 09:28:11,121 [INFO] Generating first message for Ferisa Zukic…
+2026-05-14 09:28:25,688 [INFO] Fetched profile: ferisa-zukic-584b7411a
+2026-05-14 09:28:25,688 [INFO] Waiting 124s…
+2026-05-14 09:30:39,432 [INFO] Waiting 83s…
+2026-05-14 09:32:03,667 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb29ghoSARxvXtNdQn7Ee"}
+2026-05-14 09:32:03,733 [ERROR] Something went wrong. Click Retry or try again in a few minutes. If it keeps happening, reach out to support@influentia.io.
+2026-05-14 09:32:06,832 [INFO] ⏰ [09:00] started 'reply'
+2026-05-14 09:32:07,381 [INFO] LinkedIn client initialised.
+2026-05-14 09:32:07,381 [INFO] Verifying LinkedIn session…
+2026-05-14 09:32:13,248 [INFO] Session OK — LinkedIn feed loaded. Session saved.
+2026-05-14 09:32:13,248 [INFO] Checking inbox for 39 active conversations…
+2026-05-14 09:32:23,334 [INFO] Waiting 87s…
+2026-05-14 09:33:59,811 [INFO] Waiting 136s…
+2026-05-14 09:36:29,280 [INFO] Waiting 76s…
+2026-05-14 09:37:59,174 [INFO] Waiting 138s…
+2026-05-14 09:40:38,234 [INFO] Session cooldown: 412s pause…
+2026-05-14 09:42:07,652 [WARNING] Auto-failed stuck task 'reply' after 601s
+2026-05-14 09:42:07,839 [INFO] ⏰ [09:00] started 'followup'
+2026-05-14 09:42:07,865 [ERROR] Something went wrong. Click Retry or try again in a few minutes. If it keeps happening, reach out to support@influentia.io.
+2026-05-14 09:42:11,728 [ERROR] Future exception was never retrieved
+future: <Future finished exception=FileNotFoundError(2, 'No such file or directory')>
+Traceback (most recent call last):
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/server.py", line 189, in _worker
+    main_module.COMMANDS[cmd_name]()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/main.py", line 1083, in cmd_followup
+    client = _make_client()
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/main.py", line 155, in _make_client
+    return LinkedInClient()
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/linkedin_client.py", line 314, in __init__
+    self._launch(headless=headless)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/linkedin_client.py", line 325, in _launch
+    self._pw = sync_playwright().start()
+               ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/venv/lib/python3.13/site-packages/playwright/sync_api/_context_manager.py", line 84, in start
+    return self.__enter__()
+           ~~~~~~~~~~~~~~^^
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/venv/lib/python3.13/site-packages/playwright/sync_api/_context_manager.py", line 77, in __enter__
+    dispatcher_fiber.switch()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/venv/lib/python3.13/site-packages/playwright/sync_api/_context_manager.py", line 56, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 303, in run_as_sync
+    await self.run()
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 312, in run
+    await self._transport.connect()
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/venv/lib/python3.13/site-packages/playwright/_impl/_transport.py", line 133, in connect
+    raise exc
+  File "/Users/ermoegberts/Desktop/linkedin_outreach/venv/lib/python3.13/site-packages/playwright/_impl/_transport.py", line 120, in connect
+    self._proc = await asyncio.create_subprocess_exec(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/asyncio/subprocess.py", line 224, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        stderr=stderr, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/asyncio/base_events.py", line 1802, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        protocol, popen_args, False, stdin, stdout, stderr,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bufsize, **kwargs)
+        ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/asyncio/unix_events.py", line 213, in _make_subprocess_transport
+    transp = _UnixSubprocessTransport(self, protocol, args, shell,
+                                    stdin, stdout, stderr, bufsize,
+                                    waiter=waiter, extra=extra,
+                                    **kwargs)
+  File "/opt/anaconda3/lib/python3.13/asyncio/base_subprocess.py", line 39, in __init__
+    self._start(args=args, shell=shell, stdin=stdin, stdout=stdout,
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                stderr=stderr, bufsize=bufsize, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/asyncio/unix_events.py", line 855, in _start
+    self._proc = subprocess.Popen(
+                 ~~~~~~~~~~~~~~~~^
+        args, shell=shell, stdin=stdin, stdout=stdout, stderr=stderr,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        universal_newlines=False, bufsize=bufsize, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/subprocess.py", line 1972, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ermoegberts/Desktop/linkedin_outreach/venv/lib/python3.13/site-packages/playwright/driver/node'
+2026-05-14 09:42:17,904 [INFO] ⏰ Scheduler [09:00]: done.
+2026-05-14 09:47:43,556 [INFO] Waiting 128s…
+2026-05-14 09:50:05,141 [INFO] Waiting 91s…
