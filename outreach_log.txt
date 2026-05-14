@@ -31848,3 +31848,33 @@ FileNotFoundError: [Errno 2] No such file or directory: '/Users/ermoegberts/Desk
 2026-05-14 09:42:17,904 [INFO] ⏰ Scheduler [09:00]: done.
 2026-05-14 09:47:43,556 [INFO] Waiting 128s…
 2026-05-14 09:50:05,141 [INFO] Waiting 91s…
+2026-05-14 09:51:45,658 [INFO] Waiting 69s…
+2026-05-14 09:53:07,651 [INFO] Waiting 127s…
+2026-05-14 09:55:27,440 [INFO] Session cooldown: 440s pause…
+2026-05-14 09:58:15,017 [INFO] 🔄 [auto-scan] Starting scan (interval: 30m)
+2026-05-14 09:58:15,847 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='looking for outreach tool'
+2026-05-14 09:58:15,848 [INFO] Reddit Signal: query 'looking for outreach tool' → 25 posts
+2026-05-14 09:58:18,501 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='LinkedIn automation'
+2026-05-14 09:58:18,502 [INFO] Reddit Signal: query 'LinkedIn automation' → 25 posts
+2026-05-14 09:58:20,351 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='cold outreach not working'
+2026-05-14 09:58:20,351 [INFO] Reddit Signal: query 'cold outreach not working' → 25 posts
+2026-05-14 09:58:22,364 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='how to get more clients'
+2026-05-14 09:58:22,365 [INFO] Reddit Signal: query 'how to get more clients' → 25 posts
+2026-05-14 09:58:24,265 [INFO] Reddit API → 25 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='best way to find leads'
+2026-05-14 09:58:24,266 [INFO] Reddit Signal: query 'best way to find leads' → 25 posts
+2026-05-14 09:58:25,748 [INFO] Reddit API → 5 results for 'entrepreneur+SaaS+b2b_sales+startups+smallbusiness+marketing+consulting+freelance+agency+B2BSaaS+sales+linkedin' q='struggling with prospecting'
+2026-05-14 09:58:25,748 [INFO] Reddit Signal: query 'struggling with prospecting' → 5 posts
+2026-05-14 09:58:26,874 [INFO] Reddit Signal: 2 unique raw posts collected
+2026-05-14 09:58:26,874 [INFO] Reddit Signal: 2 posts collected — AI scoring now…
+2026-05-14 09:58:27,102 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb2BhRj4fEaB2fgsghPZx"}
+2026-05-14 09:58:27,103 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 09:58:27,534 [ERROR] Anthropic direct HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cb2BhTYhhB8mXv318dFtX"}
+2026-05-14 09:58:27,535 [WARNING] Reddit signal scoring failed: Anthropic direct error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_i
+2026-05-14 09:58:27,792 [INFO] Reddit Signal: saved 2 new signals.
+2026-05-14 09:58:27,792 [INFO] 🔄 [auto-scan] scan added 2 new signals
+2026-05-14 09:58:27,797 [INFO] 🔄 [auto-scan] cycle done — 0 auto-posted
+2026-05-14 09:58:27,800 [WARNING] Reddit client init failed: Reddit credentials missing. Add REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD to your .env file. Register a free 'script' app at https://www.reddit.com/prefs/apps
+2026-05-14 10:00:10,183 [INFO] ⏰ Scheduler [10:00]: starting — ['post_comments']
+2026-05-14 10:00:10,184 [INFO] ⏰ [10:00] started 'post_comments'
+2026-05-14 10:00:10,200 [INFO] No approved comments to post. Review and approve in the Engage tab.
+2026-05-14 10:00:20,293 [INFO] ⏰ Scheduler [10:00]: done.

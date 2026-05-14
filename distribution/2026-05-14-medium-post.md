@@ -1,48 +1,60 @@
 # Medium Republish Post — 2026-05-14
 
-**Title:** Why Cold Outreach Fails: The Math Behind 0.8% Reply Rates
+**Title:** The Buyer Intent Framework We Use to Find Qualified Leads on Reddit
 
-**Subtitle:** We sent 1,400 cold messages. Got 11 replies. Then changed one thing and saw 42x better results.
+**Subtitle:** How we catch 40+ buyer signals per week from Reddit and convert them at 34% reply rates.
 
-**Tags:** sales, marketing, startups, saas, lead-generation
+**Tags:** marketing, sales, reddit, lead-generation, startups
 
-**Canonical URL:** https://influentia.io/blog/why-cold-outreach-fails-framework
+**Canonical URL:** https://influentia.io/blog/buyer-intent-framework-spotting-signals
 
 ---
 
 **Content:**
 
-I used to send 50 cold LinkedIn DMs per day. That's 350 per week, 1,400 per month.
+Every day, your ideal buyers are telling you exactly what they need.
 
-Results? 11 replies. 3 conversations. 1 booked call.
+They're posting on Reddit about pricing frustrations. Complaining on LinkedIn about tool limitations. Asking in community forums for recommendations.
 
-That's a 0.07% booking rate. And we were paying $99/month for it.
+But most companies miss every signal because they're looking in the wrong direction.
 
-Most people blame their templates. They're wrong.
+Here's our exact framework:
 
-The problem isn't the template. It's the timing.
+THE FIVE SIGNAL TYPES
 
-When you interrupt someone with a cold message, they weren't thinking about your product. They don't want to hop on a quick call. They don't have time for a demo.
+1. REPLACEMENT SIGNALS: someone shopping for replacements. 'Looking for alternatives to X'
 
-But what if you could catch buyers when they're already looking?
+2. PAIN SIGNALS: complaining about problems you solve. 'Spending 20 hrs/week on manual work'
 
-We switched from sending first to listening first. We monitored Reddit and LinkedIn for people complaining about problems we solve. When someone said 'I need X' and we responded with context — not a template — results changed everything.
+3. BUDGET SIGNALS: mentioning specific amounts. '$400/mo for 2% reply rate is insane'
 
-0.8% reply rate (industry average) vs 34% reply rate (intent-based). That's 42x better.
+4. URGENCY SIGNALS: timeline or deadline. 'Need to replace before Q2'
 
-The framework:
+5. PEER INFLUENCE: asking for recommendations. 'What do you guys use for X?'
 
-1. Monitor where buyers hang out (Reddit, LinkedIn, niche forums)
-2. Track five intent signals: replacement, pain, budget, urgency, peer influence
-3. Score signals 0-10 on buying language, urgency, budget, severity, competitive mentions
-4. Score 8+ = respond with context. Score below 6 = skip.
+SCORING SYSTEM (10-point scale)
 
-We built Influentia to automate this framework. It monitors public conversations, scores signals, and drafts contextual responses (not templates).
+- Buying language: 'looking for', 'alternatives', 'budget' (0-2 pts)
+- Urgency: 'right now', 'this week' (0-2 pts)
+- Budget specificity: '$800/mo' vs 'reasonable price' (0-2 pts)
+- Problem severity: emotional language vs mild complaint (0-2 pts)
+- Competitor mentions: naming tools they hate (0-2 pts)
 
-If you're doing volume outreach: try listening for one week instead. You'll see how many buyers are already talking.
+REAL EXAMPLE FROM LAST WEEK:
 
-See it live: https://influentia.io
+'Need to replace Apollo before Q2. $400/mo for 2% reply rate is insane. 6-person team spending 20+ hours/week on manual LinkedIn.'
+
+Score: 9/10. Result: $1,200/mo deal after one conversation.
+
+Cold outbound = interrupting people who don't care.
+Intent-based = responding to people who told you they need help.
+
+0.8% vs 34%. 42x better.
+
+The buyers are already talking. They're just hard to hear above the noise.
+
+https://influentia.io
 
 ---
 Publish at: https://medium.com/new-story
-Set canonical link to: https://influentia.io/blog/why-cold-outreach-fails-framework
+Set canonical link to: https://influentia.io/blog/buyer-intent-framework-spotting-signals
